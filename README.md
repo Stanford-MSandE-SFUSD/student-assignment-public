@@ -77,6 +77,17 @@ uv run python -m pytest tests -q
 bash scripts/test_clean_checkout.sh
 ```
 
+A bare clone can also simulate a **full-scale** cohort, using the committed
+public synthetic 2023-24 kindergarten data in
+**[data/synthetic_2324/](data/synthetic_2324/README.md)** — 4,308 synthetic
+applicants, no confidential data required:
+
+```bash
+sed "s#<STUDENT_ASSIGNMENT_PATH>#$PWD#g" \
+    configs/custom_configs/status_quo_synthetic_2324.yaml > /tmp/synthetic.yaml
+uv run python run_custom_config.py --config-path /tmp/synthetic.yaml
+```
+
 ## Paper quickstart
 
 Main-text policy comparison (Status Quo vs zones / reserves / distance
@@ -171,7 +182,7 @@ scripts/
   settings/                 Pipeline settings files (local, test)
   analysis/analyze_trends.py    Aggregate runs into metrics_comparison.xlsx
   preprocessing/            Data filtering and extraction
-  generators/               Zone + small-dataset generators
+  generators/               Zone, small-dataset and synthetic-dataset generators
   test_clean_checkout.sh    Verify the repo runs from tracked files only
 
 configs/
@@ -182,6 +193,10 @@ configs/
   policy_configs/           Policy definitions (zones, distance bands, reserves)
   examples/                 One canonical sample per generated config family
   paper/                    Table 1–style paper configs
+
+data/
+  synthetic_2324/           Public synthetic 2023-24 KG cohort + its provenance docs
+  zones/                    Committed zone definitions
 
 tests/                      pytest suite (incl. end-to-end test_full_pipeline.py)
 tests/fixtures/small_2223/  Committed small dataset the pipeline test runs on
@@ -201,9 +216,17 @@ documented in **[docs/CONFIG_OPTIONS.md](docs/CONFIG_OPTIONS.md)**.
 
 ## Data setup
 
-Point configs at your own copy of the confidential SFUSD data (not in this
-repo). Defaults load from `configs/local_path_config.yaml`; on first run the
-`Configerator` also writes `configs/<user>.config.yaml` for personal overrides.
+**Without the confidential data**, use the committed public synthetic cohort in
+**[data/synthetic_2324/](data/synthetic_2324/README.md)**: 4,308 synthetic
+kindergarten applicants calibrated to the real 2023-24 cohort, runnable at full
+scale via `configs/custom_configs/status_quo_synthetic_2324.yaml`. Read its
+[ANONYMIZATION.md](data/synthetic_2324/ANONYMIZATION.md) for the limits before
+drawing conclusions from it.
+
+For the real data, point configs at your own copy of the confidential SFUSD
+data (not in this repo). Defaults load from
+`configs/local_path_config.yaml`; on first run the `Configerator` also writes
+`configs/<user>.config.yaml` for personal overrides.
 
 Write run outputs and any local copies of cleaned microdata under
 **`local-data/`** (gitignored) so individual-level files are not committed —

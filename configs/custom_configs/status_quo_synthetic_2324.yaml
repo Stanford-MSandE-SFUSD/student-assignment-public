@@ -1,0 +1,35 @@
+# Status-quo run against the public synthetic 2324 cohort in data/synthetic_2324/.
+#
+# Mirrors status_quo_real_2324.yaml but sources every input from the repository,
+# so it runs from a fresh clone with no access to the confidential SFUSD tree.
+# Replace <STUDENT_ASSIGNMENT_PATH> with your absolute checkout path (see
+# docs/DATA_SETUP.md). The utility model is off: this run uses the ranked lists
+# in the synthetic dataset, which is what it ships with -- no choice-model
+# estimates matrix exists for the synthetic cohort.
+grade: KG
+year: 23
+random-seed: 2023
+r1-only: true
+remove-special-lps: true
+rounds-merged-options:
+- 0
+save-assignment: true
+iterations:
+  end: 25
+  start: 0
+subconfigs:
+- status_quo
+utility-model:
+  designate-lp-for-all: false
+  enable: false
+  list-length: "0"
+paths:
+  sfusd: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/
+  student-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/student_2324_synthetic.csv
+  program-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/programs_without_specialprogs_2324.csv
+  school-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/Cleaned/schools_rehauled_2324.csv
+  student-save: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324/precomputed/
+  assignment-folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324/
+  estimate-path: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/no-estimates.csv
+  zone-files:
+    Con1: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/zones/concept1zones.csv

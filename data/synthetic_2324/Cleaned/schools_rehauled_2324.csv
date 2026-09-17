@@ -1,0 +1,73 @@
+school_id,school_name,school_name_long,lat,lon,zip,category,grades,cap_lb,greatschools_rating,ela_color,math_color,chronic_color,suspension_color,index,Block,BlockGroup,Tract
+413,Alamo ES,Alamo Elementary School,37.783001,-122.482263,94121,Attendance,K-5th,68,9,Green,Green,Orange,Blue,0,60750426011000,60750426011,6075042601.0
+420,Alvarado ES (TK-5),Alvarado Elementary School,37.753715,-122.438162,94114,Attendance,TK-5th,88,7,Green,Green,Orange,Blue,1,60750212003004,60750212003,6075021200.0
+435,Argonne ES (PK-TK-5),Argonne Elementary School,37.775337,-122.476329,94121,Attendance,PK-TK-5th,67,8,Blue,Blue,Yellow,Blue,2,60750476003004,60750476003,6075047600.0
+456,Bryant ES (PK-5),Bryant School,37.751631,-122.404701,94110,Attendance,PK-5th,35,3,Orange,Yellow,Red,Orange,3,60750229032009,60750229032,6075022903.0
+618,BVHM (K-8),Buena Vista Horace Mann School,37.75304,-122.420202,94110,Citywide,K-8th,54,3,Orange,Orange,Orange,Blue,8,60750209004002,60750209004,6075020900.0
+603,Chavez ES (PK-5),Cesar Chavez Elementary School,37.754899,-122.415092,94110,Attendance,PK-5th,46,9,Yellow,Yellow,Red,Green,8,60750228031005,60750228031,6075022803.0
+449,Carmichael (PK-TK-5),Bessie Carmichael School,37.77609125,-122.406448,94103,Citywide,PK-TK-5th,49,3,Orange,Orange,Red,Green,68,60750178021021,60750178021,6075017802.0
+497,Webster ES,Daniel Webster Elementary School,37.760521,-122.395844,94107,Attendance,K-5th,60,5,Yellow,Green,Orange,Blue,68,60750227022009,60750227022,6075022702.0
+625,Carver ES,Dr. George Washington Carver Elementary School,37.731843,-122.38557,94124,Attendance,K-5th,6,1,Yellow,Yellow,Red,Orange,6,60750231022004,60750231022,6075023102.0
+476,Lee Newcomer School (K-5),Edwin and Anita Lee Newcomer School ,37.794768,-122.404058,94111,Citywide,K-5th,0,5,,,Blue,Blue,9,60750611001015,60750611001,6075061100.0
+872,Chin ES,John Yehall Chin Elementary School,37.798611,-122.403217,94133,Attendance,K-5th,44,10,Blue,Blue,Green,Blue,9,60750106002000,60750106002,6075010600.0
+509,CIS ES,Chinese Immersion School at De Avila,37.76998,-122.444338,94117,Citywide,K-5th,66,10,Blue,Blue,Blue,Blue,36,60750166002001,60750166002,6075016600.0
+718,Mckinley ES,Mckinley Elementary School,37.766972,-122.436455,94114,Attendance,K-5th,43,6,Green,Green,Orange,Yellow,36,60750170001006,60750170001,6075017000.0
+478,Clarendon ES,Clarendon Elementary School,37.753757,-122.456323,94131,Attendance,K-5th,87,9,Blue,Blue,Orange,Green,11,60750301022010,60750301022,6075030102.0
+796,Rooftop (PK-4),Rooftop School,37.754995,-122.443917,94131,Citywide,PK-4th,66,6,Green,Green,Orange,Orange,11,60750204022013,60750204022,6075020402.0
+485,Yu (K-8),Alice Fong Yu School,37.75891,-122.469711,94122,Citywide,K-8th,66,9,Green,Green,Yellow,Yellow,11,60750303011000,60750303011,6075030301.0
+481,Cleveland ES,Cleveland Elementary School,37.72063,-122.42888,94112,Attendance,K-5th,29,1,Red,Orange,Yellow,Blue,12,60750260031009,60750260031,6075026003.0
+525,Cobb ES (PK-5),Dr. William L. Cobb Elementary School,37.787702,-122.439627,94115,Attendance,PK-TK-5th,26,2,Yellow,Orange,Red,Yellow,13,60750153001002,60750153001,6075015300.0
+507,Drew ES (PK-TK-5),Dr. Charles Drew Elementary School,37.731322,-122.393995,94124,Attendance,PK-TK-5th,34,1,Orange,Red,Red,Yellow,14,60750230032002,60750230032,6075023003.0
+521,El Dorado ES,El Dorado Elementary School,37.718422,-122.407296,94134,Attendance,K-5th,26,1,Red,Yellow,Yellow,Blue,15,60759805011010,60759805011,6075980501.0
+537,Huerta ES (PK-5),Dolores Huerta Elementary School,37.74046,-122.425009,94131,Citywide,PK-5th,65,5,Yellow,Orange,Yellow,Blue,20,60750218001002,60750218001,6075021800.0
+575,Glen Park ES,Glen Park Elementary School,37.733097,-122.435787,94131,Attendance,K-5th,57,3,Orange,Orange,Red,Orange,20,60750311001020,60750311001,6075031100.0
+724,MEC ES,Mission Education Center,37.742204,-122.431436,94131,Citywide,K-5th,1,1,,,Red,Yellow,20,60750216001014,60750216001,6075021600.0
+539,Feinstein ES,Dianne Feinstein Elementary School,37.739686,-122.481366,94116,Attendance,K-5th,66,8,Green,Green,Green,Yellow,17,60750330002005,60750330002,6075033000.0
+680,Flynn ES (TK-5),Leonard R. Flynn Elementary School,37.747738,-122.411965,94110,Attendance,TK-5th,62,1,Orange,Orange,Orange,Blue,18,60750252001002,60750252001,6075025200.0
+760,Revere (PK-8),Paul Revere School,37.737322,-122.413169,94110,Citywide,PK-8th,36,1,Orange,Red,Red,Red,18,60750254022004,60750254022,6075025402.0
+562,Garfield ES,Garfield Elementary School,37.802185,-122.406698,94133,Attendance,K-5th,40,7,Green,Green,Red,Blue,19,60750104003012,60750104003,6075010400.0
+589,Grattan ES (PK-5),Grattan Elementary School,37.763535,-122.450072,94117,Attendance,PK-5th,66,7,Green,Green,Green,Blue,21,60750171022001,60750171022,6075017102.0
+593,Guadalupe ES (PK-5),Guadalupe Elementary School,37.710135,-122.4345,94112,Attendance,PK-5th,31,3,Yellow,Yellow,Orange,Orange,22,60750263022007,60750263022,6075026302.0
+453,Harte ES (PK-TK-5),Bret Harte Elementary School,37.717516,-122.389079,94124,Attendance,PK-TK-5th,38,1,Red,Yellow,Red,Blue,23,60750234002018,60750234002,6075023400.0
+614,Hillcrest ES,Hillcrest Elementary School,37.728519,-122.418942,94134,Attendance,K-5th,40,5,Yellow,Green,Red,Green,24,60750256002003,60750256002,6075025600.0
+644,Jefferson ES,Jefferson Elementary School,37.763294,-122.476815,94122,Attendance,K-5th,90,10,Blue,Blue,Yellow,Blue,25,60750302012005,60750302012,6075030201.0
+544,Key ES,Francis Scott Key Elementary School,37.758098,-122.502,94122,Attendance,K-5th,87,9,Green,Green,Green,Blue,26,60750351004006,60750351004,6075035100.0
+664,Lafayette ES,Lafayette Elementary School,37.777056,-122.496876,94121,Attendance,K-5th,84,9,Blue,Green,Green,Blue,27,60750478012003,60750478012,6075047801.0
+670,Lakeshore ES,Lakeshore Elementary School,37.729126,-122.483841,94132,Attendance,K-5th,69,3,Orange,Orange,Red,Yellow,28,60750332011002,60750332011,6075033201.0
+490,Lau ES (PK-5),Gordon J. Lau Elementary School,37.794079,-122.408925,94108,Attendance,PK-5th,100,8,Green,Green,Blue,Blue,29,60750113002001,60750113002,6075011300.0
+676,Lawton (K-8),Lawton School,37.758051,-122.489098,94122,Citywide,K-8th,65,10,Blue,Green,Yellow,Blue,60,60750327004002,60750327004,6075032700.0
+782,Stevenson ES (TK-5),Robert Louis Stevenson Elementary School,37.748844,-122.492756,94116,Attendance,TK-5th,67,9,Green,Blue,Yellow,Green,60,60750329011006,60750329011,6075032901.0
+479,Lilienthal (K-2),Claire Lilienthal School,37.787226,-122.458067,94118,Citywide,K-2nd,88,9,Green,Blue,Yellow,Blue,63,60750133005002,60750133005,6075013300.0
+848,Sutro ES,Sutro Elementary School,37.783603,-122.471452,94118,Attendance,K-5th,41,8,Blue,Green,Yellow,Blue,63,60750402003004,60750402003,6075040200.0
+691,Longfellow ES,Longfellow Elementary School,37.710235,-122.447126,94112,Attendance,K-5th,63,3,Yellow,Orange,Orange,Orange,32,60750263031002,60750263031,6075026303.0
+830,Malcolm X ES (PK-5),Malcolm X Academy Elementary School,37.734449,-122.380973,94124,Attendance,PK-TK-5th,17,4,Yellow,Green,Red,Blue,33,60750231031006,60750231031,6075023103.0
+714,Marshall ES,Marshall Elementary School,37.766455,-122.419007,94103,Citywide,K-5th,43,2,Yellow,Orange,Red,Blue,41,60750201003003,60750201003,6075020100.0
+723,Moscone ES (PK-5),George R. Moscone Elementary School,37.75711,-122.412777,94110,Attendance,PK-5th,56,5,Yellow,Green,Red,Blue,41,60750228031000,60750228031,6075022803.0
+549,Mccoppin ES,Frank Mccoppin Elementary School,37.776311,-122.46448,94118,Attendance,K-5th,44,8,Yellow,Green,Yellow,Blue,35,60750452002000,60750452002,6075045200.0
+505,Milk ES,Harvey Milk Civil Rights Academy,37.75898,-122.436455,94114,Attendance,K-5th,44,3,Yellow,Yellow,Yellow,Blue,38,60750205002004,60750205002,6075020500.0
+722,Miraloma ES,Miraloma Elementary School,37.738587,-122.449738,94127,Attendance,K-5th,65,8,Green,Blue,Orange,Blue,39,60750307001022,60750307001,6075030700.0
+729,Monroe ES,Monroe Elementary School,37.725642,-122.430476,94112,Attendance,K-5th,87,5,Orange,Green,Orange,Blue,40,60750260011000,60750260011,6075026001.0
+493,SF Community (K-8),SF Community School,37.726105,-122.432134,94112,Citywide,K-8th,33,3,Orange,Orange,Red,Red,40,60750260011002,60750260011,6075026001.0
+650,Muir ES (PK-5),John Muir Elementary School,37.773724,-122.428787,94117,Attendance,PK-5th,28,7,Green,Green,Red,Blue,42,60750168022001,60750168022,6075016802.0
+735,New Traditions ES,New Traditions Elementary School,37.773885,-122.450267,94117,Attendance,K-5th,43,5,Green,Green,Yellow,Blue,43,60750165003002,60750165003,6075016500.0
+746,Ortega ES,Jose Ortega Elementary School,37.717209,-122.467305,94132,Attendance,K-5th,66,8,Blue,Blue,Green,Blue,44,60750313021003,60750313021,6075031302.0
+638,Parker ES,Jean Parker Elementary School,37.797618,-122.411026,94133,Attendance,K-5th,11,6,Orange,Green,Orange,Green,45,60750107002003,60750107002,6075010700.0
+786,Parks ES (PK-5),Rosa Parks Elementary School,37.783207,-122.429917,94115,Attendance,PK-5th,45,4,Yellow,Yellow,Orange,Blue,46,60750159001003,60750159001,6075015900.0
+569,Peabody ES,George Peabody Elementary School,37.783854,-122.465025,94118,Attendance,K-5th,44,8,Green,Blue,Yellow,Blue,47,60750402001005,60750402001,6075040200.0
+790,Redding ES (TK-5),Redding Elementary School,37.789578,-122.419243,94109,Attendance,TK-5th,26,6,Green,Yellow,Yellow,Blue,48,60750111003002,60750111003,6075011100.0
+816,Sanchez ES (PK-5),Sanchez College Preparatory School,37.76346,-122.4305,94114,Attendance,PK-5th,25,1,Red,Orange,Orange,Green,51,60750203002001,60750203002,6075020300.0
+656,Serra ES,Junipero Serra Elementary School,37.736985,-122.421498,94110,Attendance,K-5th,37,3,Yellow,Orange,Red,Blue,52,60750254013000,60750254013,6075025401.0
+814,SF Montessori (PK-5),San Francisco Public Montessori School,37.79266,-122.433619,94115,Citywide,PK-5th,22,6,Green,Green,Yellow,Green,56,60750132001008,60750132001,6075013200.0
+823,Sherman ES,Sherman Elementary School,37.797802,-122.426118,94123,Attendance,K-5th,64,7,Green,Green,Orange,Blue,56,60750130001002,60750130001,6075013000.0
+820,Sheridan ES (PK-TK-5),Sheridan Elementary School,37.714476,-122.459629,94112,Attendance,PK-TK-5th,24,2,Orange,Orange,Red,Blue,55,60750314004002,60750314004,6075031400.0
+488,Sloat ES,Commodore Sloat Elementary School,37.730835,-122.470614,94127,Attendance,K-5th,65,8,Green,Green,Green,Blue,57,60750309005018,60750309005,6075030900.0
+834,Spring Valley ES,Spring Valley Science School,37.79402,-122.4188,94109,Attendance,K-5th,14,5,Yellow,Yellow,Orange,Yellow,58,60750110002005,60750110002,6075011000.0
+838,Starr King ES (PK-5),Starr King Elementary School,37.753343,-122.399049,94107,Attendance,PK-5th,57,6,Green,Blue,Yellow,Blue,59,60750614001002,60750614001,6075061400.0
+842,Sunnyside ES,Sunnyside Elementary School,37.730288,-122.448234,94112,Attendance,K-5th,66,7,Blue,Blue,Orange,Blue,61,60750311004007,60750311004,6075031100.0
+750,Sunset ES,Sunset Elementary School,37.750593,-122.499523,94116,Attendance,K-5th,67,10,Blue,Blue,Yellow,Blue,62,60750353001001,60750353001,6075035300.0
+513,Taylor ES (PK-5),Edward Robeson Taylor School,37.727373,-122.407044,94134,Attendance,PK-5th,79,6,Green,Green,Orange,Blue,64,60750257023005,60750257023,6075025702.0
+859,Tenderloin ES (PK-TK-5),Tenderloin Community School,37.781855,-122.419951,94102,Attendance,PK-TK-5th,28,2,Yellow,Yellow,Yellow,Green,65,60750124022001,60750124022,6075012402.0
+862,Ulloa ES,Ulloa Elementary School,37.73729,-122.49991,94116,Attendance,K-5th,88,10,Green,Green,Blue,Yellow,66,60750353003005,60750353003,6075035300.0
+867,Vis Valley ES,Visitacion Valley Elementary School,37.712525,-122.410275,94134,Attendance,K-5th,33,5,Orange,Green,Orange,Green,67,60750264012005,60750264012,6075026401.0
+876,West Portal ES,West Portal Elementary School,37.742816,-122.464389,94127,Attendance,K-5th,99,8,Green,Green,Green,Blue,69,60750308001002,60750308001,6075030800.0
+801,Yick Wo ES,Yick Wo Elementary School,37.8019,-122.416597,94133,Attendance,K-5th,46,8,Blue,Blue,Orange,Green,70,60750103001013,60750103001,6075010300.0
