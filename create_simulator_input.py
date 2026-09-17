@@ -225,7 +225,7 @@ class ConvertEstimates:
 @click.argument("model_path")
 @click.argument(
     "features_path"
-)  # TODO: generate features file without loading (need codes from SFUSD-Choice)
+)  # TODO: generate features file without loading (need codes from SFUSD-Choice-public)
 @click.option("--distance_weight", type=float, help="Optional distance weight")
 def create_simulator_input(model_path, features_path, distance_weight):
     ce = ConvertEstimates(model_path, features_path, distance_weight)

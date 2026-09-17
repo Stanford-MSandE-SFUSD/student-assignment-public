@@ -42,7 +42,7 @@ directory. Replace them with your **absolute** paths (cluster paths
 | Token | Replace with |
 |-------|--------------|
 | `<STUDENT_ASSIGNMENT_PATH>` | your `student-assignment` checkout |
-| `<SFUSD_CHOICE_PATH>` | your `SFUSD-Choice` checkout (MNL estimates) |
+| `<SFUSD_CHOICE_PATH>` | your [`SFUSD-Choice-public`](https://github.com/irene-lo/SFUSD-Choice-public) checkout (MNL estimates) |
 | `<SFUSD_DATA_PATH>` | your local copy of the SFUSD data tree (off-cluster `policy_configs` variant only) |
 | `<RA_SFUSD_PATH>` | your `RA_SFUSD` checkout (permuted-students configs only) |
 

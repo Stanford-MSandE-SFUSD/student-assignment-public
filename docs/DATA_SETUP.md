@@ -35,7 +35,7 @@ sitting "under" the `sfusd` root: each file is named by its exact, full path.
 | Token | Replace with (absolute path) |
 |-------|------------------------------|
 | `<STUDENT_ASSIGNMENT_PATH>` | Your `student-assignment` checkout (e.g. `/path/to/student-assignment`). Covers filtered inputs **and** run outputs under `local-data/`. |
-| `<SFUSD_CHOICE_PATH>` | Your `SFUSD-Choice` checkout, which holds the MNL `estimates_*.csv`. |
+| `<SFUSD_CHOICE_PATH>` | Your [`SFUSD-Choice-public`](https://github.com/irene-lo/SFUSD-Choice-public) checkout, which holds the MNL `estimates_*.csv`. |
 | `<SFUSD_DATA_PATH>` | Your local copy of the confidential SFUSD data tree (root that contains `cleaned/`, `zones/`, …). Only the off-cluster `policy_configs/config_08082025_06.yaml` variant uses it; the `_clusterpaths` twin uses `/share/...` directly. |
 | `<RA_SFUSD_PATH>` | Your `RA_SFUSD` checkout (only the permuted-students experiment configs). |
 
@@ -80,7 +80,7 @@ See the per-file table below.
 | `sfusd` | **Root folder** of the confidential SFUSD data tree | All relative files below are resolved against this root. Sanity check: it contains a `Data/` subdirectory. |
 | `student-save` | Precomputed-data folder (distances, etc.) | Written/read during runs. |
 | `assignment-folder` | Folder where assignment CSVs are written | Created if missing. |
-| `estimate-path` | MNL choice-model estimates (`.npy` or `estimates_*.csv`) | Required when `utility-model.enable: true`. Produced by the **SFUSD-Choice** repo — only this file is needed, not that repo's code. |
+| `estimate-path` | MNL choice-model estimates (`.npy` or `estimates_*.csv`) | Required when `utility-model.enable: true`. Produced by the **SFUSD-Choice-public** repo — only this file is needed, not that repo's code. |
 
 ### Files resolved automatically under `sfusd`
 
@@ -135,7 +135,7 @@ paths:
   sfusd: /path/to/your/SFUSD/                 # contains Data/...
   student-save: /path/to/precomputed/
   assignment-folder: /path/to/assignments/
-  estimate-path: /path/to/estimates_2324.csv  # MNL estimates from SFUSD-Choice
+  estimate-path: /path/to/estimates_2324.csv  # MNL estimates from SFUSD-Choice-public
   zone-files:                                 # only if running zone policies
     my-zone: /path/to/zones/my_zone.csv
 ```
@@ -150,7 +150,7 @@ If your config relies on `custom_configs/` overrides, also set `student-data`,
 - **`FileNotFoundError` on a `Data/Cleaned/...` path** → `sfusd` is wrong, or
   you're missing the cleaned data for that `year`.
 - **`estimate-path` not found** → an experiment config points at someone else's
-  SFUSD-Choice output; repoint it to your own `estimates_*.csv`.
+  SFUSD-Choice-public output; repoint it to your own `estimates_*.csv`.
 - **Zone key not found** → the name under `policies:` must match a key in
   `zone-files` / `citywide-or-lp-zones`.
 - **Wrong path config picked** → detection keys on `soal` in the hostname; off

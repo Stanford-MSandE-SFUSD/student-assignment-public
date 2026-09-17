@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run_models_estimates.sh
 #
-# Focused DA pipeline for SFUSD-Choice estimate models.
+# Focused DA pipeline for SFUSD-Choice-public estimate models.
 # Default settings (scripts/settings/models_cluster.env) reproduce the
 # alternative / baseline / selected × k1/k3/k5 runs on years 2223 (in-sample) and 2324
 # (out-of-sample), with list-length variants 0.8/0.7/0.6*real and 7, plus
