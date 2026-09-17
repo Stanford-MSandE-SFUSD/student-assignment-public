@@ -33,6 +33,7 @@ class School_with_class:
             for frac_iClass in frac_reserve_class
         ]
         self.assignedPerClass = np.zeros(len(frac_reserve_class))
+        self.strictGuards = bool(strictGuards)
         self.virtual_school = (
             School(-1, 0) if strictGuards else School(-1, capacity)
         )
@@ -107,14 +108,19 @@ class DeferredAcceptance_with_GuardRails:
                 if school.school_by_classes[iClass].has_space():
                     student.set_match(school_index)
                     school.school_by_classes[iClass].add_match(i, priority)
-                    school.virtual_school.capacity -= 1
 
-                    if school.virtual_school.has_excess_matches():
-                        (
-                            student_to_remove,
-                            _,
-                        ) = school.virtual_school.remove_lowest_priority()
-                        self.students[student_to_remove].unmatch()
+                    # Soft reserves share the school's seats with the leftover
+                    # pool, so filling a reserved seat shrinks it. Strict
+                    # reserves have no leftover pool to shrink.
+                    if not school.strictGuards:
+                        school.virtual_school.capacity -= 1
+
+                        if school.virtual_school.has_excess_matches():
+                            (
+                                student_to_remove,
+                                _,
+                            ) = school.virtual_school.remove_lowest_priority()
+                            self.students[student_to_remove].unmatch()
 
                 elif (
                     school.school_by_classes[iClass].give_lowest_priority()
@@ -204,7 +210,7 @@ class DAwithGuards:
         self.student_priorities = StudentPrts
         self.student_classes = classOfStudent
         self.student_prefs = StudPrefs
-        self.strictGuards = 0
+        self.strictGuards = strictGuards
 
     def setguards(self, program_reserve_frac, numOfClasses=3):
         self.program_reserve_frac = program_reserve_frac
