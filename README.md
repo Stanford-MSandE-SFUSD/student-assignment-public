@@ -157,7 +157,7 @@ with your own **absolute** path:
 | Token | Replace with (absolute path) |
 |-------|------------------------------|
 | `<STUDENT_ASSIGNMENT_PATH>` | your `student-assignment` checkout (inputs and run outputs under `local-data/`) |
-| `<SFUSD_CHOICE_PATH>` | your [`SFUSD-Choice-public`](https://github.com/irene-lo/SFUSD-Choice-public) checkout (MNL `estimates_*.csv`) |
+| `<SFUSD_CHOICE_PATH>` | your [`SFUSD-Choice-public`](https://github.com/Stanford-MSandE-SFUSD/SFUSD-Choice-public) checkout (MNL `estimates_*.csv`) |
 | `<SFUSD_DATA_PATH>` | your local copy of the confidential SFUSD data tree |
 | `<RA_SFUSD_PATH>` | your `RA_SFUSD` checkout (permuted-students experiment configs) |
 

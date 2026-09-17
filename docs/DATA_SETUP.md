@@ -35,7 +35,7 @@ sitting "under" the `sfusd` root: each file is named by its exact, full path.
 | Token | Replace with (absolute path) |
 |-------|------------------------------|
 | `<STUDENT_ASSIGNMENT_PATH>` | Your `student-assignment` checkout (e.g. `/path/to/student-assignment`). Covers filtered inputs **and** run outputs under `local-data/`. |
-| `<SFUSD_CHOICE_PATH>` | Your [`SFUSD-Choice-public`](https://github.com/irene-lo/SFUSD-Choice-public) checkout, which holds the MNL `estimates_*.csv`. |
+| `<SFUSD_CHOICE_PATH>` | Your [`SFUSD-Choice-public`](https://github.com/Stanford-MSandE-SFUSD/SFUSD-Choice-public) checkout, which holds the MNL `estimates_*.csv`. |
 | `<SFUSD_DATA_PATH>` | Your local copy of the confidential SFUSD data tree (root that contains `cleaned/`, `zones/`, …). Only the off-cluster `policy_configs/config_08082025_06.yaml` variant uses it; the `_clusterpaths` twin uses `/share/...` directly. |
 | `<RA_SFUSD_PATH>` | Your `RA_SFUSD` checkout (only the permuted-students experiment configs). |
 
