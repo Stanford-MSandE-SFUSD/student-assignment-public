@@ -264,6 +264,18 @@ explained by a language program appearing in `r4_programs` in the current
 extract, which the May 2024 extract behind the published matrix evidently
 carried in an earlier round.
 
+Distance is the one feature where a plausible-looking shortcut breaks the
+match: the model measures it with `geopy.distance.geodesic`, the WGS84
+ellipsoid, not the great-circle approximation. The port therefore ships a
+vectorised Vincenty inverse, `student_assignment.choice_model.geodesic_miles`,
+and every stage of this pipeline calls that one function -- the priors
+extractor, the generator's deferred acceptance and `r1_distance`, and the
+fidelity report. A pipeline that ranked programs by ellipsoidal distance while
+assigning and reporting on spherical distance would be quietly inconsistent
+with itself; on this cohort the two differ by 0.135% on average, enough to move
+22 of the model's "within half a mile" indicators and 10 applicants' nearest
+school.
+
 ## Mechanism 6: identifiers and outcomes regenerated
 
 - `studentno` is a fresh sequential integer from 1,000,000. The source

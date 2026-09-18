@@ -43,14 +43,14 @@ Headline agreement with the source cohort (full table in
 - **Cohort size and geography.** 4,308 applicants against 4,304, across the
   same 58 attendance areas; the per-area applicant count correlates at 0.995
   with the real one.
-- **Ranked lists.** Mean length 5.62 against 5.59; the same median of 5; 6.8%
-  against 8.1% filing no list at all, and 14.1% against 15.0% filing ten or
+- **Ranked lists.** Mean length 5.78 against 5.59; the same median of 5; 6.8%
+  against 8.1% filing no list at all, and 15.4% against 15.0% filing ten or
   more choices.
 - **School demand.** Any-rank share by school correlates at 0.97 across the 72
   schools. First choices are weaker, at 0.84 — that is the model's top-1
   accuracy showing through (see below).
 - **Language pathways.** 75.9% of choices are general education against 76.3%,
-  and 25.8% of applicants rank two programs at the same school against 25.0%.
+  and 25.8% of applicants rank two programs at the same school against 25.4%.
   Both are emergent: the model ranks *programs*, so the immersion/general mix
   and the habit of ranking two pathways at one school are its predictions, not
   fitted quantities.
@@ -60,11 +60,13 @@ Headline agreement with the source cohort (full table in
 - **Block characteristics.** Mean and standard deviation of free-lunch
   probability, AALPI score, neighbourhood SES, home opportunity index, median
   household income, and the CTIP1 share.
-- **Demographics.** Ethnicity shares within 0.034 total absolute deviation;
-  home language and English proficiency within 0.10. The share of applicants in
-  CTIP1 blocks matches by race (34.4% of AALPI applicants against 34.1%).
-- **Priorities.** Sibling (28.9% against 28.4%), pre-K (3.9% against 3.8%),
-  attendance-area, and language-pathway priority rates.
+- **Demographics.** Ethnicity shares within 0.041 total absolute deviation;
+  home language within 0.055 and English proficiency within 0.030. The share of
+  applicants in CTIP1 blocks matches by race (33.8% of AALPI applicants against
+  34.1%).
+- **Priorities.** Sibling (28.4% against 28.4%), attendance-area pre-K (4.4%
+  against 3.8%), citywide pre-K (1.3% against 1.7%), and language pathway (3.9%
+  against 3.9%).
 
 ## What is not reproduced
 

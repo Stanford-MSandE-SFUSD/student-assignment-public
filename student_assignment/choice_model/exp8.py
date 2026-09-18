@@ -33,9 +33,13 @@ Spanish speakers.
 """
 
 import enum
+import logging
+import re
 
 import numpy as np
 import pandas as pd
+
+logger = logging.getLogger(__name__)
 
 # --- Feature groups of config_exp8.yaml -------------------------------------
 EXP8_FEATURES = (
@@ -48,6 +52,10 @@ EXP8_FEATURES = (
     "distance_indicator_lt_0_5",
     "distance_x_low_income",
 )
+
+# Fixed effects are named per entity, so a coefficient for a school or
+# program type outside the current program table is legitimately unused.
+_FIXED_EFFECT_RE = re.compile(r"^(school_\d+|program_type_[A-Za-z]+)$")
 
 # --- Constants mirrored from SFUSD-Choice-public/choice_model/data ----------
 LOW_INCOME_THRESHOLD = 83_150
@@ -434,7 +442,15 @@ def compute_utilities(
     n, p = len(students), len(program_ids)
     u = np.zeros((n, p), dtype=float)
 
+    # A name absent from the coefficient table contributes nothing, which is
+    # correct for exp8 (several of its fitted coefficients are exactly 0) but
+    # would also silently zero an entire feature group if handed a different
+    # model's weights. Record every lookup so the unconsumed coefficients can
+    # be reported below.
+    consumed: set[str] = set()
+
     def coef(name: str) -> float:
+        consumed.add(name)
         return float(weights.get(name, 0.0))
 
     # --- distance -------------------------------------------------------
@@ -540,6 +556,34 @@ def compute_utilities(
         qualified = _qualified_types(home_lang[i], ranked_types, mode)
         ineligible = ~np.isin(program_type, list(qualified))
         u[i, ineligible] = -np.inf
+
+    # A fixed effect for a school or program type that this program table does
+    # not contain is unused for a benign reason: the model was fitted on a
+    # wider set of programs than the run covers. Anything else left unconsumed
+    # is a feature this port does not implement.
+    unconsumed = set(map(str, weights.index)) - consumed
+    out_of_scope = {
+        name
+        for name in unconsumed
+        if _FIXED_EFFECT_RE.match(name)
+    }
+    unimplemented = sorted(unconsumed - out_of_scope)
+    if unimplemented:
+        raise ValueError(
+            f"{len(unimplemented)} coefficient(s) in the weights table are "
+            "not features of this port, so their effect would be silently "
+            f"dropped: {unimplemented[:8]}"
+            f"{' ...' if len(unimplemented) > 8 else ''}. These weights are "
+            "probably from a different choice model; only the exp8 "
+            f"specification ({', '.join(EXP8_FEATURES)}) is implemented here."
+        )
+    if out_of_scope:
+        logger.info(
+            "%d fixed effect(s) in the weights table have no matching program "
+            "in this program table and were not applied: %s",
+            len(out_of_scope),
+            sorted(out_of_scope),
+        )
 
     index = pd.Index(students["studentno"].to_numpy(), name="studentno")
     return pd.DataFrame(u, index=index, columns=program_ids)

@@ -43,8 +43,9 @@ sitting "under" the `sfusd` root: each file is named by its exact, full path.
 ## Running without the confidential data
 
 `data/synthetic_2324/` holds a committed **public synthetic** 2023-24
-kindergarten cohort (4,308 applicants, 72 schools, 129 programs) calibrated to
-the real cohort's aggregate statistics. Nothing in it is derived from a real
+kindergarten cohort (4,308 applicants, 72 schools, 129 programs) built from
+the real cohort's aggregate statistics, with ranked lists drawn from the public
+choice model. Nothing in it is derived from a real
 applicant's record. It is enough to run the simulator and the evaluator at full
 scale:
 

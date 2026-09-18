@@ -227,7 +227,8 @@ documented in **[docs/CONFIG_OPTIONS.md](docs/CONFIG_OPTIONS.md)**.
 
 **Without the confidential data**, use the committed public synthetic cohort in
 **[data/synthetic_2324/](data/synthetic_2324/README.md)**: 4,308 synthetic
-kindergarten applicants calibrated to the real 2023-24 cohort, runnable at full
+kindergarten applicants built from aggregate statistics of the real 2023-24
+cohort, with preferences drawn from the public choice model, runnable at full
 scale via `configs/custom_configs/status_quo_synthetic_2324.yaml`. Read its
 [ANONYMIZATION.md](data/synthetic_2324/ANONYMIZATION.md) for the limits before
 drawing conclusions from it.

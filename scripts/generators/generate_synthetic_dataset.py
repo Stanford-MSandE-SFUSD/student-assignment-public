@@ -34,6 +34,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 from student_assignment.choice_model import (  # noqa: E402
     ChoiceSetMode,
     compute_utilities,
+    geodesic_miles,
     load_weights,
 )
 
@@ -197,16 +198,6 @@ def tilt(dist: dict, factors: dict) -> dict:
     if total <= 0:
         return dict(dist)
     return {k: v / total for k, v in out.items()}
-
-
-def haversine_miles(lat1, lon1, lat2, lon2):
-    """Great-circle distance in miles between (arrays of) coordinates."""
-    lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
-    a = (
-        np.sin((lat2 - lat1) / 2) ** 2
-        + np.cos(lat1) * np.cos(lat2) * np.sin((lon2 - lon1) / 2) ** 2
-    )
-    return 3958.8 * 2 * np.arcsin(np.sqrt(np.clip(a, 0, 1)))
 
 
 def sample_locations(
@@ -878,7 +869,7 @@ def generate(
     schools_ok = schools.dropna(subset=["lat", "lon"])
     school_ids = [int(x) for x in schools_ok["school_id"]]
     index_of = {sid: j for j, sid in enumerate(school_ids)}
-    distances = haversine_miles(
+    distances = geodesic_miles(
         students["latitude"].to_numpy()[:, None],
         students["longitude"].to_numpy()[:, None],
         schools_ok["lat"].to_numpy(dtype=float)[None, :],
@@ -922,7 +913,6 @@ def generate(
         eligible,
     )
     lists, codes = draw_lists_from_model(utilities, lengths, rng)
-    lengths = np.array([len(x) for x in lists])
 
     # --- priority bookkeeping --------------------------------------------
     students["aaprek"] = list(priorities["aaprek"])

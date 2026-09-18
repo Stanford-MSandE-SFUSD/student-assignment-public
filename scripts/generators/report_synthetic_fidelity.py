@@ -19,11 +19,16 @@ import argparse
 import ast
 import datetime as _dt
 import logging
+import sys
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from student_assignment.choice_model import geodesic_miles  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -55,16 +60,6 @@ def _load(path: Path) -> pd.DataFrame:
     return df
 
 
-def _haversine_miles(lat1, lon1, lat2, lon2):
-    """Great-circle distance in miles between (arrays of) coordinates."""
-    lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
-    a = (
-        np.sin((lat2 - lat1) / 2) ** 2
-        + np.cos(lat1) * np.cos(lat2) * np.sin((lon2 - lon1) / 2) ** 2
-    )
-    return 3958.8 * 2 * np.arcsin(np.sqrt(np.clip(a, 0, 1)))
-
-
 def _choice_distances(df: pd.DataFrame, school_ll: pd.DataFrame) -> dict:
     """Mean home-to-school distance of ranked choices, by list position."""
     buckets: dict[int, list] = {}
@@ -75,7 +70,7 @@ def _choice_distances(df: pd.DataFrame, school_ll: pd.DataFrame) -> dict:
                 continue
             lat, lon = school_ll.loc[int(school)]
             buckets.setdefault(min(position, 8), []).append(
-                _haversine_miles(row.latitude, row.longitude, lat, lon)
+                geodesic_miles(row.latitude, row.longitude, lat, lon)
             )
     return {k: float(np.mean(v)) for k, v in sorted(buckets.items())}
 

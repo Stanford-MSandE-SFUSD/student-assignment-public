@@ -113,6 +113,46 @@ def test_files_present():
     assert not missing, f"Missing dataset files: {missing}"
 
 
+def test_priors_file_has_no_unaccounted_releases():
+    """Every statistic in the priors file must be covered by the accounting.
+
+    ANONYMIZATION.md claims the priors file is the release's entire disclosure
+    surface, that 32 Laplace query families compose to the stated epsilon, and
+    that exactly the releases named in ``meta.non_laplace_releases`` sit
+    outside that accounting. A bare scalar added to the top level would
+    silently falsify all three claims, so pin the top-level shape.
+    """
+    import json
+
+    with open(PRIORS_JSON) as handle:
+        priors = json.load(handle)
+
+    expected_top = {
+        "meta",
+        "n_students",
+        "students_per_aa",
+        "blockgroup_attributes",
+        "blockgroup_residuals",
+        "choice",
+        "demographics",
+        "priorities",
+        "missingness",
+    }
+    assert set(priors) == expected_top, (
+        "unaccounted top-level release(s): "
+        f"{sorted(set(priors) - expected_top)}; "
+        f"missing: {sorted(expected_top - set(priors))}"
+    )
+
+    meta = priors["meta"]
+    assert meta["n_query_families"] == len(meta["query_families"])
+    assert meta["composed_epsilon"] == pytest.approx(
+        meta["n_query_families"] * meta["laplace_epsilon_per_family"]
+    )
+    # The two coarsening-protected releases, and only those two.
+    assert len(meta["non_laplace_releases"]) == 2
+
+
 def test_schema(students):
     """The student table must carry every column the loader touches."""
     missing = [c for c in REQUIRED_COLUMNS if c not in students.columns]

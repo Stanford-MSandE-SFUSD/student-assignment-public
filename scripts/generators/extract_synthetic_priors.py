@@ -28,11 +28,16 @@ import json
 import logging
 import re
 import struct
+import sys
 from collections import Counter
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from student_assignment.choice_model import geodesic_miles  # noqa: E402
 
 logger = logging.getLogger(__name__)
 
@@ -498,16 +503,6 @@ def _load_students(sfusd_root: Path, year: str) -> pd.DataFrame:
     return df
 
 
-def _haversine_miles(lat1, lon1, lat2, lon2):
-    """Great-circle distance in miles between arrays of coordinates."""
-    lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
-    a = (
-        np.sin((lat2 - lat1) / 2) ** 2
-        + np.cos(lat1) * np.cos(lat2) * np.sin((lon2 - lon1) / 2) ** 2
-    )
-    return 3958.8 * 2 * np.arcsin(np.sqrt(np.clip(a, 0, 1)))
-
-
 def _find_census_block_dbf(sfusd_root: Path, override: Path | None) -> Path:
     """Locate the .dbf of the public 2010 census block layer.
 
@@ -633,7 +628,7 @@ def _build_block_reference(
         k_zip = known["zipcode"].to_numpy()
         u_lat = ref.loc[unknown, "intptlat"].to_numpy()
         u_lon = ref.loc[unknown, "intptlon"].to_numpy()
-        d = _haversine_miles(
+        d = geodesic_miles(
             u_lat[:, None], u_lon[:, None], k_lat[None, :], k_lon[None, :]
         )
         ref.loc[unknown, "zipcode"] = k_zip[d.argmin(axis=1)]
@@ -1292,7 +1287,6 @@ def extract(
         "priorities": _priority_priors(students, rng, budget),
         "missingness": _missingness_priors(students, rng, budget),
     }
-    priors["p_ctip1"] = round(float((students["ctip1"] == 1).mean()), 4)
     priors["meta"]["n_noisy_queries"] = len(budget.queries)
     priors["meta"]["n_query_families"] = len(budget.families)
     priors["meta"]["composed_epsilon"] = round(budget.total_eps, 3)

@@ -56,9 +56,9 @@ See `ANONYMIZATION.md` for which differences are deliberate.
 | Mean distance of choice at position 2 | 1.62 | 1.50 |
 | Mean distance of choice at position 3 | 1.68 | 1.59 |
 | Mean distance of choice at position 4 | 1.78 | 1.65 |
-| Mean distance of choice at position 5 | 1.85 | 1.69 |
-| Mean distance of choice at position 6 | 1.91 | 1.75 |
-| Mean distance of choice at position 7 | 2.00 | 1.75 |
+| Mean distance of choice at position 5 | 1.86 | 1.69 |
+| Mean distance of choice at position 6 | 1.91 | 1.76 |
+| Mean distance of choice at position 7 | 2.00 | 1.76 |
 | Mean distance of choice at position 8+ | 2.32 | 2.10 |
 
 ## Block attributes
