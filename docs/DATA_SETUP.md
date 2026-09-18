@@ -40,6 +40,43 @@ sitting "under" the `sfusd` root: each file is named by its exact, full path.
 
 ---
 
+## Running without the confidential data
+
+`data/synthetic_2324/` holds a committed **public synthetic** 2023-24
+kindergarten cohort (4,308 applicants, 72 schools, 129 programs) built from
+the real cohort's aggregate statistics, with ranked lists drawn from the public
+choice model. Nothing in it is derived from a real
+applicant's record. It is enough to run the simulator and the evaluator at full
+scale:
+
+```bash
+sed "s#<STUDENT_ASSIGNMENT_PATH>#$PWD#g" \
+    configs/custom_configs/status_quo_synthetic_2324.yaml > /tmp/synthetic.yaml
+uv run python run_custom_config.py --config-path /tmp/synthetic.yaml
+```
+
+| File | Config key |
+|------|------------|
+| `data/synthetic_2324/student_2324_synthetic.csv` | `student-data` |
+| `data/synthetic_2324/programs_without_specialprogs_2324.csv` | `program-data` |
+| `data/synthetic_2324/Cleaned/schools_rehauled_2324.csv` | `school-data` |
+| `data/zones/table1/concept1zones.csv` | `zone-files.Con1` |
+| `data/synthetic_2324/choice_model/estimates_2324_synthetic.csv` | `estimate-path` |
+
+Set `year: 23` and `grade: KG`. The dataset's preference lists are drawn from
+the published `exp8` choice model, and that model's utility matrix for the
+synthetic cohort ships alongside, so both `utility-model.enable: false` (read
+the dataset's lists) and `true` (redraw from the matrix, see
+`status_quo_synthetic_2324_umodel.yaml`) run without the confidential data.
+
+Read [`data/synthetic_2324/README.md`](../data/synthetic_2324/README.md) for
+what the dataset reproduces and
+[`data/synthetic_2324/ANONYMIZATION.md`](../data/synthetic_2324/ANONYMIZATION.md)
+for how it was built and which analyses it is unsuitable for.
+
+
+---
+
 ## `local-data/` — scratch space for real (authorized) runs
 
 District microdata and simulation outputs **must not** be committed. Put them

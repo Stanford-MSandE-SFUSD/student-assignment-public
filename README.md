@@ -77,6 +77,26 @@ uv run python -m pytest tests -q
 bash scripts/test_clean_checkout.sh
 ```
 
+A bare clone can also simulate a **full-scale** cohort, using the committed
+public synthetic 2023-24 kindergarten data in
+**[data/synthetic_2324/](data/synthetic_2324/README.md)** — 4,308 synthetic
+applicants, no confidential data required:
+
+```bash
+sed "s#<STUDENT_ASSIGNMENT_PATH>#$PWD#g" \
+    configs/custom_configs/status_quo_synthetic_2324.yaml > /tmp/synthetic.yaml
+uv run python run_custom_config.py --config-path /tmp/synthetic.yaml
+```
+
+Its preference lists are drawn from the published `exp8` choice model applied
+to the synthetic features, and it ships that model's utility matrix, so
+`utility-model.enable: true` works too
+(`status_quo_synthetic_2324_umodel.yaml`). See
+**[data/synthetic_2324/](data/synthetic_2324/README.md)** for what the dataset
+does and does not reproduce, and
+**[data/synthetic_2324/ANONYMIZATION.md](data/synthetic_2324/ANONYMIZATION.md)**
+for how it was built.
+
 ## Paper quickstart
 
 Main-text policy comparison (Status Quo vs zones / reserves / distance
@@ -111,7 +131,6 @@ aggregate metrics. Details and SI variants:
 4. **Metrics table** — `scripts/analysis/analyze_trends.py` →
    `metrics_comparison.xlsx` (`short_match_evaluator.py`). Row-name map:
    [docs/PAPER_METRICS.md](docs/PAPER_METRICS.md).
-
 ```bash
 # Table 1 seven policies (needs real data + paths; see Data setup)
 uv run python run_custom_config.py \
@@ -161,6 +180,7 @@ Use `--help` on any script for its options. Full config reference:
 student_assignment/         Core library (installed as a package by uv sync)
   da/                       Deferred-acceptance variants (vanilla, guardrails, quotas)
   market_generator/         Preference/utility generation, list augmentation
+  choice_model/             Port of the public exp8 MNL (utilities from weights)
   data_interfaces/          Student, program, zone loaders
   evaluation/               Match evaluation and metrics
   configerator/             Layered config loading + schema validation
@@ -171,7 +191,7 @@ scripts/
   settings/                 Pipeline settings files (local, test)
   analysis/analyze_trends.py    Aggregate runs into metrics_comparison.xlsx
   preprocessing/            Data filtering and extraction
-  generators/               Zone + small-dataset generators
+  generators/               Zone, small-dataset and synthetic-dataset generators
   test_clean_checkout.sh    Verify the repo runs from tracked files only
 
 configs/
@@ -182,6 +202,10 @@ configs/
   policy_configs/           Policy definitions (zones, distance bands, reserves)
   examples/                 One canonical sample per generated config family
   paper/                    Table 1–style paper configs
+
+data/
+  synthetic_2324/           Public synthetic 2023-24 KG cohort + its provenance docs
+  zones/                    Committed zone definitions
 
 tests/                      pytest suite (incl. end-to-end test_full_pipeline.py)
 tests/fixtures/small_2223/  Committed small dataset the pipeline test runs on
@@ -201,9 +225,18 @@ documented in **[docs/CONFIG_OPTIONS.md](docs/CONFIG_OPTIONS.md)**.
 
 ## Data setup
 
-Point configs at your own copy of the confidential SFUSD data (not in this
-repo). Defaults load from `configs/local_path_config.yaml`; on first run the
-`Configerator` also writes `configs/<user>.config.yaml` for personal overrides.
+**Without the confidential data**, use the committed public synthetic cohort in
+**[data/synthetic_2324/](data/synthetic_2324/README.md)**: 4,308 synthetic
+kindergarten applicants built from aggregate statistics of the real 2023-24
+cohort, with preferences drawn from the public choice model, runnable at full
+scale via `configs/custom_configs/status_quo_synthetic_2324.yaml`. Read its
+[ANONYMIZATION.md](data/synthetic_2324/ANONYMIZATION.md) for the limits before
+drawing conclusions from it.
+
+For the real data, point configs at your own copy of the confidential SFUSD
+data (not in this repo). Defaults load from
+`configs/local_path_config.yaml`; on first run the `Configerator` also writes
+`configs/<user>.config.yaml` for personal overrides.
 
 Write run outputs and any local copies of cleaned microdata under
 **`local-data/`** (gitignored) so individual-level files are not committed —

@@ -1,0 +1,56 @@
+path:
+  # the path to your input data
+ # input_data_path: "/share/data/school_choice/Data/Cleaned"
+  input_data_path: "/home/sidhantb/SFUSD/Cleaned"
+ #  student_data_file: "student_{year}.csv"
+ # program_data_file: "programs_{year}.csv"
+  student_data_file: "student_without_specialprogs_{year}.csv"
+  program_data_file: "programs_without_specialprogs_{year}.csv"
+  school_data_file: "schools_rehauled_{year}.csv"
+  distance_data_file: "distance_{year}.csv"
+  feature_data_file: "features_{year}.csv"
+ # output_path: "/home/vravoson/SFUSD/Choice_Model/model_outputs"
+  output_path: "local_outputs"
+
+model:
+  # The choice model type.
+  # See README for available choice models.
+  model_type: "mnl"
+  # The features used in training the choice model.
+  # SEE README for available features.
+  features:
+    - 'sibling'
+    - 'fixed_effect_schools'
+    - 'fixed_effect_program_types'
+    - 'prog_XE_x_English_x_ethn_match'
+    - 'prog_XN_x_English'
+    - 'lang_match_XB'
+    - 'distance_indicator_lt_0_5'
+    - 'distance_x_low_income'
+    
+  rounds:
+    - 1
+
+train:
+  # year in format {year1}{year2}
+  # because one school year usually cross over two calendar years
+  # e.g. 1415
+  years:
+    - 2223
+  top_k: 5
+
+test:
+  # year in format {year1}{year2} 
+  # because school years usually cross over two calendar years
+  # e.g. 1819
+  years: 
+    - 2122
+
+metrics:
+  pref_real_share:
+    round: 1
+    n_iter: 3
+    top_k: 1
+
+
+grade: "KG"

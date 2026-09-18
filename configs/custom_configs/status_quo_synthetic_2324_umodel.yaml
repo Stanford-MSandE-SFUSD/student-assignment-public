@@ -1,0 +1,40 @@
+# Status-quo run on the public synthetic 2324 cohort, with preference lists
+# drawn at simulation time from the choice model rather than read off the
+# dataset.
+#
+# data/synthetic_2324/ ships the choice model's utility matrix for the
+# synthetic cohort, so `utility-model.enable: true` works from a fresh clone.
+# The dataset's own r1 lists are a Gumbel draw over that same matrix; this
+# config redraws them each iteration at a list length of 0.8 x the real one,
+# which is how the paper's utility-model runs are configured.
+#
+# Replace <STUDENT_ASSIGNMENT_PATH> with your absolute checkout path
+# (see docs/DATA_SETUP.md).
+grade: KG
+year: 23
+random-seed: 2023
+r1-only: true
+remove-special-lps: true
+rounds-merged-options:
+- 0
+save-assignment: true
+iterations:
+  end: 25
+  start: 0
+subconfigs:
+- status_quo
+utility-model:
+  designate-lp-for-all: false
+  enable: true
+  list-length: 0.8*round(real_length)
+  save-path: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324_umodel/utility_matrix.csv
+paths:
+  sfusd: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/
+  student-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/student_2324_synthetic.csv
+  program-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/programs_without_specialprogs_2324.csv
+  school-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/Cleaned/schools_rehauled_2324.csv
+  student-save: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324_umodel/precomputed/
+  assignment-folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324_umodel/
+  estimate-path: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/choice_model/estimates_2324_synthetic.csv
+  zone-files:
+    Con1: <STUDENT_ASSIGNMENT_PATH>/data/zones/table1/concept1zones.csv
