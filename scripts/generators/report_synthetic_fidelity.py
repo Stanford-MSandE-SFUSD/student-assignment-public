@@ -367,6 +367,43 @@ def _rows(
         syn.loc[~syn["_aalpi"], "ctip1"].mean(),
     )
 
+    def _sibling_first(df: pd.DataFrame) -> float:
+        rows = [
+            (lst, sib)
+            for lst, sib in zip(df["r1_ranked_idschool"], df["sibling"])
+            if sib and lst
+        ]
+        return (
+            float(np.mean([lst[0] in sib for lst, sib in rows]))
+            if rows
+            else 0.0
+        )
+
+    def _sibling_in_list(df: pd.DataFrame) -> float:
+        rows = [
+            (lst, sib)
+            for lst, sib in zip(df["r1_ranked_idschool"], df["sibling"])
+            if sib and lst
+        ]
+        return (
+            float(np.mean([any(s in lst for s in sib) for lst, sib in rows]))
+            if rows
+            else 0.0
+        )
+
+    add(
+        "Choice model",
+        "Sibling's school is the first choice",
+        _sibling_first(listed_real),
+        _sibling_first(listed_syn),
+    )
+    add(
+        "Choice model",
+        "Sibling's school appears in the list",
+        _sibling_in_list(listed_real),
+        _sibling_in_list(listed_syn),
+    )
+
     for column, label in (
         ("sibling", "sibling priority"),
         ("aaprek", "attendance-area pre-K priority"),

@@ -13,11 +13,11 @@ Run: python -m pytest tests/test_synthetic_dataset.py -v
 
 import ast
 import importlib.util
-import json
 import shutil
 import sys
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 import pytest
 
@@ -33,7 +33,8 @@ PROGRAMS_CSV = DATA_DIR / f"programs_without_specialprogs_{YEAR}.csv"
 SCHOOLS_CSV = DATA_DIR / "Cleaned" / f"schools_rehauled_{YEAR}.csv"
 PRIORS_JSON = DATA_DIR / "priors" / f"synthetic_priors_{YEAR}.json"
 BLOCKS_CSV = DATA_DIR / "reference" / f"block_reference_{YEAR}.csv"
-ZONES_CSV = DATA_DIR / "zones" / "concept1zones.csv"
+WEIGHTS_CSV = DATA_DIR / "choice_model" / "weights_exp8.csv"
+ESTIMATES_CSV = DATA_DIR / "choice_model" / f"estimates_{YEAR}_synthetic.csv"
 
 # Columns the simulator reads off the student table; see
 # student_assignment/data_interfaces/students.py.
@@ -102,7 +103,8 @@ def test_files_present():
         SCHOOLS_CSV,
         PRIORS_JSON,
         BLOCKS_CSV,
-        ZONES_CSV,
+        WEIGHTS_CSV,
+        ESTIMATES_CSV,
         DATA_DIR / "README.md",
         DATA_DIR / "ANONYMIZATION.md",
         DATA_DIR / "FIDELITY.md",
@@ -149,25 +151,53 @@ def test_lists_are_internally_consistent(students):
 
 
 def test_choices_reference_real_programs(students):
-    """Every (school, program type) ranked must exist at that school."""
+    """Every ranked (school, program type) pair must be a real program."""
     programs = pd.read_csv(PROGRAMS_CSV, index_col=0)
-    with open(PRIORS_JSON) as handle:
-        priors = json.load(handle)
-    offered = {
-        int(k): set(v)
-        for k, v in priors["choice"]["school_program_types"].items()
-    }
+    real_pairs = set(
+        zip(programs["school_id"].astype(int), programs["program_type"])
+    )
     schools = set(pd.read_csv(SCHOOLS_CSV)["school_id"])
     assert set(programs["school_id"]) <= schools
-    bad = [
-        (school, code)
+    bad = {
+        (int(school), code)
         for lst, codes in zip(
             students["r1_ranked_idschool"], students["r1_programs"]
         )
         for school, code in zip(lst, codes)
-        if code not in offered.get(int(school), set())
+        if (int(school), code) not in real_pairs
+    }
+    assert not bad, f"Ranked programs that do not exist: {bad}"
+
+
+def test_lists_come_from_the_committed_utilities(students):
+    """Each ranked list must be a top-k slice of the shipped utility matrix.
+
+    The dataset's preferences are a Gumbel draw over the choice model's
+    utilities, so a ranked program must at minimum be *eligible* under those
+    utilities -- a finite entry, not the -inf that marks a program outside the
+    applicant's choice set. This is what ties the committed lists to the
+    committed model output.
+    """
+    utilities = pd.read_csv(ESTIMATES_CSV, index_col=0)
+    # The simulator's loader expects the index as "<year>-<studentno>".
+    assert list(utilities.index) == [
+        f"{YEAR}-{s}" for s in students["studentno"]
     ]
-    assert not bad, f"Choices at schools that do not offer them: {set(bad)}"
+    values = utilities.to_numpy(dtype=float)
+    column_of = {c: i for i, c in enumerate(utilities.columns)}
+    ineligible = []
+    for row, (lst, codes) in enumerate(
+        zip(students["r1_ranked_idschool"], students["r1_programs"])
+    ):
+        for school, code in zip(lst, codes):
+            j = column_of.get(f"{school}-{code}-KG")
+            if j is None or not np.isfinite(values[row, j]):
+                ineligible.append(
+                    (students["studentno"].iloc[row], school, code)
+                )
+    assert not ineligible, (
+        f"Ranked programs with no finite utility: {ineligible[:5]}"
+    )
 
 
 def test_round1_offers_respect_capacity(students):
@@ -211,18 +241,21 @@ def test_regenerates_from_committed_priors(tmp_path):
     (work / "priors").mkdir(parents=True)
     (work / "reference").mkdir(parents=True)
     (work / "Cleaned").mkdir(parents=True)
+    (work / "choice_model").mkdir(parents=True)
     shutil.copy(PRIORS_JSON, work / "priors" / PRIORS_JSON.name)
     shutil.copy(BLOCKS_CSV, work / "reference" / BLOCKS_CSV.name)
     shutil.copy(SCHOOLS_CSV, work / "Cleaned" / SCHOOLS_CSV.name)
     shutil.copy(PROGRAMS_CSV, work / PROGRAMS_CSV.name)
+    shutil.copy(WEIGHTS_CSV, work / "choice_model" / WEIGHTS_CSV.name)
 
     module.generate(work, YEAR, seed=20260917)
 
-    for name in (f"student_{YEAR}_synthetic.csv", PROGRAMS_CSV.name):
+    for name in (
+        f"student_{YEAR}_synthetic.csv",
+        PROGRAMS_CSV.name,
+        f"choice_model/estimates_{YEAR}_synthetic.csv",
+    ):
         assert (work / name).read_text() == (DATA_DIR / name).read_text(), (
             f"{name} differs from the committed copy; regenerate the dataset or "
             "check the generator for non-determinism"
         )
-    assert (
-        work / "zones" / "concept1zones.csv"
-    ).read_text() == ZONES_CSV.read_text()

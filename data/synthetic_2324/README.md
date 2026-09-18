@@ -5,10 +5,17 @@ kindergarten application data. It has the schema the simulator and evaluator
 expect, reproduces the cohort-level statistics the analysis depends on, and
 contains no real applicant's location, attributes, or ranked list.
 
+**Preference lists come from the published choice model.** Household features
+are sampled from privacy-protected aggregates; the ranked lists are then a
+Gumbel draw over the utilities the public `exp8` MNL assigns to those features.
+Nothing about *what* applicants rank is calibrated to the observed lists, which
+is both why the priors file is small and why the lists inherit the model's
+accuracy — see "What is not reproduced".
+
 **Read [ANONYMIZATION.md](ANONYMIZATION.md) before using or citing this
 dataset.** It documents what real information the release does and does not
 contain and, importantly, which analyses this data is *not* suitable for.
-[FIDELITY.md](FIDELITY.md) tabulates 53 statistics side by side against the
+[FIDELITY.md](FIDELITY.md) tabulates 55 statistics side by side against the
 source cohort.
 
 ## Contents
@@ -18,8 +25,9 @@ source cohort.
 | `student_2324_synthetic.csv` | 4,308 | The synthetic cohort. Drop-in replacement for `student_2324.csv` / `student_2324_filtered.csv`. |
 | `programs_without_specialprogs_2324.csv` | 129 | Real program offerings and capacities; the three `r1_*` outcome columns are recomputed from the synthetic cohort. |
 | `Cleaned/schools_rehauled_2324.csv` | 72 | Real school-level reference table (names, coordinates, capacity floor, ratings). |
-| `zones/concept1zones.csv` | 58 | Status-quo zone map: one zone per attendance area. Generated. |
 | `reference/block_reference_2324.csv` | 7,319 | Public census-block geography: block group, tract, ZIP, attendance area, CTIP 2013 designation, 2010 Census population, TIGER internal point, land area. |
+| `choice_model/weights_exp8.csv` | 109 | The published MNL coefficients the preference lists are drawn from, plus `config_exp8.yaml`, its feature specification. |
+| `choice_model/estimates_2324_synthetic.csv` | 4,308 × 129 | The utility matrix those coefficients imply for this cohort. Point `estimate-path` at it to run with `utility-model.enable: true`. |
 | `priors/synthetic_priors_2324.json` | — | Every aggregate statistic the generator consumes, each noised, suppressed, and/or coarsened. This file is the complete disclosure surface of the release. |
 
 The three real files are school- and geography-level facts with no
@@ -38,14 +46,17 @@ Headline agreement with the source cohort (full table in
 - **Ranked lists.** Mean length 5.62 against 5.59; the same median of 5; 6.8%
   against 8.1% filing no list at all, and 14.1% against 15.0% filing ten or
   more choices.
-- **School demand.** First-choice share by school correlates at 0.94 across the
-  72 schools; any-rank share at 0.96.
-- **Language pathways.** 76.3% of choices are general education, matching the
-  source exactly, and 26.5% of applicants rank two programs at the same school
-  against 25.0%.
-- **Choice geography.** Mean home-to-school distance matches within 0.07 mi at
-  every list position, from 1.41 mi at the first choice to 2.25 mi beyond the
-  eighth.
+- **School demand.** Any-rank share by school correlates at 0.97 across the 72
+  schools. First choices are weaker, at 0.84 — that is the model's top-1
+  accuracy showing through (see below).
+- **Language pathways.** 75.9% of choices are general education against 76.3%,
+  and 25.8% of applicants rank two programs at the same school against 25.0%.
+  Both are emergent: the model ranks *programs*, so the immersion/general mix
+  and the habit of ranking two pathways at one school are its predictions, not
+  fitted quantities.
+- **Choice geography.** Mean home-to-school distance rises with list position
+  exactly as it does in the source (1.33 mi at the first choice to 2.10 mi
+  beyond the eighth), though uniformly about 9% short — see below.
 - **Block characteristics.** Mean and standard deviation of free-lunch
   probability, AALPI score, neighbourhood SES, home opportunity index, median
   household income, and the CTIP1 share.
@@ -59,6 +70,24 @@ Headline agreement with the source cohort (full table in
 
 Summarised here; reasoned through in [ANONYMIZATION.md](ANONYMIZATION.md).
 
+The first three items are all the same thing: the lists are the choice model's
+predictions, so wherever the model is imperfect, this dataset inherits that
+imperfection rather than papering over it. That is the deliberate trade for
+having preferences derive from a public model instead of from calibrated
+statistics about the real lists.
+
+- **First-choice demand across schools is only moderately accurate**
+  (correlation 0.84; the previous list-generation approach, calibrated directly
+  to area-level first-choice tables, reached 0.94). The published model's own
+  top-1 accuracy is about 0.44, and that ceiling propagates. Any-rank demand,
+  which averages over the whole list, holds up much better at 0.97.
+- **Choices are about 9% closer to home than in reality**, at every list
+  position. The model weights proximity more heavily than the observed lists
+  do; no correction is applied.
+- **Siblings are followed too faithfully.** The sibling coefficient is 14.5
+  against a Gumbel(0,1) shock, so an applicant with a sibling ranks that
+  school first essentially always — 1.00 here against 0.92 in the source.
+
 - **Absolute segregation magnitudes are compressed.** The gap in mean block
   free-lunch probability between AALPI and other applicants is 0.15 here
   against 0.19 in the source — about 80% of the real gradient. Use
@@ -71,9 +100,6 @@ Summarised here; reasoned through in [ANONYMIZATION.md](ANONYMIZATION.md).
   modeled** — no idiosyncratic substitution patterns between specific schools.
 - **Rounds 2 and 4 are not modeled.** `r2_*` columns are present and empty;
   `r4_*` columns are dropped, so the loader sees two rounds.
-- **No choice-model utility matrix is shipped.** Runs with
-  `utility-model.enable: false` work out of the box; `true` needs an
-  `estimates_2324.csv` estimated for this cohort.
 
 ## Running the simulator on it
 
@@ -85,6 +111,10 @@ convention used throughout `configs/`, see `docs/DATA_SETUP.md`) and run:
 uv run python run_custom_config.py --config-path configs/custom_configs/status_quo_synthetic_2324.yaml
 ```
 
+`status_quo_synthetic_2324_umodel.yaml` is the same run with
+`utility-model.enable: true`, redrawing lists from the shipped utility matrix
+each iteration instead of reading them off the dataset.
+
 To point an existing config at this dataset instead, set:
 
 ```yaml
@@ -93,11 +123,13 @@ paths:
   program-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/programs_without_specialprogs_2324.csv
   school-data: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/Cleaned/schools_rehauled_2324.csv
   sfusd: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/
+  estimate-path: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/choice_model/estimates_2324_synthetic.csv
   zone-files:
-    Con1: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/zones/concept1zones.csv
+    Con1: <STUDENT_ASSIGNMENT_PATH>/data/zones/table1/concept1zones.csv
 ```
 
-with `year: 23`, `grade: KG`, and `utility-model.enable: false`.
+with `year: 23` and `grade: KG`. Both `utility-model.enable: false` (use the
+dataset's lists) and `true` (redraw from the utility matrix) work.
 
 ## Regenerating
 
@@ -115,8 +147,12 @@ Rebuilding the priors from the confidential data needs
 `scripts/generators/extract_synthetic_priors.py` and data access; see
 [ANONYMIZATION.md](ANONYMIZATION.md).
 
-## Relationship to `tests/fixtures/fake_2223/`
+## Relationship to `tests/fixtures/small_2223/`
 
-`tests/fixtures/fake_2223/` is a 200-row, 15-school, entirely invented fixture
+`tests/fixtures/small_2223/` is a 200-row, 15-school, entirely invented fixture
 whose only job is to make `tests/test_full_pipeline.py` run fast. It is not
 calibrated to anything. This dataset is the one to use for analysis.
+
+The status-quo zone map the configs above use, `Con1`, is the repository's
+existing [`data/zones/table1/concept1zones.csv`](../zones/table1/concept1zones.csv)
+— one zone per attendance area, geography only.

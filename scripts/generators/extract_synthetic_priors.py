@@ -28,7 +28,7 @@ import json
 import logging
 import re
 import struct
-from collections import Counter, defaultdict
+from collections import Counter
 from pathlib import Path
 
 import numpy as np
@@ -112,13 +112,6 @@ LENGTH_BINS = [
     (17, 22),
     (23, 32),
     (33, 90),
-]
-POSITION_GROUPS = [
-    ("1", 1, 1),
-    ("2", 2, 2),
-    ("3", 3, 3),
-    ("4-6", 4, 6),
-    ("7+", 7, 999),
 ]
 
 BLOCK_ATTRS = [
@@ -788,91 +781,27 @@ def _blockgroup_residuals(students: pd.DataFrame) -> dict:
 
 def _choice_priors(
     students: pd.DataFrame,
-    schools: pd.DataFrame,
-    programs: pd.DataFrame,
     rng: np.random.Generator,
     budget: Budget,
 ) -> dict:
-    """Aggregate everything needed to regenerate ranked lists.
+    """Aggregate the few list-level statistics the choice model does not supply.
+
+    The ranked lists themselves come from the public choice model applied to
+    the synthetic features, so almost nothing about *what* applicants rank is
+    released here. The model produces a full ranking over every program but
+    says nothing about how many of them a family actually writes down, so the
+    list-length distribution is still needed, as are the round-1 outcome
+    statistics that are not implied by the mechanism.
 
     Args:
         students: Confidential student frame.
-        schools: Schools table (for coordinates).
-        programs: Programs table (for the offered program types).
         rng: Seeded generator.
         budget: Query accountant.
 
     Returns:
         Dict of choice-related priors.
     """
-    school_ll = schools.set_index("school_id")[["lat", "lon"]]
-    listed = students[students["L"] > 0]
-
-    # Rank-1 school, per attendance area, smoothed toward the citywide rank-1
-    # popularity so that thin areas degrade to the city pattern.
-    city_rank1 = hist(
-        listed["r1_ranked_idschool"].apply(lambda x: int(x[0])),
-        rng,
-        budget,
-        "rank-1 school | citywide",
-    )
-    # Released as (noisy, suppressed) counts rather than a distribution so that
-    # the generator can smooth them toward a *distance-localised* citywide
-    # prior: an area whose own cells were suppressed then falls back to schools
-    # near the synthetic household rather than to the city as a whole. Keeping
-    # the smoothing in the public script also makes the policy auditable.
-    rank1_counts_by_aa = {}
-    rank1_total_by_aa = {}
-    for aa, grp in listed.dropna(subset=["idschoolattendance"]).groupby(
-        "idschoolattendance"
-    ):
-        cells, total = noisy_counts(
-            Counter(grp["r1_ranked_idschool"].apply(lambda x: int(x[0]))),
-            rng,
-            budget,
-            f"rank-1 school | AA {int(aa)}",
-        )
-        rank1_counts_by_aa[str(int(aa))] = {
-            k: round(v, 2) for k, v in cells.items()
-        }
-        rank1_total_by_aa[str(int(aa))] = round(total, 2)
-
-    # Tail popularity (positions 2+) is taken citywide only: per-area tails are
-    # made up of one- and two-student cells.
-    tail = Counter()
-    for row in listed.itertuples():
-        for school in row.r1_ranked_idschool[1:]:
-            tail[int(school)] += 1
-    school_pop_tail = to_dist(
-        *noisy_counts(tail, rng, budget, "tail school popularity")
-    )
-
-    # Mean home->school distance by list position, used by the generator to
-    # calibrate a distance-decay parameter rather than copying any real list.
-    dist_by_pos = defaultdict(list)
-    for row in listed.dropna(subset=["latitude", "longitude"]).itertuples():
-        for pos, school in enumerate(row.r1_ranked_idschool, start=1):
-            if int(school) not in school_ll.index:
-                continue
-            lat2, lon2 = school_ll.loc[int(school)]
-            d = _haversine_miles(row.latitude, row.longitude, lat2, lon2)
-            for name, lo, hi in POSITION_GROUPS:
-                if lo <= pos <= hi:
-                    dist_by_pos[name].append(float(d))
-    budget.spend("mean choice distance by list position")
-    target_dist = {
-        name: round(
-            float(
-                np.mean(vals)
-                + rng.laplace(0.0, 1.0 / LAPLACE_EPS / max(len(vals), 1))
-            ),
-            4,
-        )
-        for name, vals in dist_by_pos.items()
-        if len(vals) >= MIN_CELL
-    }
-
-    # List length: per-area bin histogram plus a citywide CTIP1 tilt.
+    # List length: per-area bin histogram plus a within-area CTIP1 tilt.
     city_len = hist(
         students["L"].apply(length_bin),
         rng,
@@ -900,91 +829,6 @@ def _choice_priors(
         "list-length bins CTIP1 tilt",
     )
 
-    # Program type given the school and the home-language group. Computed
-    # citywide over ~24k ranked choices, then restricted at generation time to
-    # the program types each school actually offers.
-    offered = defaultdict(set)
-    for row in programs.itertuples():
-        offered[int(row.school_id)].add(str(row.program_type))
-    pair_counts = Counter()
-    prog_by_hlg = defaultdict(Counter)
-    for row in students.itertuples():
-        group = hl_group(row.homelang)
-        for school, ptype in zip(row.r1_ranked_idschool, row.r1_programs):
-            prog_by_hlg[group][str(ptype)] += 1
-            pair_counts[(int(school), str(ptype))] += 1
-    # Small language groups lose most of their cells to suppression, so each
-    # group's surviving cells are smoothed toward the pooled citywide table
-    # rather than left as a point mass on the one type that survived.
-    prog_city = to_dist(
-        *noisy_counts(
-            sum(prog_by_hlg.values(), Counter()),
-            rng,
-            budget,
-            "program type | citywide",
-        )
-    )
-    program_by_hlgroup = {
-        g: to_dist(
-            *noisy_counts(c, rng, budget, f"program type | {g}"),
-            prior=prog_city,
-        )
-        for g, c in prog_by_hlg.items()
-    }
-    # Program types a school offers: the published programs table, plus types
-    # ranked there by at least MIN_CELL students (special programs are absent
-    # from the programs table but are ranked, and the simulator's
-    # remove-special-lps filter needs them to behave the same way).
-    budget.spend("school x program-type existence")
-    school_program_types = {}
-    for school in sorted(set(list(offered) + [s for s, _ in pair_counts])):
-        types = set(offered.get(school, set()))
-        for (s, ptype), count in pair_counts.items():
-            if (
-                s == school
-                and count + rng.laplace(0.0, 1.0 / LAPLACE_EPS) >= MIN_CELL
-            ):
-                types.add(ptype)
-        if types:
-            school_program_types[str(school)] = sorted(types)
-
-    # Applicants often rank two programs at the same school (typically an
-    # immersion pathway and general education). Released as one citywide rate so
-    # the generator can reproduce the pattern.
-    repeats = total = 0
-    for row in listed.itertuples():
-        seen = set()
-        for school in row.r1_ranked_idschool:
-            total += 1
-            if school in seen:
-                repeats += 1
-            seen.add(school)
-    p_repeat = noisy_rate(
-        float(repeats),
-        float(total),
-        rng,
-        budget,
-        "same-school repeat choices",
-        0.07,
-    )
-
-    # Realised rank of the round-1 assignment, by list-length bin.
-    assigned_rank = {}
-    for bin_idx, grp in listed.groupby(listed["L"].apply(length_bin)):
-        assigned_rank[str(bin_idx)] = hist(
-            grp["r1_rank"].dropna().astype(int),
-            rng,
-            budget,
-            f"assigned rank | length bin {bin_idx}",
-        )
-    p_unassigned = noisy_rate(
-        float(listed["r1_rank"].isna().sum()),
-        float(len(listed)),
-        rng,
-        budget,
-        "round-1 unassigned rate",
-        0.001,
-    )
     p_final_eq_r1 = noisy_rate(
         float((students["final_school"] == students["r1_idschool"]).sum()),
         float(len(students)),
@@ -1000,20 +844,10 @@ def _choice_priors(
         "final-school popularity",
     )
     return {
-        "rank1_counts_by_aa": rank1_counts_by_aa,
-        "rank1_total_by_aa": rank1_total_by_aa,
-        "rank1_school_citywide": city_rank1,
-        "school_pop_tail": school_pop_tail,
-        "target_mean_dist_by_position": target_dist,
         "length_bins": [list(b) for b in LENGTH_BINS],
         "length_by_aa": len_by_aa,
         "length_citywide": city_len,
         "length_tilt_by_ctip1": length_tilt,
-        "program_by_hlgroup": program_by_hlgroup,
-        "school_program_types": school_program_types,
-        "assigned_rank_by_length_bin": assigned_rank,
-        "p_same_school_repeat": round(p_repeat, 4),
-        "p_round1_unassigned": round(p_unassigned, 4),
         "p_final_equals_round1": round(p_final_eq_r1, 4),
         "final_school_citywide": final_pop,
     }
@@ -1188,7 +1022,6 @@ def _priority_priors(
         df, has_sib, rng, budget, "sibling rate", p_sib_city
     )
     sib = df[has_sib]
-    sib_listed = sib[sib["L"] > 0]
     sibling = {
         "p_two_schools": round(
             noisy_rate(
@@ -1213,39 +1046,6 @@ def _priority_priors(
                 budget,
                 "sibling school is attendance-area school",
                 0.31,
-            ),
-            4,
-        ),
-        "p_sibling_in_list": round(
-            noisy_rate(
-                float(
-                    sib_listed.apply(
-                        lambda r: any(
-                            s in r.r1_ranked_idschool for s in r.sibling
-                        ),
-                        axis=1,
-                    ).sum()
-                ),
-                float(len(sib_listed)),
-                rng,
-                budget,
-                "sibling school appears in list",
-                0.99,
-            ),
-            4,
-        ),
-        "p_sibling_first_choice": round(
-            noisy_rate(
-                float(
-                    sib_listed.apply(
-                        lambda r: r.r1_ranked_idschool[0] in r.sibling, axis=1
-                    ).sum()
-                ),
-                float(len(sib_listed)),
-                rng,
-                budget,
-                "sibling school is first choice",
-                0.92,
             ),
             4,
         ),
@@ -1446,13 +1246,6 @@ def extract(
     schools = pd.read_csv(
         sfusd_root / "Data" / "Cleaned" / f"schools_rehauled_{year}.csv"
     )
-    programs = pd.read_csv(
-        sfusd_root
-        / "Data"
-        / "Cleaned"
-        / f"programs_without_specialprogs_{year}.csv",
-        index_col=0,
-    )
     logger.info("loaded %d %s students", len(students), GRADE)
 
     reference = _build_block_reference(
@@ -1494,7 +1287,7 @@ def extract(
         "students_per_aa": aa_counts,
         "blockgroup_attributes": _blockgroup_attributes(students),
         "blockgroup_residuals": _blockgroup_residuals(students),
-        "choice": _choice_priors(students, schools, programs, rng, budget),
+        "choice": _choice_priors(students, rng, budget),
         "demographics": _demographic_priors(students, rng, budget),
         "priorities": _priority_priors(students, rng, budget),
         "missingness": _missingness_priors(students, rng, budget),

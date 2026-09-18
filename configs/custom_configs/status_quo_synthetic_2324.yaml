@@ -32,4 +32,4 @@ paths:
   assignment-folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/status_quo_synthetic_2324/
   estimate-path: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/no-estimates.csv
   zone-files:
-    Con1: <STUDENT_ASSIGNMENT_PATH>/data/synthetic_2324/zones/concept1zones.csv
+    Con1: <STUDENT_ASSIGNMENT_PATH>/data/zones/table1/concept1zones.csv

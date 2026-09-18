@@ -22,11 +22,20 @@ Usage:
 import argparse
 import json
 import logging
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from student_assignment.choice_model import (  # noqa: E402
+    ChoiceSetMode,
+    compute_utilities,
+    load_weights,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -42,28 +51,11 @@ METERS_PER_DEGREE_LAT = 111_320.0
 # attendance area is reachable; this deliberately blurs where families live.
 BLOCK_WEIGHT_FLOOR = 0.25
 
-# Minimum weight of the (distance-localised) citywide prior when smoothing an
-# attendance area's rank-1 counts. Above this floor the prior is given exactly
-# the mass that small-cell suppression removed from the area's own counts,
-# matching the smoothing rule the priors file was built with.
-RANK1_PRIOR_FLOOR = 2.0
-
-# List positions that share one distance-decay coefficient, matching the
-# position groups the priors report a mean choice distance for.
-POSITION_STAGES = [
-    ("1", 1, 1),
-    ("2", 2, 2),
-    ("3", 3, 3),
-    ("4-6", 4, 6),
-    ("7+", 7, 10**6),
-]
-BETA_BOUNDS = (0.0, 8.0)
-BETA_ITERATIONS = 18
-
-# Iterations of the availability-corrected fit for program-type weights, and
-# of the outer loop that keeps the fit on target after same-school repeats.
-PROGRAM_WEIGHT_ITERATIONS = 200
-CODE_CALIBRATION_ITERATIONS = 6
+# Temperature of the softmax used to place a sibling's school. Siblings
+# attend schools their family would plausibly have chosen, so the draw reuses
+# the choice model's own utilities (with the sibling term itself switched off)
+# rather than introducing a separate distance kernel.
+SIBLING_PLACEMENT_TEMPERATURE = 1.0
 
 # Round-1 priority tiers, highest first. The district's kindergarten
 # tie-breakers apply in this order, with a single lottery number breaking ties
@@ -469,278 +461,28 @@ def sample_demographics(
     return pd.DataFrame(rows, index=students.index)
 
 
-def first_choice_weights(
-    students: pd.DataFrame,
-    priors: dict,
-    school_ids: list[int],
-    distances: np.ndarray,
-    beta: float,
-) -> np.ndarray:
-    """Per-student weights over schools for the top of the ranked list.
-
-    An attendance area's own rank-1 counts are smoothed toward the citywide
-    rank-1 popularity localised to the household, ``citywide(j) * exp(-beta *
-    miles)``. The prior receives exactly the mass that small-cell suppression
-    removed from the area's counts, so areas whose cells survived keep their
-    real pattern while thin areas fall back to schools near the household
-    rather than to the city as a whole.
-
-    Args:
-        students: Frame with ``idschoolattendance``.
-        priors: The priors dict.
-        school_ids: Column order of ``distances``.
-        distances: ``(n_students, n_schools)`` miles matrix.
-        beta: Distance decay for the fallback prior.
-
-    Returns:
-        ``(n_students, n_schools)`` non-negative weights.
-    """
-    choice = priors["choice"]
-    citywide = np.array(
-        [
-            float(choice["rank1_school_citywide"].get(str(sid), 0.0))
-            for sid in school_ids
-        ]
-    )
-    if (citywide > 0).any():
-        citywide = np.where(
-            citywide > 0, citywide, citywide[citywide > 0].min() * 0.05
-        )
-    else:
-        citywide = np.ones(len(school_ids))
-    local = citywide[None, :] * np.exp(-beta * distances)
-    local = local / local.sum(axis=1, keepdims=True)
-
-    index_of = {sid: j for j, sid in enumerate(school_ids)}
-    own = np.zeros_like(local)
-    weight = np.zeros(len(students))
-    counts_by_aa = choice["rank1_counts_by_aa"]
-    totals_by_aa = choice["rank1_total_by_aa"]
-    for i, aa in enumerate(students["idschoolattendance"].to_numpy()):
-        key = str(int(aa))
-        cells = counts_by_aa.get(key) or {}
-        for school, count in cells.items():
-            j = index_of.get(int(school))
-            if j is not None:
-                own[i, j] = float(count)
-        suppressed = float(totals_by_aa.get(key, 0.0)) - own[i].sum()
-        weight[i] = max(suppressed, 0.0) + RANK1_PRIOR_FLOOR
-    return own + weight[:, None] * local
-
-
-def build_lists(
-    heads: list[list[int]],
-    lengths: np.ndarray,
-    log_popularity: np.ndarray,
-    distances: np.ndarray,
-    betas: dict[str, float],
-    school_ids: list[int],
-    rng: np.random.Generator,
-) -> list[list[int]]:
-    """Sample a ranked school list for every student.
-
-    Schools the student is steered to -- their drawn first choice, and any
-    school they hold a sibling or pre-K priority at -- lead the list in order.
-    The remaining positions are filled in stages, one per position group, each
-    sampling without replacement with probability proportional to
-    ``citywide_popularity * exp(-beta_stage * miles)``. Later stages use a
-    weaker decay, which is how real lists behave: the first few choices are
-    close to home and the tail reaches across the city. Each stage is drawn
-    exactly, and in one shot, with the Gumbel-top-k trick.
-
-    Args:
-        heads: Schools that must lead each student's list, in order.
-        lengths: Target list length per student.
-        log_popularity: Log citywide tail popularity per school.
-        distances: ``(n_students, n_schools)`` miles matrix.
-        betas: Distance decay per position-stage name.
-        school_ids: Column order of ``distances``.
-        rng: Seeded generator.
-
-    Returns:
-        One ranked list of school ids per student.
-    """
-    n, n_schools = distances.shape
-    index_of = {sid: j for j, sid in enumerate(school_ids)}
-    ids = np.asarray(school_ids)
-    taken = np.zeros((n, n_schools), dtype=bool)
-    lists: list[list[int]] = [[] for _ in range(n)]
-    for i, head in enumerate(heads):
-        for school in head[: int(lengths[i])]:
-            lists[i].append(school)
-            taken[i, index_of[school]] = True
-
-    for name, lo, hi in POSITION_STAGES:
-        if name not in betas:
-            continue
-        need = np.array(
-            [
-                max(min(int(lengths[i]), hi) - max(len(lists[i]), lo - 1), 0)
-                for i in range(n)
-            ]
-        )
-        if not need.any():
-            continue
-        keys = log_popularity[None, :] - betas[name] * distances
-        keys = keys + rng.gumbel(0.0, 1.0, keys.shape)
-        keys[taken] = -np.inf
-        order = np.argsort(-keys, axis=1)
-        for i in np.flatnonzero(need):
-            picks = ids[order[i, : need[i]]]
-            for school in picks:
-                lists[i].append(int(school))
-                taken[i, index_of[int(school)]] = True
-    return lists
-
-
-def calibrate_betas(
-    heads: list[list[int]],
-    lengths: np.ndarray,
-    log_popularity: np.ndarray,
-    distances: np.ndarray,
-    school_ids: list[int],
-    priors: dict,
-    seed: int,
-) -> dict[str, float]:
-    """Fit one distance decay per position stage to the released mean distances.
-
-    The priors record the mean home-to-school distance of real choices at each
-    list position. Stages are calibrated in order, each by bisection with the
-    earlier stages held at their fitted values, so the synthetic lists match
-    that distance profile without any real list being copied.
-
-    Args:
-        heads: Schools that must lead each student's list.
-        lengths: Target list length per student.
-        log_popularity: Log citywide tail popularity per school.
-        distances: ``(n_students, n_schools)`` miles matrix.
-        school_ids: Column order of ``distances``.
-        priors: The priors dict.
-        seed: Seed for the trial draws.
-
-    Returns:
-        Distance decay per position-stage name.
-    """
-    targets = priors["choice"]["target_mean_dist_by_position"]
-    index_of = {sid: j for j, sid in enumerate(school_ids)}
-    betas: dict[str, float] = {}
-    for name, lo, hi in POSITION_STAGES:
-        if name == "1" or name not in targets:
-            continue
-        target = float(targets[name])
-
-        def stage_mean(beta: float) -> float:
-            trial = dict(betas)
-            trial[name] = beta
-            lists = build_lists(
-                heads,
-                lengths,
-                log_popularity,
-                distances,
-                trial,
-                school_ids,
-                np.random.default_rng(seed),
-            )
-            values = [
-                distances[i, index_of[s]]
-                for i, lst in enumerate(lists)
-                for s in lst[lo - 1 : hi]
-            ]
-            return float(np.mean(values)) if values else np.inf
-
-        low, high = BETA_BOUNDS
-        for _ in range(BETA_ITERATIONS):
-            mid = (low + high) / 2
-            if stage_mean(mid) > target:
-                low = mid  # choices still too far away: decay harder
-            else:
-                high = mid
-        betas[name] = (low + high) / 2
-        logger.info(
-            "position %-4s target %.2f mi -> beta %.3f (achieved %.2f mi)",
-            name,
-            target,
-            betas[name],
-            stage_mean(betas[name]),
-        )
-    return betas
-
-
-def calibrate_first_choice_beta(
-    students: pd.DataFrame,
-    lengths: np.ndarray,
-    priors: dict,
-    school_ids: list[int],
-    distances: np.ndarray,
-    seed: int,
-) -> float:
-    """Fit the decay of the rank-1 fallback prior to the mean first-choice distance.
-
-    Args:
-        students: Frame with ``idschoolattendance``.
-        lengths: List length per student (students with no list are skipped).
-        priors: The priors dict.
-        school_ids: Column order of ``distances``.
-        distances: ``(n_students, n_schools)`` miles matrix.
-        seed: Seed for the trial draws.
-
-    Returns:
-        The calibrated decay.
-    """
-    targets = priors["choice"]["target_mean_dist_by_position"]
-    if "1" not in targets:
-        return 1.0
-    target = float(targets["1"])
-    listed = np.flatnonzero(lengths > 0)
-
-    def mean_distance(beta: float) -> float:
-        weights = first_choice_weights(
-            students, priors, school_ids, distances, beta
-        )
-        rng = np.random.default_rng(seed)
-        keys = np.log(np.maximum(weights, 1e-300)) + rng.gumbel(
-            0.0, 1.0, weights.shape
-        )
-        picked = keys.argmax(axis=1)
-        return float(np.mean(distances[listed, picked[listed]]))
-
-    low, high = BETA_BOUNDS
-    for _ in range(BETA_ITERATIONS):
-        mid = (low + high) / 2
-        if mean_distance(mid) > target:
-            low = mid
-        else:
-            high = mid
-    beta = (low + high) / 2
-    logger.info(
-        "position 1    target %.2f mi -> prior beta %.3f (achieved %.2f mi)",
-        target,
-        beta,
-        mean_distance(beta),
-    )
-    return beta
-
-
 def sample_priorities(
     students: pd.DataFrame,
     priors: dict,
     school_ids: list[int],
-    distances: np.ndarray,
-    beta: float,
+    placement_weights: np.ndarray,
     rng: np.random.Generator,
 ) -> pd.DataFrame:
     """Draw sibling, pre-K and language-pathway priorities.
 
     A sibling school is either the applicant's own attendance-area school (at
-    the citywide rate) or a nearby school drawn from the same popularity times
-    distance-decay kernel the ranked lists use.
+    the citywide rate) or a school drawn from ``placement_weights`` -- the
+    choice model's own utilities with the sibling term switched off. Siblings
+    attend schools their family would plausibly have chosen, so reusing the
+    model here keeps sibling placement consistent with everything else and
+    avoids inventing a second notion of "nearby and desirable".
 
     Args:
         students: Frame with ``idschoolattendance``.
         priors: The priors dict.
-        school_ids: Column order of ``distances``.
-        distances: ``(n_students, n_schools)`` miles matrix.
-        beta: Distance-decay coefficient.
+        school_ids: Column order of ``placement_weights``.
+        placement_weights: Row-normalised ``(n_students, n_schools)``
+            probabilities over schools.
         rng: Seeded generator.
 
     Returns:
@@ -748,37 +490,34 @@ def sample_priorities(
     """
     pri = priors["priorities"]
     sib_cfg = pri["sibling"]
-    popularity = np.array(
-        [
-            float(priors["choice"]["school_pop_tail"].get(str(sid), 1e-4))
-            for sid in school_ids
-        ]
-    )
-    kernel = popularity[None, :] * np.exp(-beta * distances)
-    kernel = kernel / kernel.sum(axis=1, keepdims=True)
     aa_values = students["idschoolattendance"].to_numpy()
     rows = []
     for i in range(len(students)):
-        aa = int(aa_values[i])
+        aa = int(aa_values[i]) if not pd.isna(aa_values[i]) else -1
         sibling: list[int] = []
         if rng.random() < float(
             pri["p_sibling_by_aa"].get(str(aa), pri["p_sibling"])
         ):
-            if rng.random() < float(sib_cfg["p_sibling_is_aa_school"]):
+            if aa > 0 and rng.random() < float(
+                sib_cfg["p_sibling_is_aa_school"]
+            ):
                 sibling = [aa]
             else:
                 sibling = [
-                    school_ids[int(rng.choice(len(school_ids), p=kernel[i]))]
+                    school_ids[
+                        int(rng.choice(len(school_ids), p=placement_weights[i]))
+                    ]
                 ]
             if rng.random() < float(sib_cfg["p_two_schools"]):
                 extra = school_ids[
-                    int(rng.choice(len(school_ids), p=kernel[i]))
+                    int(rng.choice(len(school_ids), p=placement_weights[i]))
                 ]
                 if extra not in sibling:
                     sibling.append(extra)
         aaprek = (
             [aa]
-            if rng.random()
+            if aa > 0
+            and rng.random()
             < float(pri["p_aaprek_by_aa"].get(str(aa), pri["p_aaprek"]))
             else []
         )
@@ -798,12 +537,6 @@ def sample_priorities(
                 "aaprek": aaprek,
                 "prek": prek,
                 "currentlp": currentlp,
-                "sibling_first": bool(
-                    rng.random() < float(sib_cfg["p_sibling_first_choice"])
-                ),
-                "sibling_in_list": bool(
-                    rng.random() < float(sib_cfg["p_sibling_in_list"])
-                ),
                 "lp_sibling": bool(
                     sibling
                     and rng.random()
@@ -814,231 +547,95 @@ def sample_priorities(
     return pd.DataFrame(rows, index=students.index)
 
 
-def fit_program_weights(
-    lists: list[list[int]],
-    groups: list[str],
-    priors: dict,
-    targets: dict[str, dict[str, float]] | None = None,
-) -> dict[str, dict[str, float]]:
-    """Fit program-type weights that reproduce the real citywide type shares.
+def school_placement_weights(
+    utilities: pd.DataFrame, school_ids: list[int], program_ids: list[str]
+) -> np.ndarray:
+    """Collapse program utilities into a probability distribution over schools.
 
-    The priors release ``P(program type | home-language group)`` pooled over
-    all choices, but most schools only run general education, so using those
-    shares directly as per-school probabilities over-picks GE. This fits a
-    Luce weight per (group, type) by multiplicative updates until the shares
-    implied by the synthetic availability sets match the released targets --
-    the standard availability correction for a choice model whose alternatives
-    differ across observations.
+    Each school is scored by its best program for that student, then the
+    scores are turned into probabilities with a softmax. Used only to place
+    the schools a student's sibling or pre-K attends.
 
     Args:
-        lists: Ranked school ids per student.
-        groups: Home-language group per student.
-        priors: The priors dict.
-        targets: Share targets per group; defaults to the released
-            ``program_by_hlgroup`` table.
+        utilities: ``(n_students, n_programs)`` utilities.
+        school_ids: Schools to score, in output column order.
+        program_ids: Column order of ``utilities``.
 
     Returns:
-        Fitted weights per group, keyed by program type.
+        Row-normalised ``(n_students, n_schools)`` probabilities.
     """
-    offered = {
-        int(k): v for k, v in priors["choice"]["school_program_types"].items()
-    }
-    by_group: dict[str, Counter] = defaultdict(Counter)
-    for lst, group in zip(lists, groups):
-        for school in lst:
-            by_group[group][tuple(offered.get(school, ["GE"]))] += 1
-
-    fitted = {}
-    for group, target in (
-        targets or priors["choice"]["program_by_hlgroup"]
-    ).items():
-        availability = by_group.get(group) or Counter()
-        if not availability:
-            fitted[group] = dict(target)
-            continue
-        total = sum(availability.values())
-        weights = {t: max(float(p), 1e-9) for t, p in target.items()}
-        for _ in range(PROGRAM_WEIGHT_ITERATIONS):
-            share = Counter()
-            for types, count in availability.items():
-                pool = sum(weights.get(t, 0.0) for t in types)
-                if pool <= 0:
-                    continue
-                for t in types:
-                    share[t] += count * weights.get(t, 0.0) / pool
-            for t in list(weights):
-                achieved = share[t] / total
-                if achieved > 0:
-                    weights[t] *= float(target.get(t, 0.0)) / achieved
-                elif float(target.get(t, 0.0)) > 0:
-                    weights[t] *= 4.0
-            norm = sum(weights.values())
-            if norm > 0:
-                weights = {t: w / norm for t, w in weights.items()}
-        fitted[group] = weights
-    return fitted
+    values = utilities.to_numpy(dtype=float)
+    columns_by_school = defaultdict(list)
+    for j, program_id in enumerate(program_ids):
+        columns_by_school[int(str(program_id).split("-")[0])].append(j)
+    best = np.full((values.shape[0], len(school_ids)), -np.inf)
+    for k, school in enumerate(school_ids):
+        columns = columns_by_school.get(school)
+        if columns:
+            best[:, k] = values[:, columns].max(axis=1)
+    # Softmax over a row that may be entirely -inf (no eligible program
+    # anywhere) falls back to uniform.
+    shifted = best / SIBLING_PLACEMENT_TEMPERATURE
+    shifted -= np.where(
+        np.isfinite(shifted).any(axis=1, keepdims=True),
+        np.nanmax(
+            np.where(np.isfinite(shifted), shifted, np.nan),
+            axis=1,
+            keepdims=True,
+        ),
+        0.0,
+    )
+    weights = np.exp(np.where(np.isfinite(shifted), shifted, -np.inf))
+    totals = weights.sum(axis=1, keepdims=True)
+    uniform = np.full(len(school_ids), 1.0 / len(school_ids))
+    return np.where(
+        totals > 0, weights / np.where(totals > 0, totals, 1.0), uniform
+    )
 
 
-def assign_program_codes(
-    lists: list[list[int]],
-    groups: list[str],
-    weights: dict[str, dict[str, float]],
-    priors: dict,
-    rng: np.random.Generator,
-) -> list[list[str]]:
-    """Pick a program type for each ranked school.
-
-    Args:
-        lists: Ranked school ids per student.
-        groups: Home-language group per student.
-        weights: Fitted weights from :func:`fit_program_weights`.
-        priors: The priors dict.
-        rng: Seeded generator.
-
-    Returns:
-        Program types parallel to ``lists``.
-    """
-    offered = {
-        int(k): v for k, v in priors["choice"]["school_program_types"].items()
-    }
-    out = []
-    for lst, group in zip(lists, groups):
-        table = weights.get(group, weights.get("EN", {}))
-        codes = []
-        for school in lst:
-            allowed = offered.get(school, ["GE"])
-            restricted = {t: table.get(t, 0.0) for t in allowed}
-            if sum(restricted.values()) <= 0:
-                restricted = {t: 1.0 for t in allowed}
-            codes.append(draw(restricted, rng, default="GE"))
-        out.append(codes)
-    return out
-
-
-def add_same_school_repeats(
-    lists: list[list[int]],
-    codes: list[list[str]],
-    groups: list[str],
-    weights: dict[str, dict[str, float]],
+def draw_lists_from_model(
+    utilities: pd.DataFrame,
     lengths: np.ndarray,
-    priors: dict,
     rng: np.random.Generator,
 ) -> tuple[list[list[int]], list[list[str]]]:
-    """Let applicants rank a second program at a school they already ranked.
+    """Draw each applicant's ranked list from the choice model.
 
-    Nearly a quarter of real applicants do this -- typically an immersion
-    pathway and general education at the same school -- and 7% of all ranked
-    choices are such a repeat. Repeats are inserted immediately after the first
-    entry for that school, which is where 69% of real ones sit, and the list is
-    then trimmed back to its drawn length.
+    This is the model's own preference draw, as implemented by
+    ``Metrics.get_preferences`` in SFUSD-Choice-public: add a standard Gumbel
+    shock to every utility and sort descending. Truncating that ranking at the
+    applicant's list length gives a Plackett-Luce draw from the fitted model,
+    so the ordering, the mix of program types and the geography of the list
+    are all consequences of the model rather than of separately calibrated
+    priors.
 
     Args:
-        lists: Ranked school ids per student, each school appearing once.
-        codes: Program types parallel to ``lists``.
-        groups: Home-language group per student.
-        weights: Fitted weights from :func:`fit_program_weights`.
-        lengths: Drawn total list length per student.
-        priors: The priors dict.
+        utilities: ``(n_students, n_programs)`` utilities, ``-inf`` outside
+            the choice set.
+        lengths: Number of programs each applicant ranks.
         rng: Seeded generator.
 
     Returns:
-        The lists and codes with repeats inserted and lengths trimmed.
+        Ranked school ids and the parallel program types.
     """
-    offered = {
-        int(k): v for k, v in priors["choice"]["school_program_types"].items()
-    }
-    p_repeat = float(priors["choice"].get("p_same_school_repeat", 0.0))
-    if p_repeat <= 0:
-        return lists, codes
-    # p_repeat is a share of all choices; a repeat can only be added at a school
-    # with a spare program, so scale it up by how often that is the case.
-    eligible = sum(
-        1
-        for lst, row in zip(lists, codes)
-        for school, code in zip(lst, row)
-        if len(offered.get(school, [])) > 1
+    program_ids = np.asarray(utilities.columns)
+    keys = utilities.to_numpy(dtype=float) + rng.gumbel(
+        0.0, 1.0, utilities.shape
     )
-    total = sum(len(lst) for lst in lists)
-    if eligible == 0:
-        return lists, codes
-    p_per_choice = min(p_repeat * total / eligible, 1.0)
-
-    out_lists, out_codes = [], []
-    for i, (lst, row) in enumerate(zip(lists, codes)):
-        schools, types = [], []
-        for school, code in zip(lst, row):
-            schools.append(school)
-            types.append(code)
-            spare = [t for t in offered.get(school, []) if t != code]
-            if spare and rng.random() < p_per_choice:
-                table = weights.get(groups[i], weights.get("EN", {}))
-                restricted = {t: table.get(t, 0.0) for t in spare}
-                if sum(restricted.values()) <= 0:
-                    restricted = {t: 1.0 for t in spare}
-                schools.append(school)
-                types.append(draw(restricted, rng, default=spare[0]))
-        limit = int(lengths[i])
-        out_lists.append(schools[:limit])
-        out_codes.append(types[:limit])
-    return out_lists, out_codes
-
-
-def calibrate_program_weights(
-    lists: list[list[int]],
-    groups: list[str],
-    lengths: np.ndarray,
-    priors: dict,
-    seed: int,
-) -> dict[str, dict[str, float]]:
-    """Fit program-type weights that survive the same-school repeat pass.
-
-    :func:`fit_program_weights` matches the released type shares on the
-    one-entry-per-school lists, but the repeat pass then adds a *second*
-    program at some schools, which shifts those shares. This wraps the fit in
-    an outer loop that nudges the fit targets until the shares of the final,
-    post-repeat lists match what was released.
-
-    Args:
-        lists: Ranked school ids per student, each school appearing once.
-        groups: Home-language group per student.
-        lengths: Drawn total list length per student.
-        priors: The priors dict.
-        seed: Seed for the trial draws.
-
-    Returns:
-        Fitted weights per group, keyed by program type.
-    """
-    released = priors["choice"]["program_by_hlgroup"]
-    overall = Counter()
-    for group, table in released.items():
-        for program_type, share in table.items():
-            overall[program_type] += share
-    targets = {g: dict(t) for g, t in released.items()}
-    weights = fit_program_weights(lists, groups, priors, targets)
-    for _ in range(CODE_CALIBRATION_ITERATIONS):
-        rng = np.random.default_rng(seed)
-        codes = assign_program_codes(lists, groups, weights, priors, rng)
-        _, final_codes = add_same_school_repeats(
-            lists, codes, groups, weights, lengths, priors, rng
-        )
-        achieved = Counter(c for row in final_codes for c in row)
-        total = sum(achieved.values())
-        if not total:
-            break
-        for group, table in targets.items():
-            for program_type in table:
-                want = released[group].get(program_type, 0.0)
-                got = achieved[program_type] / total
-                reference = overall[program_type] / max(
-                    sum(overall.values()), 1e-9
-                )
-                if got > 0 and reference > 0:
-                    table[program_type] = want * (reference / got)
-            norm = sum(table.values())
-            if norm > 0:
-                targets[group] = {t: v / norm for t, v in table.items()}
-        weights = fit_program_weights(lists, groups, priors, targets)
-    return weights
+    order = np.argsort(-keys, axis=1)
+    schools: list[list[int]] = []
+    types: list[list[str]] = []
+    for i, length in enumerate(lengths):
+        # Skipping non-finite keys keeps an applicant from ever ranking a
+        # program outside their choice set, even when their drawn length
+        # exceeds the size of that set.
+        picked = [
+            program_ids[j]
+            for j in order[i, : int(length)]
+            if np.isfinite(keys[i, j])
+        ]
+        schools.append([int(str(p).split("-")[0]) for p in picked])
+        types.append([str(p).split("-")[1] for p in picked])
+    return schools, types
 
 
 def run_round1_da(
@@ -1232,6 +829,7 @@ def generate(
     seed: int,
     schools_csv: Path | None = None,
     programs_csv: Path | None = None,
+    weights_csv: Path | None = None,
 ) -> pd.DataFrame:
     """Build and write the synthetic dataset.
 
@@ -1242,6 +840,8 @@ def generate(
         seed: Master seed; the output is a deterministic function of it.
         schools_csv: Schools table; defaults to ``<data_dir>/Cleaned/``.
         programs_csv: Programs table; defaults to ``<data_dir>/``.
+        weights_csv: Choice-model coefficients; defaults to
+            ``<data_dir>/choice_model/weights_exp8.csv``.
 
     Returns:
         The generated student frame.
@@ -1257,6 +857,7 @@ def generate(
         programs_csv or data_dir / f"programs_without_specialprogs_{year}.csv",
         index_col=0,
     )
+    weights_csv = weights_csv or data_dir / "choice_model" / "weights_exp8.csv"
 
     students = sample_locations(priors["students_per_aa"], blocks, rng)
     n = len(students)
@@ -1266,6 +867,9 @@ def generate(
         n,
         students["idschoolattendance"].nunique(),
     )
+
+    # Assigned up front because the choice model keys its utility matrix on it.
+    students["studentno"] = np.arange(1_000_000, 1_000_000 + n)
 
     attributes = sample_block_attributes(students, priors, rng)
     for column in BLOCK_ATTR_COLUMNS:
@@ -1286,83 +890,41 @@ def generate(
         students[column] = demographics[column]
     lengths = sample_lengths(students, priors, rng)
 
-    tail = np.array(
-        [
-            float(priors["choice"]["school_pop_tail"].get(str(sid), 0.0))
-            for sid in school_ids
-        ]
+    # --- preferences, straight from the choice model ----------------------
+    # Sibling priority is itself a model feature with a large coefficient, so
+    # the utilities are built twice: once with no sibling anywhere, which is
+    # what places each sibling's school, and then again once those schools are
+    # known.
+    weights = load_weights(weights_csv)
+    baseline = compute_utilities(
+        students.assign(sibling="[]"),
+        programs,
+        schools,
+        weights,
+        mode=ChoiceSetMode.FORWARD,
     )
-    floor = tail[tail > 0].min() * 0.05 if (tail > 0).any() else 1.0
-    log_popularity = np.log(np.where(tail > 0, tail, floor))
-
-    # --- first choices, then the rest of each list ------------------------
-    head_beta = calibrate_first_choice_beta(
-        students, lengths, priors, school_ids, distances, seed + 1
+    placement = school_placement_weights(
+        baseline, school_ids, list(baseline.columns)
     )
-    weights = first_choice_weights(
-        students, priors, school_ids, distances, head_beta
-    )
-    keys = np.log(np.maximum(weights, 1e-300)) + rng.gumbel(
-        0.0, 1.0, weights.shape
-    )
-    first_choice = [school_ids[j] for j in keys.argmax(axis=1)]
-
-    priorities = sample_priorities(
-        students, priors, school_ids, distances, head_beta, rng
-    )
-    heads: list[list[int]] = []
-    for i in range(n):
-        if lengths[i] <= 0:
-            heads.append([])
-            continue
-        row = priorities.iloc[i]
-        head: list[int] = []
-        sibling = [s for s in row["sibling"] if s in index_of]
-        if sibling and row["sibling_first"]:
-            head.append(sibling[0])
-        if first_choice[i] not in head:
-            head.append(first_choice[i])
-        if sibling and row["sibling_in_list"]:
-            head.extend(s for s in sibling if s not in head)
-        for school in (
-            list(row["aaprek"]) + list(row["prek"]) + list(row["currentlp"])
-        ):
-            if school in index_of and school not in head:
-                head.append(int(school))
-        heads.append(head)
-    # Forced priority schools can exceed the drawn length; keep them all rather
-    # than dropping a priority the applicant is meant to hold.
-    lengths = np.maximum(lengths, [len(h) for h in heads])
-
-    # Each school can appear once in this stage; same-school repeats (an
-    # immersion pathway plus general education, say) are added afterwards. The
-    # cap also guarantees every stage has enough unpicked schools to draw from.
-    unique_lengths = np.minimum(lengths, len(school_ids))
-    betas = calibrate_betas(
-        heads,
-        unique_lengths,
-        log_popularity,
-        distances,
-        school_ids,
-        priors,
-        seed + 2,
-    )
-    lists = build_lists(
-        heads, unique_lengths, log_popularity, distances, betas, school_ids, rng
-    )
-    groups = [hl_group(x) for x in students["homelang"]]
-    program_weights = calibrate_program_weights(
-        lists, groups, lengths, priors, seed + 3
-    )
-    codes = assign_program_codes(lists, groups, program_weights, priors, rng)
-    lists, codes = add_same_school_repeats(
-        lists, codes, groups, program_weights, lengths, priors, rng
-    )
-
-    # --- priority bookkeeping --------------------------------------------
+    priorities = sample_priorities(students, priors, school_ids, placement, rng)
     students["sibling"] = [
         [s for s in row if s in index_of] for row in priorities["sibling"]
     ]
+
+    utilities = compute_utilities(
+        students, programs, schools, weights, mode=ChoiceSetMode.FORWARD
+    )
+    eligible = int(np.isfinite(utilities.to_numpy()).sum(axis=1).mean())
+    logger.info(
+        "choice model: %d coefficients, %d programs, %d eligible per applicant",
+        len(weights),
+        utilities.shape[1],
+        eligible,
+    )
+    lists, codes = draw_lists_from_model(utilities, lengths, rng)
+    lengths = np.array([len(x) for x in lists])
+
+    # --- priority bookkeeping --------------------------------------------
     students["aaprek"] = list(priorities["aaprek"])
     students["prek"] = list(priorities["prek"])
     students["currentlp"] = list(priorities["currentlp"])
@@ -1424,6 +986,7 @@ def generate(
         previous_pathway.append(code)
     students["previous_pathway"] = previous_pathway
     designation_rates = pri["designation_rate_by_hlgroup"]
+    groups = [hl_group(x) for x in students["homelang"]]
     students["requestprogramdesignation"] = [
         float(
             rng.random()
@@ -1494,7 +1057,6 @@ def generate(
         students[column] = students[column].apply(str)
 
     # --- constants and rounds this dataset does not model ----------------
-    students["studentno"] = np.arange(1_000_000, 1_000_000 + n)
     students["grade"] = GRADE
     for column in (
         "bayview_to_all_ms",
@@ -1563,17 +1125,17 @@ def generate(
         float(first_counts.get(str(p), 0)) for p in programs_out["program_id"]
     ]
 
-    # The status-quo zone map is one zone per attendance area, which is fully
-    # determined by the list of attendance-area schools.
-    zones_dir = data_dir / "zones"
-    zones_dir.mkdir(parents=True, exist_ok=True)
-    zone_path = zones_dir / "concept1zones.csv"
-    with open(zone_path, "w") as handle:
-        for aa in sorted(int(a) for a in priors["students_per_aa"]):
-            handle.write(f"{aa}\n")
-
     cleaned_dir = data_dir / "Cleaned"
     cleaned_dir.mkdir(parents=True, exist_ok=True)
+    estimates_path = (
+        data_dir / "choice_model" / f"estimates_{year}_synthetic.csv"
+    )
+    # The simulator's utility-model loader parses the index as
+    # "<year>-<studentno>", which is also how the choice model writes it.
+    estimates = utilities.round(6)
+    estimates.index = [f"{year}-{s}" for s in estimates.index]
+    estimates.index.name = "studentno"
+    estimates.to_csv(estimates_path)
     student_path = data_dir / f"student_{year}_synthetic.csv"
     programs_path = data_dir / f"programs_without_specialprogs_{year}.csv"
     students.to_csv(student_path, index=False)
@@ -1584,7 +1146,12 @@ def generate(
         )
     logger.info("wrote %s (%d rows)", student_path, len(students))
     logger.info("wrote %s (%d rows)", programs_path, len(programs_out))
-    logger.info("wrote %s", zone_path)
+    logger.info(
+        "wrote %s (%d x %d utilities)",
+        estimates_path,
+        utilities.shape[0],
+        utilities.shape[1],
+    )
     _log_summary(students, lists, codes, distances, index_of)
     return students
 
@@ -1648,9 +1215,15 @@ def main() -> None:
     parser.add_argument("--seed", type=int, default=20260917)
     parser.add_argument("--schools-csv", type=Path, default=None)
     parser.add_argument("--programs-csv", type=Path, default=None)
+    parser.add_argument("--weights-csv", type=Path, default=None)
     args = parser.parse_args()
     generate(
-        args.data_dir, args.year, args.seed, args.schools_csv, args.programs_csv
+        args.data_dir,
+        args.year,
+        args.seed,
+        args.schools_csv,
+        args.programs_csv,
+        args.weights_csv,
     )
 
 

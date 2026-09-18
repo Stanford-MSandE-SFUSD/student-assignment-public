@@ -59,11 +59,14 @@ uv run python run_custom_config.py --config-path /tmp/synthetic.yaml
 | `data/synthetic_2324/student_2324_synthetic.csv` | `student-data` |
 | `data/synthetic_2324/programs_without_specialprogs_2324.csv` | `program-data` |
 | `data/synthetic_2324/Cleaned/schools_rehauled_2324.csv` | `school-data` |
-| `data/synthetic_2324/zones/concept1zones.csv` | `zone-files.Con1` |
+| `data/zones/table1/concept1zones.csv` | `zone-files.Con1` |
+| `data/synthetic_2324/choice_model/estimates_2324_synthetic.csv` | `estimate-path` |
 
-Set `year: 23`, `grade: KG`, and `utility-model.enable: false` — no choice-model
-estimates matrix exists for the synthetic cohort, so runs that need
-`estimate-path` still require the real pipeline.
+Set `year: 23` and `grade: KG`. The dataset's preference lists are drawn from
+the published `exp8` choice model, and that model's utility matrix for the
+synthetic cohort ships alongside, so both `utility-model.enable: false` (read
+the dataset's lists) and `true` (redraw from the matrix, see
+`status_quo_synthetic_2324_umodel.yaml`) run without the confidential data.
 
 Read [`data/synthetic_2324/README.md`](../data/synthetic_2324/README.md) for
 what the dataset reproduces and

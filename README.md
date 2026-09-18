@@ -88,6 +88,15 @@ sed "s#<STUDENT_ASSIGNMENT_PATH>#$PWD#g" \
 uv run python run_custom_config.py --config-path /tmp/synthetic.yaml
 ```
 
+Its preference lists are drawn from the published `exp8` choice model applied
+to the synthetic features, and it ships that model's utility matrix, so
+`utility-model.enable: true` works too
+(`status_quo_synthetic_2324_umodel.yaml`). See
+**[data/synthetic_2324/](data/synthetic_2324/README.md)** for what the dataset
+does and does not reproduce, and
+**[data/synthetic_2324/ANONYMIZATION.md](data/synthetic_2324/ANONYMIZATION.md)**
+for how it was built.
+
 ## Paper quickstart
 
 Main-text policy comparison (Status Quo vs zones / reserves / distance
@@ -122,7 +131,6 @@ aggregate metrics. Details and SI variants:
 4. **Metrics table** — `scripts/analysis/analyze_trends.py` →
    `metrics_comparison.xlsx` (`short_match_evaluator.py`). Row-name map:
    [docs/PAPER_METRICS.md](docs/PAPER_METRICS.md).
-
 ```bash
 # Table 1 seven policies (needs real data + paths; see Data setup)
 uv run python run_custom_config.py \
@@ -172,6 +180,7 @@ Use `--help` on any script for its options. Full config reference:
 student_assignment/         Core library (installed as a package by uv sync)
   da/                       Deferred-acceptance variants (vanilla, guardrails, quotas)
   market_generator/         Preference/utility generation, list augmentation
+  choice_model/             Port of the public exp8 MNL (utilities from weights)
   data_interfaces/          Student, program, zone loaders
   evaluation/               Match evaluation and metrics
   configerator/             Layered config loading + schema validation

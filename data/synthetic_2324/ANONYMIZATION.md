@@ -13,9 +13,11 @@ consequences are listed in "What fidelity was given up" below and quantified in
 ## The short version
 
 No record in the released dataset is derived from, or corresponds to, any real
-applicant. The generator never sees a student record. It is handed two
-committed artifacts — a file of **aggregate statistics** and a file of **public
-geography** — and samples an entirely new cohort from them.
+applicant. The generator never sees a student record. It is handed three
+committed artifacts — a file of **aggregate statistics**, a file of **public
+geography**, and the **published choice model's coefficients** — and samples an
+entirely new cohort from them. Household features come from the aggregates and
+the geography; the ranked lists come from the model.
 
 Three properties follow:
 
@@ -30,14 +32,14 @@ Three properties follow:
    each one passed through noise addition, small-cell suppression, and/or
    geographic coarsening before being written to disk. Those statistics are
    committed in full as `priors/synthetic_priors_2324.json`, so the entire
-   disclosure surface of this release is a single auditable 230 KB file.
+   disclosure surface of this release is a single auditable 200 KB file.
 
 ## The two-stage pipeline
 
 | Stage | Script | Reads | Writes |
 | --- | --- | --- | --- |
 | 1. Extract | `scripts/generators/extract_synthetic_priors.py` | confidential `student_2324.csv`, SFUSD block database, public census block shapefile | `priors/synthetic_priors_2324.json`, `reference/block_reference_2324.csv` |
-| 2. Generate | `scripts/generators/generate_synthetic_dataset.py` | the two stage-1 outputs, plus the school and program tables | `student_2324_synthetic.csv`, `programs_without_specialprogs_2324.csv`, `zones/concept1zones.csv` |
+| 2. Generate | `scripts/generators/generate_synthetic_dataset.py` | the two stage-1 outputs, the published choice-model coefficients, and the school and program tables | `student_2324_synthetic.csv`, `choice_model/estimates_2324_synthetic.csv`, `programs_without_specialprogs_2324.csv`, `zones/concept1zones.csv` |
 
 Stage 1 requires data access and cannot be re-run from a public clone. Stage 2
 can: it is a deterministic function of its committed inputs and a seed, so any
@@ -46,7 +48,7 @@ different seed.
 
 The split is the point. Because stage 2 is pure post-processing of stage 1's
 output, any disclosure risk in the released records is bounded by the risk in
-`synthetic_priors_2324.json` — which is 42 aggregate statistic families, all
+`synthetic_priors_2324.json` — which is 32 aggregate statistic families, all
 listed under `meta.query_families` in that file.
 
 ## Mechanism 1: noise and suppression on every count
@@ -82,14 +84,14 @@ Every count-based statistic in the priors file was produced by:
 Query labels in the priors file have the form `family | stratum`. Queries in
 one family run on **disjoint** subsets of applicants — one attendance area, one
 ethnic group, one list-length bin — so they compose in parallel and cost the
-family one ε. Across the 42 families, sequential composition gives a composed
-**ε = 21.0** for the 497 individual histograms.
+family one ε. Across the 32 families, sequential composition gives a composed
+**ε = 16.0** for the 408 individual histograms.
 
 Be clear about what that number is and is not. It is honest bookkeeping: the
-pipeline really is a Laplace mechanism applied 42 times, and ε = 21.0 is the
+pipeline really is a Laplace mechanism applied 32 times, and ε = 16.0 is the
 correct basic-composition total. It is **not** a tight or strong formal
 guarantee, and this release should not be described as "differentially private
-with ε = 21" as if that alone bounded the risk. Two caveats:
+with ε = 16" as if that alone bounded the risk. Two caveats:
 
 - Two releases are **not** Laplace-protected at all and are excluded from the
   ε accounting (they are listed under `meta.non_laplace_releases`): the
@@ -197,41 +199,70 @@ that joint. Each feature is a separate draw:
 Because the layers are independent, an unusual synthetic combination is an
 artifact of the sampler, not evidence that a real applicant had it.
 
-## Mechanism 5: ranked lists rebuilt, never copied
+## Mechanism 5: ranked lists come from the public choice model
 
-No real ranked list is released, and no synthetic list is a copy, truncation, or
-permutation of one. Lists are constructed position by position:
+No real ranked list is released, and no synthetic list is a copy, truncation,
+or permutation of one. More than that: **almost nothing about what applicants
+rank is extracted from the confidential data at all.**
 
-- **Length** comes from the attendance area's length histogram (14 bins, noised
-  and suppressed, smoothed to citywide), tilted by the same kind of
-  within-area CTIP1 effect — CTIP1 applicants file markedly shorter lists —
-  with the exact length drawn uniformly inside the chosen bin.
-- **Position 1** comes from the attendance area's noised, suppressed rank-1
-  counts, smoothed toward a *distance-localized* citywide prior
-  `citywide(j) × exp(-β · miles)`. Areas whose cells survived suppression keep
-  their real pattern; areas whose cells did not fall back to schools near the
-  synthetic household rather than to the city at large.
-- **Positions 2 and beyond** come from the **citywide** popularity of each
-  school times a distance kernel, sampled without replacement. Per-area tails
-  are made of one- and two-applicant cells and are never used. The decay is
-  fitted, by bisection, so that the mean home-to-school distance at each list
-  position matches the single aggregate moment released for that position.
-- **Program types** are drawn from the citywide
-  `P(program type | home-language group)` table, restricted to the pathways
-  each school actually runs, with an availability correction fitted so the
-  overall type shares match. School × pathway existence is a published fact
-  (the district's enrollment guide), not applicant information.
-- **Priorities.** Sibling, pre-K, and language-pathway priorities are drawn at
-  area-level rates and then forced into the list, which is how real lists
-  behave (99% of applicants with a sibling rank that sibling's school, 92% of
-  them first).
-- **Same-school pairs.** A quarter of real applicants rank two programs at one
-  school, usually an immersion pathway plus general education, and 7% of all
-  choices are such a repeat. These are added as a final pass at the released
-  citywide rate, and the program-type weights are re-fitted around them so the
-  overall type shares stay on target.
-- **`r1_cohortstring`** is fully determined by those priority flags and is
-  recomputed, not copied.
+The lists are produced the way the choice model itself produces them. For each
+synthetic household, `student_assignment/choice_model/exp8.py` evaluates the
+published `exp8` MNL — 109 coefficients over eight feature groups, shipped in
+`choice_model/weights_exp8.csv` — against that household's sampled features,
+giving a utility for every program. A standard Gumbel shock is added to each
+utility and the programs are sorted descending, which is exactly
+`Metrics.get_preferences` in SFUSD-Choice-public and amounts to a
+Plackett-Luce draw from the fitted model. Truncating that ranking at the
+applicant's list length gives the list.
+
+Everything about the *content* of a list is therefore a consequence of public
+coefficients applied to synthetic features:
+
+- which schools are ranked, and in what order;
+- the mix of general-education and immersion programs;
+- how far the ranked schools are from home;
+- whether an applicant ranks two programs at the same school;
+- whether they rank their own attendance-area school.
+
+Each of those was previously a separately calibrated prior extracted from the
+real lists. Ten query families disappeared with them, including the most
+granular thing the file used to carry: `rank1_counts_by_aa`, a per-attendance-
+area histogram over first-choice schools. Also gone are the citywide tail
+popularity, the mean choice distance at each list position, the
+program-type-by-home-language table, the same-school repeat rate, and the two
+sibling-list-position rates.
+
+Two list-level statistics are still needed, because the model does not supply
+them:
+
+- **Length.** The model ranks every program; it says nothing about how many a
+  family writes down. Length comes from the attendance area's length histogram
+  (14 bins, noised and suppressed, smoothed to citywide), tilted by the
+  within-area CTIP1 effect.
+- **Priorities.** Sibling, pre-K, and language-pathway priority *rates* are
+  still area-level draws. Where the sibling's school is, though, now comes from
+  the model too: a softmax over the same utilities with the sibling term itself
+  switched off, on the reasoning that siblings attend schools their family
+  would plausibly have chosen.
+
+### The choice set is narrowed for generation
+
+The model widens a student's choice set with the program types they were
+*observed* to rank. That is reasonable when fitting a likelihood and circular
+when generating preferences, so generation uses `ChoiceSetMode.FORWARD`, which
+keeps only what home language entitles an applicant to rank. The estimation-time
+rule is retained solely for the validation check below.
+
+### The port is verified, not asserted
+
+A re-implementation is only as good as its agreement with the original.
+`scripts/generators/validate_choice_model_port.py` recomputes the model's own
+released `estimates_2324.csv` for all 4,232 **real** kindergarten applicants
+and diffs it cell by cell: maximum absolute difference **1.0e-10** across
+380,736 finite cells. The 87 choice-set cells that differ are each shown to be
+explained by a language program appearing in `r4_programs` in the current
+extract, which the May 2024 extract behind the published matrix evidently
+carried in an earlier round.
 
 ## Mechanism 6: identifiers and outcomes regenerated
 
@@ -259,6 +290,7 @@ a particular data agreement requires it:
 | `Cleaned/schools_rehauled_2324.csv` | 72 schools: name, coordinates, ZIP, category, grade span, capacity floor, GreatSchools rating, CA Dashboard colors | School-level public facts; no applicant data. The outcome columns are not present. |
 | `programs_without_specialprogs_2324.csv` | 129 programs: school, pathway, capacity | Published program offerings and seat counts. The three outcome columns (`r1_assigned`, `r1_noenroll`, `r1_first_choice`) are **recomputed from the synthetic cohort**, so no real assignment counts are released. |
 | `reference/block_reference_2324.csv` | 7,319 census blocks: block/block group/tract ids, ZIP, attendance area, CTIP 2013 designation, 2010 Census population, TIGER internal point, land area | Census products and published SFUSD boundary and CTIP designations. Contains no student counts of any kind. |
+| `choice_model/weights_exp8.csv`, `config_exp8.yaml` | 109 MNL coefficients and their feature specification | The published choice model. Coefficients are estimated over the whole cohort; no individual is recoverable from them. |
 
 `zones/concept1zones.csv` is generated, not copied: the status-quo zone map is
 one zone per attendance area, which is fully determined by the list of
@@ -287,16 +319,30 @@ These are the deliberate costs of the choices above. All are quantified in
    Indian, and rare home languages are distributed citywide. Any analysis
    restricted to a small demographic group in a specific area is meaningless
    here.
-4. **Lists reproduce marginals, a distance profile and same-school pairs, not
-   other higher-order structure.** Which schools co-occur on a list beyond the
-   distance, popularity and same-school effects — a preference for two specific
-   language programs at *different* schools, say — is not modeled. A choice
-   model estimated on this dataset will recover school and distance effects but
-   not idiosyncratic substitution patterns. Same-school repeats are always
-   placed adjacently, where 69% of the real ones sit.
-5. **First choices lean slightly more local than reality** (28.6% versus 26.7%
-   for the applicant's own attendance-area school), a side effect of localizing
-   the rank-1 fallback prior.
+4. **The lists are only as good as the choice model.** This is the central
+   trade of the design, and it cuts three ways:
+   * **First-choice demand across schools correlates 0.84** with the source,
+     against 0.94 for the previous approach of calibrating directly to
+     area-level first-choice tables. The published model's top-1 accuracy is
+     about 0.44 and that ceiling propagates. Any-rank demand, which averages
+     over the whole list, is far more robust at 0.97 — so school-level
+     *capacity pressure* is well reproduced even where the specific
+     first-choice ordering is not.
+   * **Choices sit about 9% closer to home** than in reality at every list
+     position. The model weights proximity more heavily than the observed
+     lists do. The gradient with list position is right; the level is short.
+   * **Siblings are followed too faithfully.** With a sibling coefficient of
+     14.5 against a Gumbel(0,1) shock, an applicant with a sibling ranks that
+     school first essentially always (1.00 here, 0.92 in the source).
+
+   None of these is corrected. Correcting them would mean re-introducing
+   fitted-to-the-real-lists adjustments, which is exactly what deriving
+   preferences from a public model is meant to avoid. Anything sensitive to
+   the *fine* structure of first choices should be read with this in mind.
+5. **No model feature is endogenous, but the choice set was.** The `exp8`
+   specification has no feature computed from the observed list, so nothing
+   needed to be broken circularly. The choice set did: see "The choice set is
+   narrowed for generation" above.
 6. **Rounds 2 and 4 are not modeled.** The `r2_*` columns are present and empty;
    the `r4_*` columns are dropped. The source cohort had round-2 lists for 24%
    of applicants. All committed configs for this year run with `r1-only: true`.
@@ -305,11 +351,12 @@ These are the deliberate costs of the choices above. All are quantified in
    distribution than the real round (68.9% versus 64.5% of listed applicants
    offered their first choice) and places 8.8% of applicants off their own list
    against 6.8% in reality.
-8. **No choice-model utility matrix is shipped.** Configs with
-   `utility-model.enable: true` need an `estimates_*.csv` keyed by
-   `studentno`, which must be estimated for the synthetic cohort with the
-   SFUSD-Choice code. Configs with `utility-model.enable: false` (which use the
-   ranked lists in the dataset) run as-is.
+8. **The shipped utility matrix is the model's, for this cohort.**
+   `choice_model/estimates_2324_synthetic.csv` makes
+   `utility-model.enable: true` work from a fresh clone, which it previously
+   did not. It is a deterministic function of the committed coefficients and
+   the synthetic features, and the dataset's own lists are a Gumbel draw over
+   it — so the two are consistent by construction rather than by coincidence.
 
 ## Residual risk
 
@@ -334,6 +381,15 @@ The honest statement of what remains:
 # Stage 2 only; runs from a public clone.
 uv run python scripts/generators/generate_synthetic_dataset.py \
     --data-dir data/synthetic_2324 --year 2324
+```
+
+```bash
+# Verify the choice-model port still reproduces the published model.
+# Requires access to the confidential data and the model's own output.
+uv run python scripts/generators/validate_choice_model_port.py \
+    --sfusd-root /share/data/school_choice \
+    --weights  .../ChoiceModel_20240514/weights.csv \
+    --estimates .../ChoiceModel_20240514/estimates_2324.csv
 ```
 
 ```bash

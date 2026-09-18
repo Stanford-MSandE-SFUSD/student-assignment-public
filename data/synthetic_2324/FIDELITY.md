@@ -23,92 +23,99 @@ See `ANONYMIZATION.md` for which differences are deliberate.
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Mean list length | 5.586 | 5.619 |
+| Mean list length | 5.586 | 5.784 |
 | Median list length | 5 | 5 |
 | Share filing no list | 0.081 | 0.068 |
-| Share filing 10 or more choices | 0.150 | 0.141 |
-| First choice is own attendance-area school | 0.267 | 0.286 |
-| Own attendance-area school appears in list | 0.551 | 0.530 |
+| Share filing 10 or more choices | 0.150 | 0.154 |
+| First choice is own attendance-area school | 0.267 | 0.260 |
+| Own attendance-area school appears in list | 0.551 | 0.564 |
 
 ## School demand
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Correlation of first-choice share across schools | - | 0.936 |
-| Correlation of any-rank share across schools | - | 0.956 |
-| Total absolute deviation in first-choice share | - | 0.172 |
+| Correlation of first-choice share across schools | - | 0.843 |
+| Correlation of any-rank share across schools | - | 0.968 |
+| Total absolute deviation in first-choice share | - | 0.285 |
 
 ## Program type
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| General education share of choices | 0.763 | 0.763 |
-| Language pathway share of choices | 0.237 | 0.237 |
-| Share of choices repeating a school already ranked | 0.069 | 0.055 |
-| Share of applicants ranking one school twice | 0.250 | 0.265 |
-| Total absolute deviation across program types | - | 0.049 |
+| General education share of choices | 0.763 | 0.759 |
+| Language pathway share of choices | 0.237 | 0.241 |
+| Share of choices repeating a school already ranked | 0.069 | 0.066 |
+| Share of applicants ranking one school twice | 0.250 | 0.258 |
+| Total absolute deviation across program types | - | 0.063 |
 
 ## Choice distance (mi)
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Mean distance of choice at position 1 | 1.46 | 1.41 |
-| Mean distance of choice at position 2 | 1.62 | 1.62 |
-| Mean distance of choice at position 3 | 1.68 | 1.64 |
-| Mean distance of choice at position 4 | 1.78 | 1.78 |
-| Mean distance of choice at position 5 | 1.85 | 1.82 |
-| Mean distance of choice at position 6 | 1.91 | 1.86 |
-| Mean distance of choice at position 7 | 2.00 | 1.96 |
-| Mean distance of choice at position 8+ | 2.32 | 2.25 |
+| Mean distance of choice at position 1 | 1.46 | 1.33 |
+| Mean distance of choice at position 2 | 1.62 | 1.50 |
+| Mean distance of choice at position 3 | 1.68 | 1.59 |
+| Mean distance of choice at position 4 | 1.78 | 1.65 |
+| Mean distance of choice at position 5 | 1.85 | 1.69 |
+| Mean distance of choice at position 6 | 1.91 | 1.75 |
+| Mean distance of choice at position 7 | 2.00 | 1.75 |
+| Mean distance of choice at position 8+ | 2.32 | 2.10 |
 
 ## Block attributes
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Free-lunch probability of home block: mean | 0.446 | 0.447 |
-| Free-lunch probability of home block: std. dev. | 0.284 | 0.275 |
-| AALPI score of home block: mean | 0.344 | 0.350 |
-| AALPI score of home block: std. dev. | 0.299 | 0.277 |
+| Free-lunch probability of home block: mean | 0.446 | 0.445 |
+| Free-lunch probability of home block: std. dev. | 0.284 | 0.274 |
+| AALPI score of home block: mean | 0.344 | 0.351 |
+| AALPI score of home block: std. dev. | 0.299 | 0.276 |
 | Neighbourhood SES score of home block: mean | 0.375 | 0.379 |
 | Neighbourhood SES score of home block: std. dev. | 0.162 | 0.166 |
-| Home opportunity index of home block: mean | 0.359 | 0.351 |
+| Home opportunity index of home block: mean | 0.359 | 0.350 |
 | Home opportunity index of home block: std. dev. | 0.191 | 0.198 |
 | CTIP1 share | 0.160 | 0.166 |
-| Median household income: mean | 113,157 | 114,282 |
+| Median household income: mean | 113,157 | 114,233 |
 
 ## Demographics
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Total absolute deviation across ethnicity categories | - | 0.034 |
-| Total absolute deviation across home language categories | - | 0.098 |
-| Total absolute deviation across English proficiency categories | - | 0.088 |
-| AALPI share | 0.302 | 0.298 |
+| Total absolute deviation across ethnicity categories | - | 0.041 |
+| Total absolute deviation across home language categories | - | 0.055 |
+| Total absolute deviation across English proficiency categories | - | 0.030 |
+| AALPI share | 0.302 | 0.294 |
 
 ## Segregation signal
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Mean block free-lunch probability, AALPI applicants | 0.577 | 0.550 |
-| Mean block free-lunch probability, other applicants | 0.389 | 0.402 |
-| CTIP1 share, AALPI applicants | 0.341 | 0.344 |
-| CTIP1 share, other applicants | 0.085 | 0.090 |
+| Mean block free-lunch probability, AALPI applicants | 0.577 | 0.543 |
+| Mean block free-lunch probability, other applicants | 0.389 | 0.404 |
+| CTIP1 share, AALPI applicants | 0.341 | 0.338 |
+| CTIP1 share, other applicants | 0.085 | 0.095 |
+
+## Choice model
+
+| Statistic | Source | Synthetic |
+| --- | --- | --- |
+| Sibling's school is the first choice | 0.922 | 1.000 |
+| Sibling's school appears in the list | 0.995 | 1.000 |
 
 ## Priorities
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
-| Share with sibling priority | 0.284 | 0.289 |
-| Share with attendance-area pre-K priority | 0.038 | 0.039 |
-| Share with citywide pre-K priority | 0.017 | 0.017 |
-| Share with current language pathway | 0.039 | 0.045 |
-| Share with attendance-area priority applied | 0.512 | 0.500 |
+| Share with sibling priority | 0.284 | 0.284 |
+| Share with attendance-area pre-K priority | 0.038 | 0.044 |
+| Share with citywide pre-K priority | 0.017 | 0.013 |
+| Share with current language pathway | 0.039 | 0.039 |
+| Share with attendance-area priority applied | 0.512 | 0.532 |
 
 ## Round 1 outcome
 
 | Statistic | Source | Synthetic |
 | --- | --- | --- |
 | Share of applicants with a list left with no offer | 0.001 | 0.000 |
-| Share of applicants with a list offered their first choice | 0.645 | 0.689 |
-| Share of offers that are on the applicant's own list | 0.932 | 0.912 |
-| Mean distance to the round-1 offer (mi) | 1.43 | 1.32 |
+| Share of applicants with a list offered their first choice | 0.645 | 0.654 |
+| Share of offers that are on the applicant's own list | 0.932 | 0.897 |
+| Mean distance to the round-1 offer (mi) | 1.43 | 1.18 |
