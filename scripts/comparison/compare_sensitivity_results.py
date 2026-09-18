@@ -151,11 +151,9 @@ def build_analyze_trends_config(
         Config dict ready to serialise as YAML.
     """
     year_int = int(year[:2])  # 2-digit year used by analyze_trends
-    student_data = str(
-        PROJECT_ROOT
-        / "local-data"
-        / "student_filter"
-        / f"student_{year}_filtered.csv"
+    student_data = (
+        f"<SFUSD_DATA_PATH>/Data/Cleaned/"
+        f"r1_filter_student_without_specialprogs_{year}.csv"
     )
     program_data = str(
         PROJECT_ROOT

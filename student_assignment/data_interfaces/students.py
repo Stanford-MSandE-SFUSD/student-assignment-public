@@ -389,10 +389,10 @@ class Students:
         """Return an array of length n containing 1 when the student has new_CTIP1
         priority, 0 otherwise (0 for missing data as well).
         """
-        # Configure via paths.new-ctip-path; legacy cluster path as default.
+        # Configure via paths.new-ctip-path.
         new_ctip_path = self.config["paths"].get(
             "new-ctip-path",
-            "/share/data/school_choice/Data/Tie-breakers/ETB_2024.npy",
+            "<SFUSD_DATA_PATH>/Data/Tie-breakers/ETB_2024.npy",
         )
         new_ctip = np.load(new_ctip_path)
         self.student_data["new_ctip1"] = self.student_data[
@@ -414,7 +414,7 @@ class Students:
         # Configure via paths.new-ctip-blockgroup-path; legacy default.
         new_ctip_bg_path = self.config["paths"].get(
             "new-ctip-blockgroup-path",
-            "/share/data/school_choice/Data/Tie-breakers/ETB_2024_BlockGroup.npy",
+            "<SFUSD_DATA_PATH>/Data/Tie-breakers/ETB_2024_BlockGroup.npy",
         )
         new_ctip_bg = np.load(new_ctip_bg_path)
         self.student_data["new_ctip_blockgroup1"] = self.student_data[

@@ -1,31 +1,43 @@
 # Setting Up Your Config File
 
-Make all your configuration changes in your personal config file, `<YOUR-COMPUTER-USERNAME>.config.yaml`.
-If you do not see a file like this in `configs/`, it is generated automatically the first time you run any entry point (e.g. `uv run python run_custom_config.py --config-path <config>.yaml`).
-DO NOT make changes to `base_config.yaml`.
+Make configuration changes in your personal config file,
+`<YOUR-COMPUTER-USERNAME>.config.yaml`.
+If you do not see it under `configs/`, it is generated automatically the first
+time you run an entry point (e.g.
+`uv run python run_custom_config.py --config-path configs/paper/table1_config.yaml`).
+**Do not** edit `base_config.yaml` for machine-specific paths.
 
-This file will contain both your local file paths and non-policy related simulation options (like whether or not to use a utility model).
+That personal file holds local paths and non-policy options (e.g. whether to
+use a utility model). It is **gitignored** so absolute paths into confidential
+data are not committed — see [docs/DATA_SETUP.md](../docs/DATA_SETUP.md)
+(`local-data/`).
 
-To select which policies to run, add the policy configs to the subconfig section of your config. 
-For example,
+To select which policies to run, list policy config **stems** under
+`subconfigs:` (files in `configs/policy_configs/` without `.yaml`):
+
 ```yaml
 subconfigs:
-  - zones+reserves
-  - real_match
+  - status_quo_real
+  - 6-0.10-1430_BG+reserves_05frl
+  - distance_05_1_2+reserves_05frl
 ```
+
+Paper Table 1 wiring (paths + the seven policy names) lives in
+[`configs/paper/table1_config.yaml`](paper/table1_config.yaml).
 
 ## Troubleshooting
 
-The first time you generate your config, you will likely need to adjust the filepaths in your personal config.
-If you get path related errors, check the file that raised the error in your config and adjust accordingly.
+The first time you generate your config, adjust filepaths in the personal
+config. Path errors usually mean a key still points at a missing absolute path.
 
-If you are getting validation errors loading your config (missing required values or unexpected values), try re-generating your config from the base config 
-by changing the name of your config file or deleting it.
-(Changing the name is recommended for easier updating of local paths.)
-
+If you get schema validation errors, regenerate from the base config by
+renaming or deleting `configs/<username>.config.yaml` (renaming is safer so you
+can copy path overrides back).
 
 ## Generating New Policies
 
-The easiest way to create new policies is to copy an old policy and adjust the desired values accordingly.
-Note that a policy can contain multiple different zones (i.e., multiple different home based plans) but will keep the other policy details (like using guardrails) constant.
-Paths to the appropriate zone files go in your config file, then call the name under "policies" in the policy config.
+Copy an existing file under `configs/policy_configs/` and edit. A policy can
+reference multiple zone keys (different home-based maps) while keeping other
+settings (e.g. reserves) fixed. Register zone CSV paths under `paths.zone-files`
+in your personal / path config, then list those keys under `policies:` in the
+policy YAML — see [docs/ZONE_SETUP.md](../docs/ZONE_SETUP.md).

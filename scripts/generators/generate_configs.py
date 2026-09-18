@@ -15,11 +15,11 @@ OUTPUT_CONFIG_DIR = Path("configs/custom_configs")
 OUTPUT_CONFIG_DIR.mkdir(parents=True, exist_ok=True)
 
 # Data Base Paths (relative to project root or absolute)
-STUDENT_DATA_BASE = Path("local-data/student_filter")
+STUDENT_DATA_BASE = Path("Cleaned")  # relative to sfusd Data/; r1_filter_student_without_specialprogs_*.csv
 PROGRAM_DATA_BASE = Path("local-data/program_filter")
 SCHOOL_DATA_BASE = Path(
     "Cleaned"
-)  # Within share/data/... relative to sfusd path in config
+)  # Within Data/ relative to sfusd path in config
 
 
 def main():
@@ -44,9 +44,13 @@ def main():
         # Helper to get absolute path
         cwd = Path.cwd()
 
-        # Student Data: local-data/student_filter/student_{YY}{YY+1}_filtered.csv
-        student_file = STUDENT_DATA_BASE / f"student_{year_str}_filtered.csv"
-        config["paths"]["student-data"] = str(cwd / student_file)
+        # Student Data: Cleaned/r1_filter_student_without_specialprogs_{YY}{YY+1}.csv
+        student_file = (
+            STUDENT_DATA_BASE
+            / f"r1_filter_student_without_specialprogs_{year_str}.csv"
+        )
+        # Relative to paths.sfusd (Data/) when that root is set in the base config.
+        config["paths"]["student-data"] = str(student_file).replace("\\", "/")
 
         # Program Data: local-data/program_filter/programs_without_specialprogs_{YY}{YY+1}.csv
         program_file = (
@@ -68,8 +72,8 @@ def main():
 
         school_file_rel = f"Cleaned/schools_rehauled_{school_year_str}.csv"
         # We assume this is relative to sfusd path set in config.
-        # But wait, config["paths"]["sfusd"] is /share/data/school_choice/Data/
-        # And we want /share/data/school_choice/Data/Cleaned/schools_rehauled...
+        # But wait, config["paths"]["sfusd"] is <SFUSD_DATA_PATH>/Data/
+        # And we want <SFUSD_DATA_PATH>/Data/Cleaned/schools_rehauled...
         # So "Cleaned/..." is correct IF we don't mess with it.
         config["paths"]["school-data"] = school_file_rel
 

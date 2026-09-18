@@ -3,7 +3,7 @@ Script to filter program files removing special programs.
 
 Usage:
     python scripts/preprocessing/filter_programs.py \
-        [--data-dir /share/data/school_choice/Data] \
+        [--data-dir <SFUSD_DATA_PATH>/Data] \
         [--output-dir local-data/program_filter]
 """
 
@@ -39,7 +39,7 @@ def main():
     parser.add_argument(
         "--data-dir",
         type=Path,
-        default=Path("/share/data/school_choice/Data"),
+        default=Path("<SFUSD_DATA_PATH>/Data"),
         help="SFUSD data root containing Cleaned/programs_<year>.csv",
     )
     parser.add_argument(

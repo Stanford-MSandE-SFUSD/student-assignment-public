@@ -2,7 +2,7 @@
 # run_models_estimates.sh
 #
 # Focused DA pipeline for SFUSD-Choice-public estimate models.
-# Default settings (scripts/settings/models_cluster.env) reproduce the
+# Default settings (scripts/settings/models_local.env) reproduce the
 # alternative / baseline / selected × k1/k3/k5 runs on years 2223 (in-sample) and 2324
 # (out-of-sample), with list-length variants 0.8/0.7/0.6*real and 7, plus
 # the status_quo_real reference runs.
@@ -24,7 +24,7 @@
 #
 # Options:
 #   --settings FILE   Settings file to source
-#                     (default: scripts/settings/models_cluster.env)
+#                     (default: scripts/settings/models_local.env)
 #   --no-generate     Skip custom config generation
 #   --no-simulate     Skip simulation step
 #   --no-analyze      Skip analyze_trends step
@@ -44,7 +44,7 @@ DO_SIMULATE=true
 DO_ANALYZE=true
 SKIP_EXISTING=false
 DRY_RUN=false
-SETTINGS_FILE="${SCRIPT_DIR}/settings/models_cluster.env"
+SETTINGS_FILE="${SCRIPT_DIR}/settings/models_local.env"
 
 # -- Parse arguments ---------------------------------------------------------
 while [[ $# -gt 0 ]]; do
@@ -143,7 +143,7 @@ if $DO_GENERATE; then
         cfg_file="${CFG_DIR}/${RUN_LABEL}.yaml"
         run_folder="$(_run_folder "$RUN_LABEL")"
 
-        local_student="$(_abs "${STUDENT_DIR}/student_${TEST_YEAR}_filtered.csv")"
+        local_student="$(_abs "${STUDENT_DIR}/r1_filter_student_without_specialprogs_${TEST_YEAR}.csv")"
         local_program="$(_abs "${PROGRAM_DIR}/programs_without_specialprogs_${TEST_YEAR}.csv")"
         school_data="${SCHOOL_DATA_DIR_ABS}/schools_rehauled_${TEST_YEAR}.csv"
 
@@ -285,7 +285,7 @@ HEADER
                 continue
             fi
             run_folder="$(_run_folder "$RUN_LABEL")"
-            local_student="$(_abs "${STUDENT_DIR}/student_${TEST_YEAR}_filtered.csv")"
+            local_student="$(_abs "${STUDENT_DIR}/r1_filter_student_without_specialprogs_${TEST_YEAR}.csv")"
             local_program="$(_abs "${PROGRAM_DIR}/programs_without_specialprogs_${TEST_YEAR}.csv")"
 
             cat >> "$ANALYSIS_CFG" << YAML

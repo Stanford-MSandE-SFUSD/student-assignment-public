@@ -18,7 +18,6 @@ import yaml
 
 from ..definitions import (
     BASE_CONFIG_NAME,
-    CLUSTER_PATH_CONFIG_NAME,
     CONFIG_SCHEMA_NAME,
     CONFIGS_DIR,
     LOCAL_PATH_CONFIG_NAME,
@@ -93,13 +92,11 @@ class Configerator:
             self._config["subconfig-name"] = name
 
         def _get_path_config(self):
-            """Get the path to path_config depending on environment.
+            """Return the path-config YAML used for machine-specific paths.
 
-            Returns:
-                str: The path to path_config file.
+            Always ``configs/local_path_config.yaml`` (or override via your
+            ``configs/<user>.config.yaml``).
             """
-            if self._is_on_cluster():
-                return f"{CONFIGS_DIR}{CLUSTER_PATH_CONFIG_NAME}"
             return f"{CONFIGS_DIR}{LOCAL_PATH_CONFIG_NAME}"
 
         def _load_yaml(self, path):
@@ -108,14 +105,6 @@ class Configerator:
             """
             with open(path) as yf:
                 return yaml.full_load(yf)
-
-        def _is_on_cluster(self):
-            """Check if the code is currently running on cluster.
-
-            Returns:
-                boolean: true if the code is running on cluster, false otherwise.
-            """
-            return "soal" in os.popen("hostname").read()
 
         def _validate_schema(self, data, schema_path):
             schema = yamale.make_schema(schema_path)

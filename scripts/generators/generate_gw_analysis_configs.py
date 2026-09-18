@@ -17,7 +17,7 @@ import yaml
 # ── Constants ────────────────────────────────────────────────────────
 
 DATA_ROOT = Path("local-data/local-runs/gw_estimates_runs")
-STUDENT_FILTER = Path("local-data/student_filter")
+STUDENT_CLEANED = Path("<SFUSD_DATA_PATH>/Data/Cleaned")
 PROGRAM_FILTER = Path("local-data/program_filter")
 CONFIG_OUT = Path("configs/gw_estimates")
 
@@ -127,7 +127,7 @@ def make_run_entry(
     """
     year_int = year_str_to_int(year_str)
     folder = f"./{DATA_ROOT}/{exp}/{year_str}/{policy}"
-    student = str(STUDENT_FILTER / f"student_{year_str}_filtered.csv")
+    student = str(STUDENT_CLEANED / f"r1_filter_student_without_specialprogs_{year_str}.csv")
     program = str(
         PROGRAM_FILTER / f"programs_without_specialprogs_{year_str}.csv"
     )

@@ -186,11 +186,9 @@ def _year_data_paths(year_str: str) -> dict:
         Dict with keys 'student-data', 'program-data', 'school-data'.
     """
     return {
-        "student-data": str(
-            PROJECT_ROOT
-            / "local-data"
-            / "student_filter"
-            / f"student_{year_str}_filtered.csv"
+        "student-data": (
+            f"<SFUSD_DATA_PATH>/Data/Cleaned/"
+            f"r1_filter_student_without_specialprogs_{year_str}.csv"
         ),
         "program-data": str(
             PROJECT_ROOT
@@ -331,8 +329,8 @@ def main(
     student_path = (
         PROJECT_ROOT
         / "local-data"
-        / "student_filter"
-        / f"student_{year}_filtered.csv"
+        / "cleaned"
+        / f"r1_filter_student_without_specialprogs_{year}.csv"
     )
     log.info("Loading student data from %s", student_path)
     df_raw = pd.read_csv(student_path, low_memory=False)

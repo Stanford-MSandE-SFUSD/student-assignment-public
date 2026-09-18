@@ -5,97 +5,97 @@ runs:
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/small_zones+no_reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: small_zones+reserves
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/small_zones+reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: small_zones+reserves_05frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/small_zones+reserves_05frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: small_zones+reserves_06frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/small_zones+reserves_06frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: medium_zones+no_reserves
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/medium_zones+no_reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: medium_zones+reserves
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/medium_zones+reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: medium_zones+reserves_05frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/medium_zones+reserves_05frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: medium_zones+reserves_06frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/medium_zones+reserves_06frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: distance_05_1_2+reserves
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/distance_05_1_2+reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: distance_05_1_2+reserves_05frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/distance_05_1_2+reserves_05frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: distance_05_1_2+reserves_06frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/distance_05_1_2+reserves_06frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: status_quo
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/status_quo
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: status_quo+guardrails
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/status_quo+guardrails
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: status_quo+reserves
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/status_quo+reserves
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: status_quo+reserves_05frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/status_quo+reserves_05frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: status_quo+reserves_06frl
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/calibrated_extended_2223/status_quo+reserves_06frl
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
 single_metrics:
   - Unassigned

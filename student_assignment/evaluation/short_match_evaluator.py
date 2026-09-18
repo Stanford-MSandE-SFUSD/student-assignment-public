@@ -5,10 +5,10 @@ Created 12/11/2022
 
 Moved from Model_Analysis/Python_Scripts/Short_Match_Evaluator.py and
 parametrized: the schools lat/lon file and the optional equity-block
-``.npy`` are constructor arguments instead of hardcoded cluster paths
+``.npy`` are constructor arguments instead of hardcoded data paths
 (configure them via ``schools_data`` / ``new_ctip_path`` in the
-analyze_trends config). Legacy cluster defaults are kept below as
-clearly-marked fallbacks so older local workflows keep working.
+analyze_trends config). Placeholder defaults are kept below as
+fallbacks so older local workflows keep working.
 """
 
 import csv
@@ -35,16 +35,16 @@ logger = logging.getLogger(__name__)
 
 AALPI = ["Black", "Hispanic", "Pacific Islander"]
 
-# Legacy cluster paths, used only when the caller does not provide the
+# Default paths, used only when the caller does not provide the
 # corresponding constructor argument. Prefer setting ``schools_data`` /
 # ``new_ctip_path`` in the analyze_trends config (see
-# scripts/settings/models_cluster.env).
+# scripts/settings/models_local.env).
 LEGACY_SCHOOLS_LATLON_PATH = (
-    "/share/data/school_choice/Data/2025_cleaned_data/Cleaned_new/"
+    "<SFUSD_DATA_PATH>/Data/2025_cleaned_data/Cleaned_new/"
     "schools_rehauled_withMissionBay_2324.csv"
 )
 LEGACY_NEW_CTIP_PATH = (
-    "/share/data/school_choice/Data/2025_cleaned_data/Cleaned_new/ETB_2024.npy"
+    "<SFUSD_DATA_PATH>/Data/2025_cleaned_data/Cleaned_new/ETB_2024.npy"
 )
 
 
@@ -95,8 +95,8 @@ class MatchEvaluator:
         if schools_latlon_path is None:
             schools_latlon_path = LEGACY_SCHOOLS_LATLON_PATH
             logger.warning(
-                "No schools_latlon_path provided — falling back to legacy "
-                "cluster path %s. Set `schools_data` in the analysis config.",
+                "No schools_latlon_path provided — falling back to default "
+                "path %s. Set `schools_data` in the analysis config.",
                 schools_latlon_path,
             )
         self.schools_latlon = pd.read_csv(schools_latlon_path, sep=",")

@@ -1,13 +1,13 @@
-"""End-to-end smoke test of the alternative/baseline/selected estimates pipeline.
+"""End-to-end smoke test of the estimates pipeline.
 
 Runs the real tracked pipeline script (scripts/run_models_estimates.sh)
-at tiny scale against the committed fake dataset in
-tests/fixtures/fake_2223/:
+at tiny scale against the committed small dataset in
+tests/fixtures/small_2223/:
 
     config generation -> run_custom_config.py (DA simulation)
     -> analyze_trends.py -> metrics_comparison.xlsx
 
-Because every input lives in the repository (no /share/data, no real
+Because every input lives in the repository (no external shared-data mounts, no real
 student records), this test also proves that a fresh clone of the branch
 is self-sufficient — see scripts/test_clean_checkout.sh.
 
@@ -26,14 +26,14 @@ import pytest
 REPO_ROOT = Path(__file__).resolve().parents[1]
 PIPELINE_SCRIPT = REPO_ROOT / "scripts" / "run_models_estimates.sh"
 TEST_SETTINGS = REPO_ROOT / "scripts" / "settings" / "models_test.env"
-FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures" / "fake_2223"
+FIXTURES_DIR = REPO_ROOT / "tests" / "fixtures" / "small_2223"
 
-# Run labels produced by the test settings (1 fake model x 1 k-value x
+# Run labels produced by the test settings (1 small model x 1 k-value x
 # in-sample year x 2 list-length variants + the status_quo_real reference).
 EXPECTED_RUN_LABELS = [
     "status_quo_real_2223",
-    "selectedfake_2223_k1_prog_gesplit_2223_ll0p8",
-    "selectedfake_2223_k1_prog_gesplit_2223_ll7",
+    "selectedsmall_2223_k1_prog_gesplit_2223_ll0p8",
+    "selectedsmall_2223_k1_prog_gesplit_2223_ll7",
 ]
 UTILITY_RUN_LABELS = EXPECTED_RUN_LABELS[1:]
 # Test settings use ITER_START=0, ITER_END=2 -> iterations 0 and 1.
@@ -94,12 +94,12 @@ def _run_pipeline(env: dict[str, str], *extra_args: str):
 def test_fixtures_present():
     """All committed fake-data files must exist."""
     expected_files = [
-        FIXTURES_DIR / "student_2223_filtered.csv",
+        FIXTURES_DIR / "r1_filter_student_without_specialprogs_2223.csv",
         FIXTURES_DIR / "programs_without_specialprogs_2223.csv",
         FIXTURES_DIR / "Cleaned" / "schools_rehauled_2223.csv",
         FIXTURES_DIR
         / "models"
-        / "selectedfake_2223_k1_prog_gesplit"
+        / "selectedsmall_2223_k1_prog_gesplit"
         / "estimates_2223.csv",
         FIXTURES_DIR / "zones" / "concept1zones.csv",
     ]

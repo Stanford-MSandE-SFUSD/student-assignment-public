@@ -1,0 +1,23 @@
+# Local / generated artifacts — never commit district microdata or run outputs
+local-data/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# Auto-generated per-user path configs (may point at confidential data)
+configs/*.config.yaml
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

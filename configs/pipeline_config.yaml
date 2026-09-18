@@ -17,11 +17,11 @@ paths:
   student-data: <STUDENT_ASSIGNMENT_PATH>/local-data/pipeline_runs/train_${train_year}_test_${test_year}/r1_students_filtered.csv
 
   # Program and school data
-  program-data: /share/data/school_choice/Data/Cleaned/programs_${year}.csv
-  school-data: /share/data/school_choice/Data/Cleaned/schools_rehauled_${year}.csv
+  program-data: <SFUSD_DATA_PATH>/Data/Cleaned/programs_${year}.csv
+  school-data: <SFUSD_DATA_PATH>/Data/Cleaned/schools_rehauled_${year}.csv
 
   # Base path for relative paths
-  sfusd: /share/data/school_choice/Data/
+  sfusd: <SFUSD_DATA_PATH>/Data/
 
   # Output folder for assignments
   assignment-folder: <STUDENT_ASSIGNMENT_PATH>/local-data/pipeline_runs/train_${train_year}_test_${test_year}/
@@ -31,13 +31,13 @@ paths:
 
   # Zone files (for future use)
   zone-files:
-    10zone: /share/data/school_choice/simulation-files/zones/10-zone-11_BG.csv
-    13zone: /share/data/school_choice/simulation-files/zones/13-zone-7_BG.csv
-    18zone_1: /share/data/school_choice/simulation-files/zones/18-zone-1_1_BG.csv
-    18zone_2: /share/data/school_choice/simulation-files/zones/18-zone-1_2_BG.csv
-    59zone: /share/data/school_choice/simulation-files/zones/59-zone-1_B.csv
-    6zone-1: /share/data/school_choice/simulation-files/zones/6-zone-1_BG.csv
-    Con1: /share/data/school_choice/simulation-files/zones/concept1zones.csv
+    10zone: <SFUSD_DATA_PATH>/simulation-files/zones/10-zone-11_BG.csv
+    13zone: <SFUSD_DATA_PATH>/simulation-files/zones/13-zone-7_BG.csv
+    18zone_1: <SFUSD_DATA_PATH>/simulation-files/zones/18-zone-1_1_BG.csv
+    18zone_2: <SFUSD_DATA_PATH>/simulation-files/zones/18-zone-1_2_BG.csv
+    59zone: <SFUSD_DATA_PATH>/simulation-files/zones/59-zone-1_B.csv
+    6zone-1: <SFUSD_DATA_PATH>/simulation-files/zones/6-zone-1_BG.csv
+    Con1: <SFUSD_DATA_PATH>/simulation-files/zones/concept1zones.csv
 
 # Utility model configuration
 utility-model:

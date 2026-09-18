@@ -1,0 +1,58 @@
+# Table 1 (main text) — seven policy columns under Model A (t14).
+#
+# Usage (after setting paths to your local cleaned data + estimates):
+#   uv run python run_custom_config.py --config-path configs/paper/table1_config.yaml
+#
+# Then aggregate metrics:
+#   uv run python scripts/analysis/analyze_trends.py --config <analysis.yaml>
+#
+# Replace placeholder paths below. Do not commit student-level estimates.
+
+desig_after_mainround: false
+grade: KG
+year: 23
+r1-only: true
+random-seed: 2023
+remove-special-lps: true
+save-assignment: true
+save-preference-matrix: true
+
+iterations:
+  start: 0
+  end: 25
+
+rounds-merged-options:
+  - 0
+
+utility-model:
+  enable: true
+  designate-lp-for-all: false
+  list-length: 0.8*round(real_length)
+
+paths:
+  # Point sfusd at a tree that contains Cleaned/ (or override student/program/school below).
+  sfusd: <STUDENT_ASSIGNMENT_PATH>/local-data/
+  student-save: <STUDENT_ASSIGNMENT_PATH>/local-data/Precomputed/
+  assignment-folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/table1_model_a/
+  # Model A (t14): train 2022–23 → simulate 2023–24 utilities
+  estimate-path: <SFUSD_CHOICE_PATH>/local_outputs/models/t14_2223_k1_prog_gesplit/estimates_2324.csv
+  student-data: <STUDENT_ASSIGNMENT_PATH>/local-data/cleaned/r1_filter_student_without_specialprogs_2324.csv
+  program-data: <STUDENT_ASSIGNMENT_PATH>/local-data/cleaned/programs_without_specialprogs_2324.csv
+  school-data: <STUDENT_ASSIGNMENT_PATH>/local-data/cleaned/schools_rehauled_withMissionBay_2324.csv
+  zone-files:
+    # Paper zone maps under data/zones/table1/ (Census block-group FIPS lists)
+    13-0.25-2500_BG: data/zones/table1/13-0.25-2500_BG.csv
+    6-0.10-1430_BG: data/zones/table1/6-0.10-1430_BG.csv
+    10-0.15-2250_BG: data/zones/table1/10-0.15-2250_BG.csv
+    # Dist Priority uses Con1 (attendance-area Concept 1)
+    Con1: data/zones/table1/concept1zones.csv
+
+# Table 1 column order
+subconfigs:
+  - status_quo
+  - 13-0.25-2500_BG+no_reserves
+  - 13-0.25-2500_BG+reserves_05frl
+  - 6-0.10-1430_BG+no_reserves
+  - 6-0.10-1430_BG+reserves_05frl
+  - distance_05_1_2+reserves_05frl
+  - status_quo+reserves_05frl

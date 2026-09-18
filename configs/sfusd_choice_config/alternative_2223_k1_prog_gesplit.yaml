@@ -5,37 +5,37 @@ runs:
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/alternative_2223_k1_prog_gesplit_2122/status_quo
     year: 21
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2122.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2122_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2122.csv
 
   - label: "status_quo_real_2122"
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/status_quo_real_2122/status_quo_real
     year: 21
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2122.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2122_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2122.csv
 
   - label: "alternative_2223_k1_prog_gesplit_2223"
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/alternative_2223_k1_prog_gesplit_2223/status_quo
     year: 22
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2223.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2223_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2223.csv
 
   - label: "status_quo_real_2223"
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/status_quo_real_2223/status_quo_real
     year: 22
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2223.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2223_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2223.csv
 
   - label: "alternative_2223_k1_prog_gesplit_2324"
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/alternative_2223_k1_prog_gesplit_2324/status_quo
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
   - label: "status_quo_real_2324"
     folder: <STUDENT_ASSIGNMENT_PATH>/local-data/local-runs/sfusd_choice_config_runs/alternative_2223_k1_prog_gesplit/status_quo_real_2324/status_quo_real
     year: 23
     program_data: <STUDENT_ASSIGNMENT_PATH>/local-data/program_filter/programs_without_specialprogs_2324.csv
-    student_data: <STUDENT_ASSIGNMENT_PATH>/local-data/student_filter/student_2324_filtered.csv
+    student_data: <SFUSD_DATA_PATH>/Data/Cleaned/r1_filter_student_without_specialprogs_2324.csv
 
 row_order:
     - "Distance Av (All Assigned)"
