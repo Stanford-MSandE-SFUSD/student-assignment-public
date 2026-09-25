@@ -1,0 +1,6817 @@
+{
+ "blockgroup_attributes": {
+  "60750101001": {
+   "freelunch_prob": 0.445,
+   "median_hh_income": 55880,
+   "reducedlunch_prob": 0.0
+  },
+  "60750101002": {
+   "freelunch_prob": 0.445,
+   "median_hh_income": 55880,
+   "reducedlunch_prob": 0.0
+  },
+  "60750102001": {
+   "freelunch_prob": 0.261,
+   "median_hh_income": 152085,
+   "reducedlunch_prob": 0.0
+  },
+  "60750102002": {
+   "freelunch_prob": 0.358,
+   "median_hh_income": 144358,
+   "reducedlunch_prob": 0.0
+  },
+  "60750102003": {
+   "freelunch_prob": 0.261,
+   "median_hh_income": 152085,
+   "reducedlunch_prob": 0.0
+  },
+  "60750103001": {
+   "freelunch_prob": 0.182,
+   "median_hh_income": 146879,
+   "reducedlunch_prob": 0.0
+  },
+  "60750103002": {
+   "freelunch_prob": 0.182,
+   "median_hh_income": 146879,
+   "reducedlunch_prob": 0.0
+  },
+  "60750103003": {
+   "freelunch_prob": 0.182,
+   "median_hh_income": 146879,
+   "reducedlunch_prob": 0.0
+  },
+  "60750104001": {
+   "freelunch_prob": 0.383,
+   "median_hh_income": 153835,
+   "reducedlunch_prob": 0.0
+  },
+  "60750104002": {
+   "freelunch_prob": 0.383,
+   "median_hh_income": 153835,
+   "reducedlunch_prob": 0.0
+  },
+  "60750104003": {
+   "freelunch_prob": 0.383,
+   "median_hh_income": 153835,
+   "reducedlunch_prob": 0.0
+  },
+  "60750105001": {
+   "freelunch_prob": 0.803,
+   "median_hh_income": 135288,
+   "reducedlunch_prob": 0.0
+  },
+  "60750105002": {
+   "freelunch_prob": 0.69,
+   "median_hh_income": 135294,
+   "reducedlunch_prob": 0.0
+  },
+  "60750106001": {
+   "freelunch_prob": 0.721,
+   "median_hh_income": 67054,
+   "reducedlunch_prob": 0.0
+  },
+  "60750106002": {
+   "freelunch_prob": 0.721,
+   "median_hh_income": 67054,
+   "reducedlunch_prob": 0.0
+  },
+  "60750106003": {
+   "freelunch_prob": 0.721,
+   "median_hh_income": 67054,
+   "reducedlunch_prob": 0.0
+  },
+  "60750107001": {
+   "freelunch_prob": 0.773,
+   "median_hh_income": 23976,
+   "reducedlunch_prob": 0.0
+  },
+  "60750107002": {
+   "freelunch_prob": 0.773,
+   "median_hh_income": 23976,
+   "reducedlunch_prob": 0.0
+  },
+  "60750107003": {
+   "freelunch_prob": 0.773,
+   "median_hh_income": 23976,
+   "reducedlunch_prob": 0.0
+  },
+  "60750107004": {
+   "freelunch_prob": 0.773,
+   "median_hh_income": 23976,
+   "reducedlunch_prob": 0.0
+  },
+  "60750108001": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 133256,
+   "reducedlunch_prob": 0.0
+  },
+  "60750108002": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 133256,
+   "reducedlunch_prob": 0.0
+  },
+  "60750108003": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 133256,
+   "reducedlunch_prob": 0.0
+  },
+  "60750109001": {
+   "freelunch_prob": 0.181,
+   "median_hh_income": 166575,
+   "reducedlunch_prob": 0.0
+  },
+  "60750109002": {
+   "freelunch_prob": 0.226,
+   "median_hh_income": 172759,
+   "reducedlunch_prob": 0.0
+  },
+  "60750110001": {
+   "freelunch_prob": 0.672,
+   "median_hh_income": 119934,
+   "reducedlunch_prob": 0.0
+  },
+  "60750110002": {
+   "freelunch_prob": 0.672,
+   "median_hh_income": 119934,
+   "reducedlunch_prob": 0.0
+  },
+  "60750110003": {
+   "freelunch_prob": 0.672,
+   "median_hh_income": 119934,
+   "reducedlunch_prob": 0.0
+  },
+  "60750111001": {
+   "freelunch_prob": 0.61,
+   "median_hh_income": 107435,
+   "reducedlunch_prob": 0.0
+  },
+  "60750111002": {
+   "freelunch_prob": 0.611,
+   "median_hh_income": 109987,
+   "reducedlunch_prob": 0.0
+  },
+  "60750111003": {
+   "freelunch_prob": 0.611,
+   "median_hh_income": 109987,
+   "reducedlunch_prob": 0.0
+  },
+  "60750112001": {
+   "freelunch_prob": 0.634,
+   "median_hh_income": 140720,
+   "reducedlunch_prob": 0.0
+  },
+  "60750112002": {
+   "freelunch_prob": 0.634,
+   "median_hh_income": 140720,
+   "reducedlunch_prob": 0.0
+  },
+  "60750113001": {
+   "freelunch_prob": 0.831,
+   "median_hh_income": 50449,
+   "reducedlunch_prob": 0.0
+  },
+  "60750113002": {
+   "freelunch_prob": 0.726,
+   "median_hh_income": 20391,
+   "reducedlunch_prob": 0.0
+  },
+  "60750117001": {
+   "freelunch_prob": 0.472,
+   "median_hh_income": 53684,
+   "reducedlunch_prob": 0.0
+  },
+  "60750118001": {
+   "freelunch_prob": 0.769,
+   "median_hh_income": 37656,
+   "reducedlunch_prob": 0.0
+  },
+  "60750119011": {
+   "freelunch_prob": 0.478,
+   "median_hh_income": 104463,
+   "reducedlunch_prob": 0.0
+  },
+  "60750119012": {
+   "freelunch_prob": 0.478,
+   "median_hh_income": 104463,
+   "reducedlunch_prob": 0.0
+  },
+  "60750119021": {
+   "freelunch_prob": 0.733,
+   "median_hh_income": 83438,
+   "reducedlunch_prob": 0.0
+  },
+  "60750120001": {
+   "freelunch_prob": 0.674,
+   "median_hh_income": 54840,
+   "reducedlunch_prob": 0.0
+  },
+  "60750120002": {
+   "freelunch_prob": 0.788,
+   "median_hh_income": 55938,
+   "reducedlunch_prob": 0.0
+  },
+  "60750121001": {
+   "freelunch_prob": 0.661,
+   "median_hh_income": 76084,
+   "reducedlunch_prob": 0.0
+  },
+  "60750121002": {
+   "freelunch_prob": 0.661,
+   "median_hh_income": 76084,
+   "reducedlunch_prob": 0.0
+  },
+  "60750122011": {
+   "freelunch_prob": 0.678,
+   "median_hh_income": 83125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750122012": {
+   "freelunch_prob": 0.725,
+   "median_hh_income": 67596,
+   "reducedlunch_prob": 0.0
+  },
+  "60750122021": {
+   "freelunch_prob": 0.704,
+   "median_hh_income": 31538,
+   "reducedlunch_prob": 0.0
+  },
+  "60750123011": {
+   "freelunch_prob": 0.708,
+   "median_hh_income": 30104,
+   "reducedlunch_prob": 0.0
+  },
+  "60750123012": {
+   "freelunch_prob": 0.708,
+   "median_hh_income": 30104,
+   "reducedlunch_prob": 0.0
+  },
+  "60750123021": {
+   "freelunch_prob": 0.507,
+   "median_hh_income": 66246,
+   "reducedlunch_prob": 0.0
+  },
+  "60750123022": {
+   "freelunch_prob": 0.507,
+   "median_hh_income": 66246,
+   "reducedlunch_prob": 0.0
+  },
+  "60750124011": {
+   "freelunch_prob": 0.753,
+   "median_hh_income": 33176,
+   "reducedlunch_prob": 0.0
+  },
+  "60750124012": {
+   "freelunch_prob": 0.76,
+   "median_hh_income": 34722,
+   "reducedlunch_prob": 0.0
+  },
+  "60750124021": {
+   "freelunch_prob": 0.706,
+   "median_hh_income": 76000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750124022": {
+   "freelunch_prob": 0.706,
+   "median_hh_income": 76000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750124023": {
+   "freelunch_prob": 0.738,
+   "median_hh_income": 76000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750125011": {
+   "freelunch_prob": 0.757,
+   "median_hh_income": 32787,
+   "reducedlunch_prob": 0.0
+  },
+  "60750125012": {
+   "freelunch_prob": 0.796,
+   "median_hh_income": 27777,
+   "reducedlunch_prob": 0.0
+  },
+  "60750125021": {
+   "freelunch_prob": 0.809,
+   "median_hh_income": 18914,
+   "reducedlunch_prob": 0.0
+  },
+  "60750125022": {
+   "freelunch_prob": 0.809,
+   "median_hh_income": 18914,
+   "reducedlunch_prob": 0.0
+  },
+  "60750126011": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 149485,
+   "reducedlunch_prob": 0.0
+  },
+  "60750126021": {
+   "freelunch_prob": 0.05,
+   "median_hh_income": 132281,
+   "reducedlunch_prob": 0.0
+  },
+  "60750126022": {
+   "freelunch_prob": 0.05,
+   "median_hh_income": 132281,
+   "reducedlunch_prob": 0.0
+  },
+  "60750127001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 150704,
+   "reducedlunch_prob": 0.0
+  },
+  "60750127002": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 150704,
+   "reducedlunch_prob": 0.0
+  },
+  "60750127003": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 150704,
+   "reducedlunch_prob": 0.0
+  },
+  "60750128001": {
+   "freelunch_prob": 0.222,
+   "median_hh_income": 143552,
+   "reducedlunch_prob": 0.0
+  },
+  "60750128003": {
+   "freelunch_prob": 0.222,
+   "median_hh_income": 143552,
+   "reducedlunch_prob": 0.0
+  },
+  "60750128004": {
+   "freelunch_prob": 0.222,
+   "median_hh_income": 143552,
+   "reducedlunch_prob": 0.0
+  },
+  "60750129011": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 154653,
+   "reducedlunch_prob": 0.0
+  },
+  "60750129012": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 154653,
+   "reducedlunch_prob": 0.0
+  },
+  "60750129022": {
+   "freelunch_prob": 0.056,
+   "median_hh_income": 152966,
+   "reducedlunch_prob": 0.0
+  },
+  "60750129023": {
+   "freelunch_prob": 0.056,
+   "median_hh_income": 152966,
+   "reducedlunch_prob": 0.0
+  },
+  "60750130001": {
+   "freelunch_prob": 0.319,
+   "median_hh_income": 180191,
+   "reducedlunch_prob": 0.0
+  },
+  "60750130002": {
+   "freelunch_prob": 0.319,
+   "median_hh_income": 180191,
+   "reducedlunch_prob": 0.0
+  },
+  "60750130003": {
+   "freelunch_prob": 0.319,
+   "median_hh_income": 180191,
+   "reducedlunch_prob": 0.0
+  },
+  "60750131011": {
+   "freelunch_prob": 0.067,
+   "median_hh_income": 183891,
+   "reducedlunch_prob": 0.0
+  },
+  "60750131012": {
+   "freelunch_prob": 0.067,
+   "median_hh_income": 183891,
+   "reducedlunch_prob": 0.0
+  },
+  "60750131021": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 123393,
+   "reducedlunch_prob": 0.0
+  },
+  "60750131022": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 139675,
+   "reducedlunch_prob": 0.0
+  },
+  "60750132001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 182895,
+   "reducedlunch_prob": 0.0
+  },
+  "60750132003": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 182895,
+   "reducedlunch_prob": 0.0
+  },
+  "60750133002": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 137659,
+   "reducedlunch_prob": 0.0
+  },
+  "60750133003": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 137659,
+   "reducedlunch_prob": 0.0
+  },
+  "60750133005": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 137659,
+   "reducedlunch_prob": 0.0
+  },
+  "60750134001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 220446,
+   "reducedlunch_prob": 0.0
+  },
+  "60750134002": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 220446,
+   "reducedlunch_prob": 0.0
+  },
+  "60750134003": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 220446,
+   "reducedlunch_prob": 0.0
+  },
+  "60750135001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 161070,
+   "reducedlunch_prob": 0.0
+  },
+  "60750135002": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 161070,
+   "reducedlunch_prob": 0.0
+  },
+  "60750151001": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 102648,
+   "reducedlunch_prob": 0.0
+  },
+  "60750151002": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 102648,
+   "reducedlunch_prob": 0.0
+  },
+  "60750152001": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 122160,
+   "reducedlunch_prob": 0.0
+  },
+  "60750152002": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 122160,
+   "reducedlunch_prob": 0.0
+  },
+  "60750152003": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 122160,
+   "reducedlunch_prob": 0.0
+  },
+  "60750153001": {
+   "freelunch_prob": 0.2,
+   "median_hh_income": 154078,
+   "reducedlunch_prob": 0.0
+  },
+  "60750153002": {
+   "freelunch_prob": 0.2,
+   "median_hh_income": 154078,
+   "reducedlunch_prob": 0.0
+  },
+  "60750154001": {
+   "freelunch_prob": 0.226,
+   "median_hh_income": 165082,
+   "reducedlunch_prob": 0.0
+  },
+  "60750154002": {
+   "freelunch_prob": 0.226,
+   "median_hh_income": 165082,
+   "reducedlunch_prob": 0.0
+  },
+  "60750154003": {
+   "freelunch_prob": 0.296,
+   "median_hh_income": 98438,
+   "reducedlunch_prob": 0.0
+  },
+  "60750154004": {
+   "freelunch_prob": 0.226,
+   "median_hh_income": 165082,
+   "reducedlunch_prob": 0.0
+  },
+  "60750154005": {
+   "freelunch_prob": 0.149,
+   "median_hh_income": 201806,
+   "reducedlunch_prob": 0.0
+  },
+  "60750155001": {
+   "freelunch_prob": 0.556,
+   "median_hh_income": 96178,
+   "reducedlunch_prob": 0.0
+  },
+  "60750155002": {
+   "freelunch_prob": 0.556,
+   "median_hh_income": 96178,
+   "reducedlunch_prob": 0.0
+  },
+  "60750155003": {
+   "freelunch_prob": 0.556,
+   "median_hh_income": 96178,
+   "reducedlunch_prob": 0.0
+  },
+  "60750156001": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 114077,
+   "reducedlunch_prob": 0.0
+  },
+  "60750156002": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 114077,
+   "reducedlunch_prob": 0.0
+  },
+  "60750156003": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 114077,
+   "reducedlunch_prob": 0.0
+  },
+  "60750157001": {
+   "freelunch_prob": 0.321,
+   "median_hh_income": 110735,
+   "reducedlunch_prob": 0.0
+  },
+  "60750157002": {
+   "freelunch_prob": 0.224,
+   "median_hh_income": 178056,
+   "reducedlunch_prob": 0.0
+  },
+  "60750157003": {
+   "freelunch_prob": 0.21,
+   "median_hh_income": 122132,
+   "reducedlunch_prob": 0.0
+  },
+  "60750157004": {
+   "freelunch_prob": 0.267,
+   "median_hh_income": 137453,
+   "reducedlunch_prob": 0.0
+  },
+  "60750158011": {
+   "freelunch_prob": 0.432,
+   "median_hh_income": 86274,
+   "reducedlunch_prob": 0.0
+  },
+  "60750158012": {
+   "freelunch_prob": 0.334,
+   "median_hh_income": 107594,
+   "reducedlunch_prob": 0.0
+  },
+  "60750158013": {
+   "freelunch_prob": 0.637,
+   "median_hh_income": 74635,
+   "reducedlunch_prob": 0.0
+  },
+  "60750158021": {
+   "freelunch_prob": 0.312,
+   "median_hh_income": 136930,
+   "reducedlunch_prob": 0.0
+  },
+  "60750158022": {
+   "freelunch_prob": 0.312,
+   "median_hh_income": 136930,
+   "reducedlunch_prob": 0.0
+  },
+  "60750159001": {
+   "freelunch_prob": 0.329,
+   "median_hh_income": 79643,
+   "reducedlunch_prob": 0.0
+  },
+  "60750159002": {
+   "freelunch_prob": 0.404,
+   "median_hh_income": 80028,
+   "reducedlunch_prob": 0.0
+  },
+  "60750160001": {
+   "freelunch_prob": 0.625,
+   "median_hh_income": 76989,
+   "reducedlunch_prob": 0.0
+  },
+  "60750161001": {
+   "freelunch_prob": 0.716,
+   "median_hh_income": 22870,
+   "reducedlunch_prob": 0.0
+  },
+  "60750161002": {
+   "freelunch_prob": 0.716,
+   "median_hh_income": 22870,
+   "reducedlunch_prob": 0.0
+  },
+  "60750161003": {
+   "freelunch_prob": 0.696,
+   "median_hh_income": 19056,
+   "reducedlunch_prob": 0.0
+  },
+  "60750161004": {
+   "freelunch_prob": 0.778,
+   "median_hh_income": 25863,
+   "reducedlunch_prob": 0.0
+  },
+  "60750162001": {
+   "freelunch_prob": 0.456,
+   "median_hh_income": 120962,
+   "reducedlunch_prob": 0.0
+  },
+  "60750162002": {
+   "freelunch_prob": 0.456,
+   "median_hh_income": 120962,
+   "reducedlunch_prob": 0.0
+  },
+  "60750162003": {
+   "freelunch_prob": 0.456,
+   "median_hh_income": 120962,
+   "reducedlunch_prob": 0.0
+  },
+  "60750163001": {
+   "freelunch_prob": 0.312,
+   "median_hh_income": 150395,
+   "reducedlunch_prob": 0.0
+  },
+  "60750163002": {
+   "freelunch_prob": 0.312,
+   "median_hh_income": 150395,
+   "reducedlunch_prob": 0.0
+  },
+  "60750163003": {
+   "freelunch_prob": 0.205,
+   "median_hh_income": 151667,
+   "reducedlunch_prob": 0.0
+  },
+  "60750164001": {
+   "freelunch_prob": 0.338,
+   "median_hh_income": 173958,
+   "reducedlunch_prob": 0.0
+  },
+  "60750164002": {
+   "freelunch_prob": 0.237,
+   "median_hh_income": 178148,
+   "reducedlunch_prob": 0.0
+  },
+  "60750165001": {
+   "freelunch_prob": 0.187,
+   "median_hh_income": 175900,
+   "reducedlunch_prob": 0.0
+  },
+  "60750165002": {
+   "freelunch_prob": 0.106,
+   "median_hh_income": 184271,
+   "reducedlunch_prob": 0.0
+  },
+  "60750165003": {
+   "freelunch_prob": 0.18,
+   "median_hh_income": 178015,
+   "reducedlunch_prob": 0.0
+  },
+  "60750165004": {
+   "freelunch_prob": 0.187,
+   "median_hh_income": 175900,
+   "reducedlunch_prob": 0.0
+  },
+  "60750166001": {
+   "freelunch_prob": 0.095,
+   "median_hh_income": 171125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750166002": {
+   "freelunch_prob": 0.145,
+   "median_hh_income": 146339,
+   "reducedlunch_prob": 0.0
+  },
+  "60750166003": {
+   "freelunch_prob": 0.125,
+   "median_hh_income": 144405,
+   "reducedlunch_prob": 0.0
+  },
+  "60750166004": {
+   "freelunch_prob": 0.145,
+   "median_hh_income": 146339,
+   "reducedlunch_prob": 0.0
+  },
+  "60750167001": {
+   "freelunch_prob": 0.131,
+   "median_hh_income": 192563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750167002": {
+   "freelunch_prob": 0.131,
+   "median_hh_income": 192563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750167003": {
+   "freelunch_prob": 0.131,
+   "median_hh_income": 192563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750167004": {
+   "freelunch_prob": 0.131,
+   "median_hh_income": 192563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168011": {
+   "freelunch_prob": 0.32,
+   "median_hh_income": 148481,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168012": {
+   "freelunch_prob": 0.32,
+   "median_hh_income": 148481,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168013": {
+   "freelunch_prob": 0.32,
+   "median_hh_income": 148481,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168021": {
+   "freelunch_prob": 0.559,
+   "median_hh_income": 97849,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168022": {
+   "freelunch_prob": 0.559,
+   "median_hh_income": 97849,
+   "reducedlunch_prob": 0.0
+  },
+  "60750168023": {
+   "freelunch_prob": 0.559,
+   "median_hh_income": 97849,
+   "reducedlunch_prob": 0.0
+  },
+  "60750169001": {
+   "freelunch_prob": 0.073,
+   "median_hh_income": 124622,
+   "reducedlunch_prob": 0.0
+  },
+  "60750169002": {
+   "freelunch_prob": 0.083,
+   "median_hh_income": 136979,
+   "reducedlunch_prob": 0.0
+  },
+  "60750170001": {
+   "freelunch_prob": 0.013,
+   "median_hh_income": 203189,
+   "reducedlunch_prob": 0.0
+  },
+  "60750170002": {
+   "freelunch_prob": 0.018,
+   "median_hh_income": 184464,
+   "reducedlunch_prob": 0.0
+  },
+  "60750170003": {
+   "freelunch_prob": 0.013,
+   "median_hh_income": 203189,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171011": {
+   "freelunch_prob": 0.051,
+   "median_hh_income": 199766,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171012": {
+   "freelunch_prob": 0.051,
+   "median_hh_income": 199766,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171013": {
+   "freelunch_prob": 0.051,
+   "median_hh_income": 199766,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171021": {
+   "freelunch_prob": 0.066,
+   "median_hh_income": 176530,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171022": {
+   "freelunch_prob": 0.066,
+   "median_hh_income": 176530,
+   "reducedlunch_prob": 0.0
+  },
+  "60750171023": {
+   "freelunch_prob": 0.119,
+   "median_hh_income": 183636,
+   "reducedlunch_prob": 0.0
+  },
+  "60750176012": {
+   "freelunch_prob": 0.806,
+   "median_hh_income": 27030,
+   "reducedlunch_prob": 0.0
+  },
+  "60750176013": {
+   "freelunch_prob": 0.6,
+   "median_hh_income": 112258,
+   "reducedlunch_prob": 0.0
+  },
+  "60750176014": {
+   "freelunch_prob": 0.607,
+   "median_hh_income": 68220,
+   "reducedlunch_prob": 0.0
+  },
+  "60750176015": {
+   "freelunch_prob": 0.653,
+   "median_hh_income": 68220,
+   "reducedlunch_prob": 0.0
+  },
+  "60750177001": {
+   "freelunch_prob": 0.619,
+   "median_hh_income": 130857,
+   "reducedlunch_prob": 0.0
+  },
+  "60750177002": {
+   "freelunch_prob": 0.722,
+   "median_hh_income": 111964,
+   "reducedlunch_prob": 0.0
+  },
+  "60750178012": {
+   "freelunch_prob": 1.0,
+   "median_hh_income": 100234,
+   "reducedlunch_prob": 0.0
+  },
+  "60750178021": {
+   "freelunch_prob": 0.597,
+   "median_hh_income": 97197,
+   "reducedlunch_prob": 0.0
+  },
+  "60750178022": {
+   "freelunch_prob": 0.613,
+   "median_hh_income": 95913,
+   "reducedlunch_prob": 0.0
+  },
+  "60750179021": {
+   "freelunch_prob": 0.759,
+   "median_hh_income": 54375,
+   "reducedlunch_prob": 0.0
+  },
+  "60750180001": {
+   "freelunch_prob": 0.574,
+   "median_hh_income": 183680,
+   "reducedlunch_prob": 0.0
+  },
+  "60750180002": {
+   "freelunch_prob": 0.54,
+   "median_hh_income": 189271,
+   "reducedlunch_prob": 0.0
+  },
+  "60750201001": {
+   "freelunch_prob": 0.662,
+   "median_hh_income": 62582,
+   "reducedlunch_prob": 0.0
+  },
+  "60750201002": {
+   "freelunch_prob": 0.733,
+   "median_hh_income": 76167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750201003": {
+   "freelunch_prob": 0.694,
+   "median_hh_income": 51471,
+   "reducedlunch_prob": 0.0
+  },
+  "60750201004": {
+   "freelunch_prob": 0.662,
+   "median_hh_income": 34574,
+   "reducedlunch_prob": 0.0
+  },
+  "60750202001": {
+   "freelunch_prob": 0.432,
+   "median_hh_income": 103310,
+   "reducedlunch_prob": 0.0
+  },
+  "60750202002": {
+   "freelunch_prob": 0.524,
+   "median_hh_income": 98333,
+   "reducedlunch_prob": 0.0
+  },
+  "60750202003": {
+   "freelunch_prob": 0.432,
+   "median_hh_income": 103310,
+   "reducedlunch_prob": 0.0
+  },
+  "60750203001": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 146448,
+   "reducedlunch_prob": 0.0
+  },
+  "60750203002": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 146448,
+   "reducedlunch_prob": 0.0
+  },
+  "60750203003": {
+   "freelunch_prob": 0.162,
+   "median_hh_income": 146448,
+   "reducedlunch_prob": 0.0
+  },
+  "60750204011": {
+   "freelunch_prob": 0.167,
+   "median_hh_income": 151100,
+   "reducedlunch_prob": 0.0
+  },
+  "60750204013": {
+   "freelunch_prob": 0.167,
+   "median_hh_income": 151100,
+   "reducedlunch_prob": 0.0
+  },
+  "60750204021": {
+   "freelunch_prob": 0.173,
+   "median_hh_income": 114950,
+   "reducedlunch_prob": 0.0
+  },
+  "60750204022": {
+   "freelunch_prob": 0.55,
+   "median_hh_income": 182167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750205001": {
+   "freelunch_prob": 0.079,
+   "median_hh_income": 150372,
+   "reducedlunch_prob": 0.0
+  },
+  "60750205002": {
+   "freelunch_prob": 0.079,
+   "median_hh_income": 150372,
+   "reducedlunch_prob": 0.0
+  },
+  "60750205003": {
+   "freelunch_prob": 0.079,
+   "median_hh_income": 150372,
+   "reducedlunch_prob": 0.0
+  },
+  "60750206001": {
+   "freelunch_prob": 0.101,
+   "median_hh_income": 168510,
+   "reducedlunch_prob": 0.0
+  },
+  "60750206002": {
+   "freelunch_prob": 0.101,
+   "median_hh_income": 168510,
+   "reducedlunch_prob": 0.0
+  },
+  "60750206003": {
+   "freelunch_prob": 0.095,
+   "median_hh_income": 195227,
+   "reducedlunch_prob": 0.0
+  },
+  "60750206004": {
+   "freelunch_prob": 0.143,
+   "median_hh_income": 148309,
+   "reducedlunch_prob": 0.0
+  },
+  "60750207001": {
+   "freelunch_prob": 0.335,
+   "median_hh_income": 172917,
+   "reducedlunch_prob": 0.0
+  },
+  "60750207002": {
+   "freelunch_prob": 0.37,
+   "median_hh_income": 151696,
+   "reducedlunch_prob": 0.0
+  },
+  "60750207003": {
+   "freelunch_prob": 0.346,
+   "median_hh_income": 166519,
+   "reducedlunch_prob": 0.0
+  },
+  "60750208001": {
+   "freelunch_prob": 0.489,
+   "median_hh_income": 173083,
+   "reducedlunch_prob": 0.0
+  },
+  "60750208002": {
+   "freelunch_prob": 0.587,
+   "median_hh_income": 141081,
+   "reducedlunch_prob": 0.0
+  },
+  "60750208003": {
+   "freelunch_prob": 0.558,
+   "median_hh_income": 131690,
+   "reducedlunch_prob": 0.0
+  },
+  "60750208004": {
+   "freelunch_prob": 0.461,
+   "median_hh_income": 131690,
+   "reducedlunch_prob": 0.0
+  },
+  "60750209001": {
+   "freelunch_prob": 0.534,
+   "median_hh_income": 111806,
+   "reducedlunch_prob": 0.0
+  },
+  "60750209002": {
+   "freelunch_prob": 0.583,
+   "median_hh_income": 128676,
+   "reducedlunch_prob": 0.0
+  },
+  "60750209003": {
+   "freelunch_prob": 0.584,
+   "median_hh_income": 131408,
+   "reducedlunch_prob": 0.0
+  },
+  "60750209004": {
+   "freelunch_prob": 0.584,
+   "median_hh_income": 131408,
+   "reducedlunch_prob": 0.0
+  },
+  "60750210001": {
+   "freelunch_prob": 0.363,
+   "median_hh_income": 163628,
+   "reducedlunch_prob": 0.0
+  },
+  "60750210003": {
+   "freelunch_prob": 0.385,
+   "median_hh_income": 201818,
+   "reducedlunch_prob": 0.0
+  },
+  "60750210004": {
+   "freelunch_prob": 0.363,
+   "median_hh_income": 163628,
+   "reducedlunch_prob": 0.0
+  },
+  "60750211001": {
+   "freelunch_prob": 0.243,
+   "median_hh_income": 179926,
+   "reducedlunch_prob": 0.0
+  },
+  "60750211002": {
+   "freelunch_prob": 0.243,
+   "median_hh_income": 179926,
+   "reducedlunch_prob": 0.0
+  },
+  "60750211003": {
+   "freelunch_prob": 0.243,
+   "median_hh_income": 179926,
+   "reducedlunch_prob": 0.0
+  },
+  "60750211004": {
+   "freelunch_prob": 0.167,
+   "median_hh_income": 176389,
+   "reducedlunch_prob": 0.0
+  },
+  "60750212001": {
+   "freelunch_prob": 0.22,
+   "median_hh_income": 187841,
+   "reducedlunch_prob": 0.0
+  },
+  "60750212002": {
+   "freelunch_prob": 0.133,
+   "median_hh_income": 235417,
+   "reducedlunch_prob": 0.0
+  },
+  "60750212003": {
+   "freelunch_prob": 0.133,
+   "median_hh_income": 146875,
+   "reducedlunch_prob": 0.0
+  },
+  "60750213001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 152863,
+   "reducedlunch_prob": 0.0
+  },
+  "60750213002": {
+   "freelunch_prob": 0.073,
+   "median_hh_income": 160256,
+   "reducedlunch_prob": 0.0
+  },
+  "60750214001": {
+   "freelunch_prob": 0.089,
+   "median_hh_income": 191914,
+   "reducedlunch_prob": 0.0
+  },
+  "60750214002": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 162188,
+   "reducedlunch_prob": 0.0
+  },
+  "60750214003": {
+   "freelunch_prob": 0.111,
+   "median_hh_income": 213672,
+   "reducedlunch_prob": 0.0
+  },
+  "60750215001": {
+   "freelunch_prob": 0.209,
+   "median_hh_income": 210868,
+   "reducedlunch_prob": 0.0
+  },
+  "60750215002": {
+   "freelunch_prob": 0.188,
+   "median_hh_income": 228472,
+   "reducedlunch_prob": 0.0
+  },
+  "60750215003": {
+   "freelunch_prob": 0.304,
+   "median_hh_income": 250001,
+   "reducedlunch_prob": 0.0
+  },
+  "60750215004": {
+   "freelunch_prob": 0.209,
+   "median_hh_income": 210868,
+   "reducedlunch_prob": 0.0
+  },
+  "60750215005": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 250001,
+   "reducedlunch_prob": 0.0
+  },
+  "60750216001": {
+   "freelunch_prob": 0.217,
+   "median_hh_income": 201063,
+   "reducedlunch_prob": 0.0
+  },
+  "60750216002": {
+   "freelunch_prob": 0.195,
+   "median_hh_income": 127065,
+   "reducedlunch_prob": 0.0
+  },
+  "60750217001": {
+   "freelunch_prob": 0.157,
+   "median_hh_income": 159770,
+   "reducedlunch_prob": 0.0
+  },
+  "60750217002": {
+   "freelunch_prob": 0.054,
+   "median_hh_income": 136023,
+   "reducedlunch_prob": 0.0
+  },
+  "60750217003": {
+   "freelunch_prob": 0.271,
+   "median_hh_income": 193885,
+   "reducedlunch_prob": 0.0
+  },
+  "60750218001": {
+   "freelunch_prob": 0.176,
+   "median_hh_income": 182502,
+   "reducedlunch_prob": 0.0
+  },
+  "60750218002": {
+   "freelunch_prob": 0.176,
+   "median_hh_income": 182502,
+   "reducedlunch_prob": 0.0
+  },
+  "60750218003": {
+   "freelunch_prob": 0.272,
+   "median_hh_income": 191250,
+   "reducedlunch_prob": 0.0
+  },
+  "60750218004": {
+   "freelunch_prob": 0.176,
+   "median_hh_income": 182502,
+   "reducedlunch_prob": 0.0
+  },
+  "60750226001": {
+   "freelunch_prob": 0.392,
+   "median_hh_income": 183571,
+   "reducedlunch_prob": 0.0
+  },
+  "60750226002": {
+   "freelunch_prob": 0.234,
+   "median_hh_income": 215769,
+   "reducedlunch_prob": 0.0
+  },
+  "60750227021": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 177609,
+   "reducedlunch_prob": 0.0
+  },
+  "60750227022": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 177609,
+   "reducedlunch_prob": 0.0
+  },
+  "60750227041": {
+   "freelunch_prob": 0.145,
+   "median_hh_income": 192381,
+   "reducedlunch_prob": 0.0
+  },
+  "60750227042": {
+   "freelunch_prob": 0.087,
+   "median_hh_income": 193750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228011": {
+   "freelunch_prob": 0.2,
+   "median_hh_income": 131000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228012": {
+   "freelunch_prob": 0.374,
+   "median_hh_income": 159350,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228013": {
+   "freelunch_prob": 0.373,
+   "median_hh_income": 119657,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228021": {
+   "freelunch_prob": 0.406,
+   "median_hh_income": 127188,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228022": {
+   "freelunch_prob": 0.531,
+   "median_hh_income": 119146,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228031": {
+   "freelunch_prob": 0.546,
+   "median_hh_income": 138070,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228032": {
+   "freelunch_prob": 0.329,
+   "median_hh_income": 119375,
+   "reducedlunch_prob": 0.0
+  },
+  "60750228033": {
+   "freelunch_prob": 0.724,
+   "median_hh_income": 165809,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229011": {
+   "freelunch_prob": 0.486,
+   "median_hh_income": 148243,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229012": {
+   "freelunch_prob": 0.689,
+   "median_hh_income": 74538,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229013": {
+   "freelunch_prob": 0.64,
+   "median_hh_income": 83583,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229021": {
+   "freelunch_prob": 0.512,
+   "median_hh_income": 141336,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229022": {
+   "freelunch_prob": 0.481,
+   "median_hh_income": 135052,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229031": {
+   "freelunch_prob": 0.648,
+   "median_hh_income": 115125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229032": {
+   "freelunch_prob": 0.554,
+   "median_hh_income": 120100,
+   "reducedlunch_prob": 0.0
+  },
+  "60750229033": {
+   "freelunch_prob": 0.545,
+   "median_hh_income": 100750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750230011": {
+   "freelunch_prob": 0.741,
+   "median_hh_income": 53333,
+   "reducedlunch_prob": 0.0
+  },
+  "60750230012": {
+   "freelunch_prob": 0.644,
+   "median_hh_income": 106042,
+   "reducedlunch_prob": 0.0
+  },
+  "60750230013": {
+   "freelunch_prob": 0.626,
+   "median_hh_income": 90347,
+   "reducedlunch_prob": 0.0
+  },
+  "60750230031": {
+   "freelunch_prob": 0.55,
+   "median_hh_income": 123523,
+   "reducedlunch_prob": 0.0
+  },
+  "60750230032": {
+   "freelunch_prob": 0.694,
+   "median_hh_income": 123523,
+   "reducedlunch_prob": 0.0
+  },
+  "60750231021": {
+   "freelunch_prob": 0.706,
+   "median_hh_income": 37206,
+   "reducedlunch_prob": 0.0
+  },
+  "60750231022": {
+   "freelunch_prob": 0.722,
+   "median_hh_income": 37206,
+   "reducedlunch_prob": 0.0
+  },
+  "60750231031": {
+   "freelunch_prob": 0.779,
+   "median_hh_income": 23966,
+   "reducedlunch_prob": 0.0
+  },
+  "60750231032": {
+   "freelunch_prob": 0.801,
+   "median_hh_income": 20227,
+   "reducedlunch_prob": 0.0
+  },
+  "60750232001": {
+   "freelunch_prob": 0.667,
+   "median_hh_income": 104583,
+   "reducedlunch_prob": 0.0
+  },
+  "60750232002": {
+   "freelunch_prob": 0.716,
+   "median_hh_income": 82321,
+   "reducedlunch_prob": 0.0
+  },
+  "60750232003": {
+   "freelunch_prob": 0.632,
+   "median_hh_income": 73600,
+   "reducedlunch_prob": 0.0
+  },
+  "60750233001": {
+   "freelunch_prob": 0.726,
+   "median_hh_income": 60104,
+   "reducedlunch_prob": 0.0
+  },
+  "60750234001": {
+   "freelunch_prob": 0.695,
+   "median_hh_income": 71016,
+   "reducedlunch_prob": 0.0
+  },
+  "60750234002": {
+   "freelunch_prob": 0.677,
+   "median_hh_income": 42557,
+   "reducedlunch_prob": 0.0
+  },
+  "60750251001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 184844,
+   "reducedlunch_prob": 0.0
+  },
+  "60750251002": {
+   "freelunch_prob": 0.02,
+   "median_hh_income": 136964,
+   "reducedlunch_prob": 0.0
+  },
+  "60750251003": {
+   "freelunch_prob": 0.009,
+   "median_hh_income": 154217,
+   "reducedlunch_prob": 0.0
+  },
+  "60750252001": {
+   "freelunch_prob": 0.346,
+   "median_hh_income": 146731,
+   "reducedlunch_prob": 0.0
+  },
+  "60750252002": {
+   "freelunch_prob": 0.236,
+   "median_hh_income": 156181,
+   "reducedlunch_prob": 0.0
+  },
+  "60750252003": {
+   "freelunch_prob": 0.24,
+   "median_hh_income": 140375,
+   "reducedlunch_prob": 0.0
+  },
+  "60750252004": {
+   "freelunch_prob": 0.167,
+   "median_hh_income": 174028,
+   "reducedlunch_prob": 0.0
+  },
+  "60750253001": {
+   "freelunch_prob": 0.425,
+   "median_hh_income": 133440,
+   "reducedlunch_prob": 0.0
+  },
+  "60750253002": {
+   "freelunch_prob": 0.321,
+   "median_hh_income": 138872,
+   "reducedlunch_prob": 0.0
+  },
+  "60750253003": {
+   "freelunch_prob": 0.737,
+   "median_hh_income": 112019,
+   "reducedlunch_prob": 0.0
+  },
+  "60750253004": {
+   "freelunch_prob": 0.508,
+   "median_hh_income": 145000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254011": {
+   "freelunch_prob": 0.561,
+   "median_hh_income": 136458,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254012": {
+   "freelunch_prob": 0.302,
+   "median_hh_income": 146563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254013": {
+   "freelunch_prob": 0.385,
+   "median_hh_income": 127596,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254021": {
+   "freelunch_prob": 0.417,
+   "median_hh_income": 112208,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254022": {
+   "freelunch_prob": 0.384,
+   "median_hh_income": 131563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254023": {
+   "freelunch_prob": 0.412,
+   "median_hh_income": 138732,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254031": {
+   "freelunch_prob": 0.31,
+   "median_hh_income": 110682,
+   "reducedlunch_prob": 0.0
+  },
+  "60750254032": {
+   "freelunch_prob": 0.56,
+   "median_hh_income": 108385,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255001": {
+   "freelunch_prob": 0.338,
+   "median_hh_income": 118866,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255002": {
+   "freelunch_prob": 0.553,
+   "median_hh_income": 86838,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255003": {
+   "freelunch_prob": 0.665,
+   "median_hh_income": 166726,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255004": {
+   "freelunch_prob": 0.534,
+   "median_hh_income": 103894,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255005": {
+   "freelunch_prob": 0.455,
+   "median_hh_income": 80696,
+   "reducedlunch_prob": 0.0
+  },
+  "60750255006": {
+   "freelunch_prob": 0.446,
+   "median_hh_income": 156516,
+   "reducedlunch_prob": 0.0
+  },
+  "60750256001": {
+   "freelunch_prob": 0.64,
+   "median_hh_income": 94137,
+   "reducedlunch_prob": 0.0
+  },
+  "60750256002": {
+   "freelunch_prob": 0.492,
+   "median_hh_income": 93599,
+   "reducedlunch_prob": 0.0
+  },
+  "60750256003": {
+   "freelunch_prob": 0.185,
+   "median_hh_income": 110083,
+   "reducedlunch_prob": 0.0
+  },
+  "60750256004": {
+   "freelunch_prob": 0.624,
+   "median_hh_income": 81620,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257011": {
+   "freelunch_prob": 0.269,
+   "median_hh_income": 96932,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257012": {
+   "freelunch_prob": 0.664,
+   "median_hh_income": 98269,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257013": {
+   "freelunch_prob": 0.493,
+   "median_hh_income": 71475,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257021": {
+   "freelunch_prob": 0.82,
+   "median_hh_income": 68519,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257022": {
+   "freelunch_prob": 0.684,
+   "median_hh_income": 65806,
+   "reducedlunch_prob": 0.0
+  },
+  "60750257023": {
+   "freelunch_prob": 0.715,
+   "median_hh_income": 74105,
+   "reducedlunch_prob": 0.0
+  },
+  "60750258001": {
+   "freelunch_prob": 0.618,
+   "median_hh_income": 117750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750258002": {
+   "freelunch_prob": 0.754,
+   "median_hh_income": 49152,
+   "reducedlunch_prob": 0.0
+  },
+  "60750259001": {
+   "freelunch_prob": 0.501,
+   "median_hh_income": 91838,
+   "reducedlunch_prob": 0.0
+  },
+  "60750259002": {
+   "freelunch_prob": 0.478,
+   "median_hh_income": 96771,
+   "reducedlunch_prob": 0.0
+  },
+  "60750259003": {
+   "freelunch_prob": 0.486,
+   "median_hh_income": 97928,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260011": {
+   "freelunch_prob": 0.582,
+   "median_hh_income": 93125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260012": {
+   "freelunch_prob": 0.658,
+   "median_hh_income": 66806,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260021": {
+   "freelunch_prob": 0.496,
+   "median_hh_income": 99044,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260022": {
+   "freelunch_prob": 0.539,
+   "median_hh_income": 123088,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260031": {
+   "freelunch_prob": 0.68,
+   "median_hh_income": 104239,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260032": {
+   "freelunch_prob": 0.54,
+   "median_hh_income": 84097,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260041": {
+   "freelunch_prob": 0.525,
+   "median_hh_income": 94091,
+   "reducedlunch_prob": 0.0
+  },
+  "60750260042": {
+   "freelunch_prob": 0.524,
+   "median_hh_income": 86989,
+   "reducedlunch_prob": 0.0
+  },
+  "60750261001": {
+   "freelunch_prob": 0.438,
+   "median_hh_income": 93750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750261002": {
+   "freelunch_prob": 0.595,
+   "median_hh_income": 97000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750261003": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 103929,
+   "reducedlunch_prob": 0.0
+  },
+  "60750261004": {
+   "freelunch_prob": 0.581,
+   "median_hh_income": 107868,
+   "reducedlunch_prob": 0.0
+  },
+  "60750262001": {
+   "freelunch_prob": 0.587,
+   "median_hh_income": 72219,
+   "reducedlunch_prob": 0.0
+  },
+  "60750262002": {
+   "freelunch_prob": 0.666,
+   "median_hh_income": 88750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750262003": {
+   "freelunch_prob": 0.638,
+   "median_hh_income": 85771,
+   "reducedlunch_prob": 0.0
+  },
+  "60750262004": {
+   "freelunch_prob": 0.563,
+   "median_hh_income": 69282,
+   "reducedlunch_prob": 0.0
+  },
+  "60750262005": {
+   "freelunch_prob": 0.646,
+   "median_hh_income": 107426,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263011": {
+   "freelunch_prob": 0.625,
+   "median_hh_income": 56178,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263012": {
+   "freelunch_prob": 0.62,
+   "median_hh_income": 72926,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263013": {
+   "freelunch_prob": 0.572,
+   "median_hh_income": 124625,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263021": {
+   "freelunch_prob": 0.612,
+   "median_hh_income": 87898,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263022": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 88364,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263023": {
+   "freelunch_prob": 0.577,
+   "median_hh_income": 86841,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263031": {
+   "freelunch_prob": 0.582,
+   "median_hh_income": 101012,
+   "reducedlunch_prob": 0.0
+  },
+  "60750263032": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 86809,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264011": {
+   "freelunch_prob": 0.669,
+   "median_hh_income": 80132,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264012": {
+   "freelunch_prob": 0.7,
+   "median_hh_income": 77957,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264021": {
+   "freelunch_prob": 0.568,
+   "median_hh_income": 84433,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264022": {
+   "freelunch_prob": 0.565,
+   "median_hh_income": 82321,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264023": {
+   "freelunch_prob": 0.573,
+   "median_hh_income": 88594,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264031": {
+   "freelunch_prob": 0.592,
+   "median_hh_income": 92000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264032": {
+   "freelunch_prob": 0.653,
+   "median_hh_income": 76325,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264041": {
+   "freelunch_prob": 0.652,
+   "median_hh_income": 82813,
+   "reducedlunch_prob": 0.0
+  },
+  "60750264042": {
+   "freelunch_prob": 0.797,
+   "median_hh_income": 50833,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301011": {
+   "freelunch_prob": 0.172,
+   "median_hh_income": 155473,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301012": {
+   "freelunch_prob": 0.236,
+   "median_hh_income": 126760,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301013": {
+   "freelunch_prob": 0.333,
+   "median_hh_income": 106851,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301014": {
+   "freelunch_prob": 0.236,
+   "median_hh_income": 126760,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301021": {
+   "freelunch_prob": 0.124,
+   "median_hh_income": 129145,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301022": {
+   "freelunch_prob": 0.1,
+   "median_hh_income": 139203,
+   "reducedlunch_prob": 0.0
+  },
+  "60750301023": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 155985,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302011": {
+   "freelunch_prob": 0.225,
+   "median_hh_income": 115962,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302012": {
+   "freelunch_prob": 0.187,
+   "median_hh_income": 125663,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302013": {
+   "freelunch_prob": 0.117,
+   "median_hh_income": 149769,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302021": {
+   "freelunch_prob": 0.257,
+   "median_hh_income": 113631,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302022": {
+   "freelunch_prob": 0.238,
+   "median_hh_income": 132266,
+   "reducedlunch_prob": 0.0
+  },
+  "60750302023": {
+   "freelunch_prob": 0.242,
+   "median_hh_income": 119717,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303011": {
+   "freelunch_prob": 0.213,
+   "median_hh_income": 189762,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303012": {
+   "freelunch_prob": 0.202,
+   "median_hh_income": 230804,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303013": {
+   "freelunch_prob": 0.113,
+   "median_hh_income": 134519,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303014": {
+   "freelunch_prob": 0.123,
+   "median_hh_income": 213661,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303021": {
+   "freelunch_prob": 0.179,
+   "median_hh_income": 122344,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303022": {
+   "freelunch_prob": 0.127,
+   "median_hh_income": 205590,
+   "reducedlunch_prob": 0.0
+  },
+  "60750303023": {
+   "freelunch_prob": 0.071,
+   "median_hh_income": 117167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750304001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 131172,
+   "reducedlunch_prob": 0.0
+  },
+  "60750304002": {
+   "freelunch_prob": 0.164,
+   "median_hh_income": 158928,
+   "reducedlunch_prob": 0.0
+  },
+  "60750304003": {
+   "freelunch_prob": 0.358,
+   "median_hh_income": 174844,
+   "reducedlunch_prob": 0.0
+  },
+  "60750304004": {
+   "freelunch_prob": 0.212,
+   "median_hh_income": 207050,
+   "reducedlunch_prob": 0.0
+  },
+  "60750304005": {
+   "freelunch_prob": 0.164,
+   "median_hh_income": 158928,
+   "reducedlunch_prob": 0.0
+  },
+  "60750305001": {
+   "freelunch_prob": 0.167,
+   "median_hh_income": 171176,
+   "reducedlunch_prob": 0.0
+  },
+  "60750305002": {
+   "freelunch_prob": 0.131,
+   "median_hh_income": 169653,
+   "reducedlunch_prob": 0.0
+  },
+  "60750305003": {
+   "freelunch_prob": 0.062,
+   "median_hh_income": 169653,
+   "reducedlunch_prob": 0.0
+  },
+  "60750306001": {
+   "freelunch_prob": 0.02,
+   "median_hh_income": 178021,
+   "reducedlunch_prob": 0.0
+  },
+  "60750306002": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 117056,
+   "reducedlunch_prob": 0.0
+  },
+  "60750306003": {
+   "freelunch_prob": 0.02,
+   "median_hh_income": 178021,
+   "reducedlunch_prob": 0.0
+  },
+  "60750307001": {
+   "freelunch_prob": 0.114,
+   "median_hh_income": 162886,
+   "reducedlunch_prob": 0.0
+  },
+  "60750307002": {
+   "freelunch_prob": 0.209,
+   "median_hh_income": 220673,
+   "reducedlunch_prob": 0.0
+  },
+  "60750307003": {
+   "freelunch_prob": 0.071,
+   "median_hh_income": 171902,
+   "reducedlunch_prob": 0.0
+  },
+  "60750308001": {
+   "freelunch_prob": 0.067,
+   "median_hh_income": 166765,
+   "reducedlunch_prob": 0.0
+  },
+  "60750308002": {
+   "freelunch_prob": 0.16,
+   "median_hh_income": 162527,
+   "reducedlunch_prob": 0.0
+  },
+  "60750308003": {
+   "freelunch_prob": 0.16,
+   "median_hh_income": 162527,
+   "reducedlunch_prob": 0.0
+  },
+  "60750308004": {
+   "freelunch_prob": 0.119,
+   "median_hh_income": 191397,
+   "reducedlunch_prob": 0.0
+  },
+  "60750308005": {
+   "freelunch_prob": 0.261,
+   "median_hh_income": 115588,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309001": {
+   "freelunch_prob": 0.067,
+   "median_hh_income": 174931,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309002": {
+   "freelunch_prob": 0.211,
+   "median_hh_income": 187431,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309003": {
+   "freelunch_prob": 0.239,
+   "median_hh_income": 231544,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309004": {
+   "freelunch_prob": 0.333,
+   "median_hh_income": 172734,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309005": {
+   "freelunch_prob": 0.25,
+   "median_hh_income": 250001,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309006": {
+   "freelunch_prob": 0.211,
+   "median_hh_income": 187431,
+   "reducedlunch_prob": 0.0
+  },
+  "60750309007": {
+   "freelunch_prob": 0.211,
+   "median_hh_income": 187431,
+   "reducedlunch_prob": 0.0
+  },
+  "60750310001": {
+   "freelunch_prob": 0.273,
+   "median_hh_income": 142701,
+   "reducedlunch_prob": 0.0
+  },
+  "60750310002": {
+   "freelunch_prob": 0.357,
+   "median_hh_income": 124458,
+   "reducedlunch_prob": 0.0
+  },
+  "60750310003": {
+   "freelunch_prob": 0.273,
+   "median_hh_income": 142701,
+   "reducedlunch_prob": 0.0
+  },
+  "60750311001": {
+   "freelunch_prob": 0.319,
+   "median_hh_income": 139926,
+   "reducedlunch_prob": 0.0
+  },
+  "60750311002": {
+   "freelunch_prob": 0.416,
+   "median_hh_income": 141083,
+   "reducedlunch_prob": 0.0
+  },
+  "60750311003": {
+   "freelunch_prob": 0.283,
+   "median_hh_income": 183750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750311004": {
+   "freelunch_prob": 0.376,
+   "median_hh_income": 100809,
+   "reducedlunch_prob": 0.0
+  },
+  "60750311005": {
+   "freelunch_prob": 0.225,
+   "median_hh_income": 132167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312011": {
+   "freelunch_prob": 0.458,
+   "median_hh_income": 82138,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312012": {
+   "freelunch_prob": 0.68,
+   "median_hh_income": 73229,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312013": {
+   "freelunch_prob": 0.581,
+   "median_hh_income": 95962,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312014": {
+   "freelunch_prob": 0.545,
+   "median_hh_income": 91136,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312021": {
+   "freelunch_prob": 0.557,
+   "median_hh_income": 103264,
+   "reducedlunch_prob": 0.0
+  },
+  "60750312022": {
+   "freelunch_prob": 0.574,
+   "median_hh_income": 107045,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313011": {
+   "freelunch_prob": 0.406,
+   "median_hh_income": 106250,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313012": {
+   "freelunch_prob": 0.466,
+   "median_hh_income": 109286,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313013": {
+   "freelunch_prob": 0.28,
+   "median_hh_income": 103125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313021": {
+   "freelunch_prob": 0.526,
+   "median_hh_income": 64063,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313022": {
+   "freelunch_prob": 0.718,
+   "median_hh_income": 83233,
+   "reducedlunch_prob": 0.0
+  },
+  "60750313023": {
+   "freelunch_prob": 0.668,
+   "median_hh_income": 96582,
+   "reducedlunch_prob": 0.0
+  },
+  "60750314001": {
+   "freelunch_prob": 0.46,
+   "median_hh_income": 81161,
+   "reducedlunch_prob": 0.0
+  },
+  "60750314002": {
+   "freelunch_prob": 0.498,
+   "median_hh_income": 66154,
+   "reducedlunch_prob": 0.0
+  },
+  "60750314003": {
+   "freelunch_prob": 0.726,
+   "median_hh_income": 87261,
+   "reducedlunch_prob": 0.0
+  },
+  "60750314004": {
+   "freelunch_prob": 0.715,
+   "median_hh_income": 82708,
+   "reducedlunch_prob": 0.0
+  },
+  "60750314005": {
+   "freelunch_prob": 0.533,
+   "median_hh_income": 86444,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326011": {
+   "freelunch_prob": 0.101,
+   "median_hh_income": 114792,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326012": {
+   "freelunch_prob": 0.453,
+   "median_hh_income": 106607,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326013": {
+   "freelunch_prob": 0.253,
+   "median_hh_income": 112736,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326021": {
+   "freelunch_prob": 0.375,
+   "median_hh_income": 112279,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326022": {
+   "freelunch_prob": 0.113,
+   "median_hh_income": 104500,
+   "reducedlunch_prob": 0.0
+  },
+  "60750326023": {
+   "freelunch_prob": 0.272,
+   "median_hh_income": 104415,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327001": {
+   "freelunch_prob": 0.283,
+   "median_hh_income": 122881,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327002": {
+   "freelunch_prob": 0.146,
+   "median_hh_income": 158696,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327003": {
+   "freelunch_prob": 0.302,
+   "median_hh_income": 146667,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327004": {
+   "freelunch_prob": 0.333,
+   "median_hh_income": 117228,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327005": {
+   "freelunch_prob": 0.266,
+   "median_hh_income": 128472,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327006": {
+   "freelunch_prob": 0.447,
+   "median_hh_income": 133456,
+   "reducedlunch_prob": 0.0
+  },
+  "60750327007": {
+   "freelunch_prob": 0.283,
+   "median_hh_income": 80365,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328011": {
+   "freelunch_prob": 0.473,
+   "median_hh_income": 83859,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328012": {
+   "freelunch_prob": 0.45,
+   "median_hh_income": 116114,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328013": {
+   "freelunch_prob": 0.226,
+   "median_hh_income": 148125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328021": {
+   "freelunch_prob": 0.26,
+   "median_hh_income": 94091,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328022": {
+   "freelunch_prob": 0.309,
+   "median_hh_income": 111154,
+   "reducedlunch_prob": 0.0
+  },
+  "60750328023": {
+   "freelunch_prob": 0.335,
+   "median_hh_income": 151016,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329011": {
+   "freelunch_prob": 0.417,
+   "median_hh_income": 134219,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329012": {
+   "freelunch_prob": 0.357,
+   "median_hh_income": 122955,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329013": {
+   "freelunch_prob": 0.405,
+   "median_hh_income": 136979,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329014": {
+   "freelunch_prob": 0.329,
+   "median_hh_income": 122679,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329021": {
+   "freelunch_prob": 0.182,
+   "median_hh_income": 92563,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329022": {
+   "freelunch_prob": 0.238,
+   "median_hh_income": 130592,
+   "reducedlunch_prob": 0.0
+  },
+  "60750329023": {
+   "freelunch_prob": 0.469,
+   "median_hh_income": 109244,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330001": {
+   "freelunch_prob": 0.373,
+   "median_hh_income": 99219,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330002": {
+   "freelunch_prob": 0.211,
+   "median_hh_income": 134375,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330003": {
+   "freelunch_prob": 0.214,
+   "median_hh_income": 137667,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330004": {
+   "freelunch_prob": 0.347,
+   "median_hh_income": 134044,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330005": {
+   "freelunch_prob": 0.48,
+   "median_hh_income": 115069,
+   "reducedlunch_prob": 0.0
+  },
+  "60750330006": {
+   "freelunch_prob": 0.374,
+   "median_hh_income": 91641,
+   "reducedlunch_prob": 0.0
+  },
+  "60750331001": {
+   "freelunch_prob": 0.322,
+   "median_hh_income": 130469,
+   "reducedlunch_prob": 0.0
+  },
+  "60750331002": {
+   "freelunch_prob": 0.322,
+   "median_hh_income": 130469,
+   "reducedlunch_prob": 0.0
+  },
+  "60750331003": {
+   "freelunch_prob": 0.528,
+   "median_hh_income": 116875,
+   "reducedlunch_prob": 0.0
+  },
+  "60750331004": {
+   "freelunch_prob": 0.287,
+   "median_hh_income": 158988,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332011": {
+   "freelunch_prob": 0.5,
+   "median_hh_income": 35377,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332031": {
+   "freelunch_prob": 0.528,
+   "median_hh_income": 44967,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332032": {
+   "freelunch_prob": 0.67,
+   "median_hh_income": 78417,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332041": {
+   "freelunch_prob": 0.705,
+   "median_hh_income": 65714,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332042": {
+   "freelunch_prob": 0.683,
+   "median_hh_income": 69345,
+   "reducedlunch_prob": 0.0
+  },
+  "60750332043": {
+   "freelunch_prob": 0.69,
+   "median_hh_income": 67679,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351001": {
+   "freelunch_prob": 0.26,
+   "median_hh_income": 143061,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351002": {
+   "freelunch_prob": 0.26,
+   "median_hh_income": 143061,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351003": {
+   "freelunch_prob": 0.279,
+   "median_hh_income": 141111,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351004": {
+   "freelunch_prob": 0.26,
+   "median_hh_income": 143061,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351005": {
+   "freelunch_prob": 0.214,
+   "median_hh_income": 208095,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351006": {
+   "freelunch_prob": 0.26,
+   "median_hh_income": 143061,
+   "reducedlunch_prob": 0.0
+  },
+  "60750351007": {
+   "freelunch_prob": 0.25,
+   "median_hh_income": 131667,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352011": {
+   "freelunch_prob": 0.425,
+   "median_hh_income": 89219,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352012": {
+   "freelunch_prob": 0.276,
+   "median_hh_income": 75625,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352013": {
+   "freelunch_prob": 0.278,
+   "median_hh_income": 107222,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352014": {
+   "freelunch_prob": 0.359,
+   "median_hh_income": 86875,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352015": {
+   "freelunch_prob": 0.431,
+   "median_hh_income": 108438,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352021": {
+   "freelunch_prob": 0.363,
+   "median_hh_income": 90882,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352022": {
+   "freelunch_prob": 0.37,
+   "median_hh_income": 79469,
+   "reducedlunch_prob": 0.0
+  },
+  "60750352023": {
+   "freelunch_prob": 0.438,
+   "median_hh_income": 104861,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353001": {
+   "freelunch_prob": 0.366,
+   "median_hh_income": 177500,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353002": {
+   "freelunch_prob": 0.4,
+   "median_hh_income": 47965,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353003": {
+   "freelunch_prob": 0.307,
+   "median_hh_income": 93095,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353004": {
+   "freelunch_prob": 0.173,
+   "median_hh_income": 100320,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353005": {
+   "freelunch_prob": 0.537,
+   "median_hh_income": 100398,
+   "reducedlunch_prob": 0.0
+  },
+  "60750353006": {
+   "freelunch_prob": 0.509,
+   "median_hh_income": 86953,
+   "reducedlunch_prob": 0.0
+  },
+  "60750354001": {
+   "freelunch_prob": 0.309,
+   "median_hh_income": 132692,
+   "reducedlunch_prob": 0.0
+  },
+  "60750354002": {
+   "freelunch_prob": 0.382,
+   "median_hh_income": 146823,
+   "reducedlunch_prob": 0.0
+  },
+  "60750354003": {
+   "freelunch_prob": 0.246,
+   "median_hh_income": 126841,
+   "reducedlunch_prob": 0.0
+  },
+  "60750354004": {
+   "freelunch_prob": 0.598,
+   "median_hh_income": 101845,
+   "reducedlunch_prob": 0.0
+  },
+  "60750354005": {
+   "freelunch_prob": 0.423,
+   "median_hh_income": 126841,
+   "reducedlunch_prob": 0.0
+  },
+  "60750401001": {
+   "freelunch_prob": 0.33,
+   "median_hh_income": 109870,
+   "reducedlunch_prob": 0.0
+  },
+  "60750401002": {
+   "freelunch_prob": 0.33,
+   "median_hh_income": 109870,
+   "reducedlunch_prob": 0.0
+  },
+  "60750401003": {
+   "freelunch_prob": 0.495,
+   "median_hh_income": 111094,
+   "reducedlunch_prob": 0.0
+  },
+  "60750401004": {
+   "freelunch_prob": 0.33,
+   "median_hh_income": 109870,
+   "reducedlunch_prob": 0.0
+  },
+  "60750402001": {
+   "freelunch_prob": 0.234,
+   "median_hh_income": 103750,
+   "reducedlunch_prob": 0.0
+  },
+  "60750402002": {
+   "freelunch_prob": 0.273,
+   "median_hh_income": 115936,
+   "reducedlunch_prob": 0.0
+  },
+  "60750402003": {
+   "freelunch_prob": 0.388,
+   "median_hh_income": 122986,
+   "reducedlunch_prob": 0.0
+  },
+  "60750402004": {
+   "freelunch_prob": 0.143,
+   "median_hh_income": 143821,
+   "reducedlunch_prob": 0.0
+  },
+  "60750426011": {
+   "freelunch_prob": 0.417,
+   "median_hh_income": 83250,
+   "reducedlunch_prob": 0.0
+  },
+  "60750426012": {
+   "freelunch_prob": 0.267,
+   "median_hh_income": 111676,
+   "reducedlunch_prob": 0.0
+  },
+  "60750426021": {
+   "freelunch_prob": 0.275,
+   "median_hh_income": 125812,
+   "reducedlunch_prob": 0.0
+  },
+  "60750426022": {
+   "freelunch_prob": 0.269,
+   "median_hh_income": 115625,
+   "reducedlunch_prob": 0.0
+  },
+  "60750426023": {
+   "freelunch_prob": 0.264,
+   "median_hh_income": 132232,
+   "reducedlunch_prob": 0.0
+  },
+  "60750427001": {
+   "freelunch_prob": 0.375,
+   "median_hh_income": 117953,
+   "reducedlunch_prob": 0.0
+  },
+  "60750427002": {
+   "freelunch_prob": 0.575,
+   "median_hh_income": 85000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750427003": {
+   "freelunch_prob": 0.249,
+   "median_hh_income": 72946,
+   "reducedlunch_prob": 0.0
+  },
+  "60750428001": {
+   "freelunch_prob": 0.093,
+   "median_hh_income": 194167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750428003": {
+   "freelunch_prob": 0.093,
+   "median_hh_income": 194167,
+   "reducedlunch_prob": 0.0
+  },
+  "60750451001": {
+   "freelunch_prob": 0.427,
+   "median_hh_income": 171875,
+   "reducedlunch_prob": 0.0
+  },
+  "60750451002": {
+   "freelunch_prob": 0.308,
+   "median_hh_income": 165529,
+   "reducedlunch_prob": 0.0
+  },
+  "60750451003": {
+   "freelunch_prob": 0.404,
+   "median_hh_income": 99531,
+   "reducedlunch_prob": 0.0
+  },
+  "60750452001": {
+   "freelunch_prob": 0.425,
+   "median_hh_income": 109402,
+   "reducedlunch_prob": 0.0
+  },
+  "60750452002": {
+   "freelunch_prob": 0.293,
+   "median_hh_income": 123510,
+   "reducedlunch_prob": 0.0
+  },
+  "60750452003": {
+   "freelunch_prob": 0.315,
+   "median_hh_income": 135284,
+   "reducedlunch_prob": 0.0
+  },
+  "60750452004": {
+   "freelunch_prob": 0.293,
+   "median_hh_income": 123510,
+   "reducedlunch_prob": 0.0
+  },
+  "60750452005": {
+   "freelunch_prob": 0.293,
+   "median_hh_income": 123510,
+   "reducedlunch_prob": 0.0
+  },
+  "60750476001": {
+   "freelunch_prob": 0.371,
+   "median_hh_income": 84342,
+   "reducedlunch_prob": 0.0
+  },
+  "60750476002": {
+   "freelunch_prob": 0.315,
+   "median_hh_income": 123214,
+   "reducedlunch_prob": 0.0
+  },
+  "60750476003": {
+   "freelunch_prob": 0.273,
+   "median_hh_income": 166875,
+   "reducedlunch_prob": 0.0
+  },
+  "60750476004": {
+   "freelunch_prob": 0.274,
+   "median_hh_income": 137375,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477011": {
+   "freelunch_prob": 0.482,
+   "median_hh_income": 96091,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477012": {
+   "freelunch_prob": 0.366,
+   "median_hh_income": 98958,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477013": {
+   "freelunch_prob": 0.35,
+   "median_hh_income": 75781,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477021": {
+   "freelunch_prob": 0.238,
+   "median_hh_income": 78333,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477022": {
+   "freelunch_prob": 0.21,
+   "median_hh_income": 102503,
+   "reducedlunch_prob": 0.0
+  },
+  "60750477023": {
+   "freelunch_prob": 0.142,
+   "median_hh_income": 139063,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478011": {
+   "freelunch_prob": 0.288,
+   "median_hh_income": 135278,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478012": {
+   "freelunch_prob": 0.271,
+   "median_hh_income": 105156,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478013": {
+   "freelunch_prob": 0.271,
+   "median_hh_income": 89342,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478021": {
+   "freelunch_prob": 0.375,
+   "median_hh_income": 96435,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478022": {
+   "freelunch_prob": 0.382,
+   "median_hh_income": 93953,
+   "reducedlunch_prob": 0.0
+  },
+  "60750478023": {
+   "freelunch_prob": 0.428,
+   "median_hh_income": 81500,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479011": {
+   "freelunch_prob": 0.319,
+   "median_hh_income": 107344,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479012": {
+   "freelunch_prob": 0.331,
+   "median_hh_income": 57560,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479013": {
+   "freelunch_prob": 0.384,
+   "median_hh_income": 163950,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479014": {
+   "freelunch_prob": 0.479,
+   "median_hh_income": 93313,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479015": {
+   "freelunch_prob": 0.383,
+   "median_hh_income": 109655,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479022": {
+   "freelunch_prob": 0.198,
+   "median_hh_income": 110583,
+   "reducedlunch_prob": 0.0
+  },
+  "60750479023": {
+   "freelunch_prob": 0.311,
+   "median_hh_income": 110517,
+   "reducedlunch_prob": 0.0
+  },
+  "60750601001": {
+   "freelunch_prob": 0.121,
+   "median_hh_income": 208000,
+   "reducedlunch_prob": 0.0
+  },
+  "60750604001": {
+   "freelunch_prob": 0.41,
+   "median_hh_income": 69182,
+   "reducedlunch_prob": 0.0
+  },
+  "60750605021": {
+   "freelunch_prob": 0.745,
+   "median_hh_income": 37685,
+   "reducedlunch_prob": 0.0
+  },
+  "60750605022": {
+   "freelunch_prob": 0.745,
+   "median_hh_income": 37685,
+   "reducedlunch_prob": 0.0
+  },
+  "60750605023": {
+   "freelunch_prob": 0.656,
+   "median_hh_income": 53036,
+   "reducedlunch_prob": 0.0
+  },
+  "60750607001": {
+   "freelunch_prob": 0.438,
+   "median_hh_income": 160577,
+   "reducedlunch_prob": 0.0
+  },
+  "60750607002": {
+   "freelunch_prob": 0.413,
+   "median_hh_income": 165567,
+   "reducedlunch_prob": 0.0
+  },
+  "60750607003": {
+   "freelunch_prob": 0.413,
+   "median_hh_income": 165567,
+   "reducedlunch_prob": 0.0
+  },
+  "60750610001": {
+   "freelunch_prob": 0.658,
+   "median_hh_income": 93227,
+   "reducedlunch_prob": 0.0
+  },
+  "60750610002": {
+   "freelunch_prob": 0.613,
+   "median_hh_income": 71813,
+   "reducedlunch_prob": 0.0
+  },
+  "60750611001": {
+   "freelunch_prob": 0.86,
+   "median_hh_income": 19073,
+   "reducedlunch_prob": 0.0
+  },
+  "60750611002": {
+   "freelunch_prob": 0.887,
+   "median_hh_income": 21384,
+   "reducedlunch_prob": 0.0
+  },
+  "60750611003": {
+   "freelunch_prob": 0.822,
+   "median_hh_income": 16141,
+   "reducedlunch_prob": 0.0
+  },
+  "60750612001": {
+   "freelunch_prob": 0.738,
+   "median_hh_income": 57500,
+   "reducedlunch_prob": 0.0
+  },
+  "60750612002": {
+   "freelunch_prob": 0.804,
+   "median_hh_income": 71384,
+   "reducedlunch_prob": 0.0
+  },
+  "60750614001": {
+   "freelunch_prob": 0.393,
+   "median_hh_income": 180886,
+   "reducedlunch_prob": 0.0
+  },
+  "60750614002": {
+   "freelunch_prob": 0.186,
+   "median_hh_income": 153125,
+   "reducedlunch_prob": 0.0
+  },
+  "60750614003": {
+   "freelunch_prob": 0.281,
+   "median_hh_income": 180886,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615001": {
+   "freelunch_prob": 0.0,
+   "median_hh_income": 207766,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615002": {
+   "freelunch_prob": 0.796,
+   "median_hh_income": 200452,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615003": {
+   "freelunch_prob": 0.19,
+   "median_hh_income": 236516,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615004": {
+   "freelunch_prob": 0.367,
+   "median_hh_income": 219592,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615005": {
+   "freelunch_prob": 0.367,
+   "median_hh_income": 219592,
+   "reducedlunch_prob": 0.0
+  },
+  "60750615006": {
+   "freelunch_prob": 0.306,
+   "median_hh_income": 235495,
+   "reducedlunch_prob": 0.0
+  },
+  "60759805011": {
+   "freelunch_prob": 0.764,
+   "median_hh_income": 12340,
+   "reducedlunch_prob": 0.0
+  },
+  "60759806001": {
+   "freelunch_prob": 0.58,
+   "median_hh_income": 66042,
+   "reducedlunch_prob": 0.0
+  },
+  "60759809001": {
+   "freelunch_prob": 0.698,
+   "median_hh_income": 119873,
+   "reducedlunch_prob": 0.0
+  }
+ },
+ "blockgroup_residuals": {
+  "freelunch_prob": {
+   "max": 1.0,
+   "min": 0.0,
+   "p_missing": 0.0,
+   "quantiles": [
+    -0.6667,
+    -0.3471,
+    -0.2948,
+    -0.25,
+    -0.2186,
+    -0.1912,
+    -0.1667,
+    -0.1501,
+    -0.1333,
+    -0.1208,
+    -0.1111,
+    -0.0965,
+    -0.0833,
+    -0.0714,
+    -0.063,
+    -0.0498,
+    -0.0364,
+    -0.0253,
+    -0.016,
+    -0.0019,
+    0.0,
+    0.0,
+    0.0,
+    0.0118,
+    0.0245,
+    0.0384,
+    0.0499,
+    0.0621,
+    0.0732,
+    0.089,
+    0.1032,
+    0.1167,
+    0.1333,
+    0.1521,
+    0.1724,
+    0.1931,
+    0.2199,
+    0.25,
+    0.2963,
+    0.375,
+    0.7833
+   ]
+  },
+  "median_hh_income": {
+   "max": 250001.0,
+   "min": 12340.0,
+   "p_missing": 0.0375,
+   "quantiles": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  },
+  "reducedlunch_prob": {
+   "max": 0.0,
+   "min": 0.0,
+   "p_missing": 0.0,
+   "quantiles": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+   ]
+  }
+ },
+ "choice": {
+  "assigned_rank_by_length_bin": {
+   "1": {
+    "1": 0.9511536405552419,
+    "2": 0.04884635944475807
+   },
+   "10": {
+    "1": 0.3752196151881572,
+    "10": 0.050488010523707286,
+    "14": 0.039603573193875655,
+    "2": 0.16282431442783032,
+    "3": 0.05271121867655946,
+    "4": 0.07251918979264632,
+    "5": 0.04918555925738873,
+    "6": 0.03506290549678192,
+    "7": 0.041372930684474424,
+    "8": 0.06283225230800317,
+    "9": 0.05818043045057532
+   },
+   "11": {
+    "1": 0.4115809661014452,
+    "2": 0.16125604042370023,
+    "20": 0.04250189287701299,
+    "3": 0.13380541877054597,
+    "4": 0.056120307635562514,
+    "5": 0.04089723759998138,
+    "6": 0.05481850127435731,
+    "7": 0.09901963531739434
+   },
+   "12": {
+    "1": 0.5027604485307292,
+    "2": 0.3367000802771131,
+    "7": 0.16053947119215772
+   },
+   "13": {
+    "1": 0.390903086771967,
+    "3": 0.2829969497083616,
+    "4": 0.32609996351967135
+   },
+   "2": {
+    "1": 0.8427336171549756,
+    "2": 0.08418397089083242,
+    "3": 0.07308241195419198
+   },
+   "3": {
+    "1": 0.7372289850879876,
+    "2": 0.11414115533889042,
+    "3": 0.05705548886461859,
+    "4": 0.09157437070850331
+   },
+   "4": {
+    "1": 0.6917995259193761,
+    "2": 0.10487106517783243,
+    "3": 0.08127805356940834,
+    "4": 0.06515689906620084,
+    "5": 0.05689445626718227
+   },
+   "5": {
+    "1": 0.643430640029929,
+    "2": 0.1235922582211166,
+    "3": 0.07962854485657528,
+    "4": 0.036802285924566205,
+    "5": 0.03500251356350206,
+    "6": 0.08154375740431084
+   },
+   "6": {
+    "1": 0.544137669283955,
+    "2": 0.13537326766614277,
+    "3": 0.07191445041820126,
+    "4": 0.062718597540796,
+    "5": 0.08720538966877153,
+    "6": 0.040634757191064436,
+    "7": 0.05801586823106899
+   },
+   "7": {
+    "1": 0.48963364027623607,
+    "2": 0.169833918498161,
+    "3": 0.05793323517908724,
+    "5": 0.06587973996792232,
+    "6": 0.037493651305219006,
+    "7": 0.04327386570380655,
+    "8": 0.13595194906956784
+   },
+   "8": {
+    "1": 0.4970336432314306,
+    "10": 0.040867534696974676,
+    "2": 0.1352947967025937,
+    "3": 0.07777856080379836,
+    "4": 0.04525949106603176,
+    "5": 0.034959734777830515,
+    "7": 0.03908376936453485,
+    "8": 0.02851700811464197,
+    "9": 0.10120546124216341
+   },
+   "9": {
+    "1": 0.41125776498034616,
+    "11": 0.02811053399890283,
+    "2": 0.16017661885929796,
+    "3": 0.09142553837004959,
+    "4": 0.08020897781394948,
+    "5": 0.07995818615672787,
+    "6": 0.09083318828279252,
+    "7": 0.025234418572334973,
+    "9": 0.03279477296559859
+   }
+  },
+  "final_school_citywide": {
+   "413": 0.019151185691154385,
+   "420": 0.02197559536143466,
+   "435": 0.017188460749060424,
+   "449": 0.012029352082522201,
+   "453": 0.009882274190743933,
+   "456": 0.010767502609950045,
+   "478": 0.024175661828637892,
+   "479": 0.02440461718821351,
+   "481": 0.008000370174653904,
+   "485": 0.018345949771890663,
+   "488": 0.017779661213383136,
+   "490": 0.02564003521808415,
+   "493": 0.006323715416267406,
+   "497": 0.01885025182283336,
+   "505": 0.014868457054461279,
+   "507": 0.009826943442436712,
+   "509": 0.01794199675290713,
+   "513": 0.021165268042955387,
+   "521": 0.005258662261615925,
+   "525": 0.0083782518961926,
+   "537": 0.015708491736276375,
+   "539": 0.017636650838275706,
+   "544": 0.024426520662044485,
+   "549": 0.012353963652640326,
+   "562": 0.00862014859571961,
+   "569": 0.012455864575656644,
+   "575": 0.014795637769742602,
+   "589": 0.01896363546228993,
+   "593": 0.008797868929787145,
+   "603": 0.011028099816097228,
+   "614": 0.013111479572170376,
+   "618": 0.01407105761864121,
+   "625": 0.002532368516260205,
+   "638": 0.0035210037062516565,
+   "644": 0.02248331199160582,
+   "650": 0.008225146144968819,
+   "656": 0.010268660727030926,
+   "664": 0.02426891511941059,
+   "670": 0.01762490501831733,
+   "676": 0.01744011915898315,
+   "680": 0.015658590643030594,
+   "691": 0.01577147061576669,
+   "714": 0.011040658776089339,
+   "718": 0.010954294559904485,
+   "722": 0.01922310443748011,
+   "723": 0.01603081448267851,
+   "729": 0.02167101276270747,
+   "735": 0.01190910045176999,
+   "746": 0.01832024753544512,
+   "750": 0.018899336281200933,
+   "760": 0.00984619595050726,
+   "782": 0.01614306765939337,
+   "786": 0.010633049992115874,
+   "790": 0.004712301376751519,
+   "796": 0.0207970681343883,
+   "801": 0.011750422389398947,
+   "814": 0.006902373069968648,
+   "816": 0.007248165731420576,
+   "820": 0.009202163341020114,
+   "823": 0.0184891556150185,
+   "830": 0.005450821114723679,
+   "834": 0.0058394167934734415,
+   "838": 0.017113572453821117,
+   "842": 0.01611880826020383,
+   "848": 0.012378493105980047,
+   "859": 0.006894620137203118,
+   "862": 0.024635981108442367,
+   "867": 0.010213738759464769,
+   "872": 0.008461479555923126,
+   "876": 0.027402412523139238
+  },
+  "length_bins": [
+   [
+    0,
+    0
+   ],
+   [
+    1,
+    1
+   ],
+   [
+    2,
+    2
+   ],
+   [
+    3,
+    3
+   ],
+   [
+    4,
+    4
+   ],
+   [
+    5,
+    5
+   ],
+   [
+    6,
+    6
+   ],
+   [
+    7,
+    7
+   ],
+   [
+    8,
+    9
+   ],
+   [
+    10,
+    12
+   ],
+   [
+    13,
+    16
+   ],
+   [
+    17,
+    22
+   ],
+   [
+    23,
+    32
+   ],
+   [
+    33,
+    90
+   ]
+  ],
+  "length_by_aa": {
+   "413": {
+    "1": 0.06751167508961546,
+    "10": 0.0009065923686847733,
+    "11": 0.0584964370706459,
+    "12": 0.0002799308050876227,
+    "13": 0.00010881680796466288,
+    "2": 0.09113411216021165,
+    "3": 0.09464141009139401,
+    "4": 0.1542007203810466,
+    "5": 0.23978768904312578,
+    "6": 0.07859647339112703,
+    "7": 0.083091458475946,
+    "8": 0.07086500439879678,
+    "9": 0.060379679916353714
+   },
+   "420": {
+    "1": 0.08098275442836775,
+    "10": 0.11534173071286034,
+    "11": 0.06363021748876939,
+    "12": 0.00039472668236316443,
+    "13": 0.00015344112478008992,
+    "2": 0.10333456268514776,
+    "3": 0.07939451527067264,
+    "4": 0.002432294963411019,
+    "5": 0.19422184142653934,
+    "6": 0.07858606980759876,
+    "7": 0.10330933901521461,
+    "8": 0.11266119156878523,
+    "9": 0.06555731482548993
+   },
+   "435": {
+    "1": 0.026196562676842217,
+    "10": 0.007887801718027365,
+    "11": 0.006806189988612789,
+    "12": 0.0024355363684587556,
+    "13": 0.000946760015263669,
+    "2": 0.08293583471353302,
+    "3": 0.017279728822954848,
+    "4": 0.015007708135515222,
+    "5": 0.3562442953927115,
+    "6": 0.16329033738516735,
+    "7": 0.20076231540952372,
+    "8": 0.1069138234998602,
+    "9": 0.013293105873529254
+   },
+   "453": {
+    "1": 0.2737518111895951,
+    "10": 0.007838131459898968,
+    "11": 0.00676333074522782,
+    "12": 0.0024201995579725133,
+    "13": 0.000940798174940488,
+    "2": 0.15119603111868818,
+    "3": 0.10940091242643511,
+    "4": 0.10021455476445132,
+    "5": 0.19556376079270338,
+    "6": 0.015407516716014808,
+    "7": 0.010145923033671579,
+    "8": 0.11314763213341447,
+    "9": 0.013209397886986279
+   },
+   "456": {
+    "1": 0.15754673689255116,
+    "10": 0.007201311388690485,
+    "11": 0.0062138343775261715,
+    "12": 0.0022235670234543106,
+    "13": 0.0008643616972131632,
+    "2": 0.016081487439405583,
+    "3": 0.16071302173691185,
+    "4": 0.14483639104060178,
+    "5": 0.30039049123125217,
+    "6": 0.1714673821228652,
+    "7": 0.00932160317353213,
+    "8": 0.011003630194434151,
+    "9": 0.012136181681561699
+   },
+   "478": {
+    "1": 0.01592005006395681,
+    "10": 0.07616926419058052,
+    "11": 0.11311737131185787,
+    "12": 0.0014801125398305431,
+    "13": 0.0005753604786812047,
+    "2": 0.06816383493754516,
+    "3": 0.05711863145009549,
+    "4": 0.009120412773614101,
+    "5": 0.23478560162157264,
+    "6": 0.10147579872032142,
+    "7": 0.08024067799357752,
+    "8": 0.09811990558024664,
+    "9": 0.1437129783381201
+   },
+   "481": {
+    "1": 0.12284467220865933,
+    "10": 0.07503607548445719,
+    "11": 0.0034493440715169773,
+    "12": 0.0012343180175050413,
+    "13": 0.0004798133832970863,
+    "2": 0.22492450158121016,
+    "3": 0.16455897427199906,
+    "4": 0.09846778489536613,
+    "5": 0.18518276649734203,
+    "6": 0.10580218505710591,
+    "7": 0.005174488840569596,
+    "8": 0.006108194114991405,
+    "9": 0.006736881575980091
+   },
+   "488": {
+    "1": 0.057701247620502695,
+    "10": 0.017373882433654706,
+    "11": 0.01499149559160686,
+    "12": 0.005364577361495226,
+    "13": 0.002085358859932115,
+    "2": 0.1524313465122242,
+    "3": 0.038060791559873575,
+    "4": 0.03305637819839276,
+    "5": 0.3544607296492745,
+    "6": 0.13130855556233478,
+    "7": 0.022489297974876202,
+    "8": 0.02654735603320109,
+    "9": 0.14412898264263144
+   },
+   "490": {
+    "1": 0.06796312605140133,
+    "10": 0.020463740569469768,
+    "11": 0.01765765813752309,
+    "12": 0.0063186406267972065,
+    "13": 0.0024562295081053593,
+    "2": 0.045698258160035636,
+    "3": 0.2934651346043106,
+    "4": 0.03893528980648736,
+    "5": 0.374571497779935,
+    "6": 0.04022584036889321,
+    "7": 0.026488907191860124,
+    "8": 0.031268670588931645,
+    "9": 0.0344870066062497
+   },
+   "497": {
+    "1": 0.16300580860642144,
+    "10": 0.041190548382349104,
+    "11": 0.0008250101529701228,
+    "12": 0.039477611229238714,
+    "13": 0.0001147612138840505,
+    "2": 0.11792943739020138,
+    "3": 0.08429380284669585,
+    "4": 0.07476645259544266,
+    "5": 0.19704904309646232,
+    "6": 0.07111268598782237,
+    "7": 0.09197746756032381,
+    "8": 0.07718883329333302,
+    "9": 0.04106853764485509
+   },
+   "505": {
+    "1": 0.16050076331057267,
+    "10": 0.010634810297018989,
+    "11": 0.16545089966341628,
+    "12": 0.0032837371140874753,
+    "13": 0.0012764789885780685,
+    "2": 0.02374894779311461,
+    "3": 0.023297573213087012,
+    "4": 0.020234297808153803,
+    "5": 0.37754561170272716,
+    "6": 0.16608825165794652,
+    "7": 0.013766031777252618,
+    "8": 0.016250029109994787,
+    "9": 0.017922567564049672
+   },
+   "507": {
+    "1": 0.16727537938185338,
+    "10": 0.004041774898228719,
+    "11": 0.003487548094126083,
+    "12": 0.0012479889973985752,
+    "13": 0.00048512766942325166,
+    "2": 0.19866643752192067,
+    "3": 0.14359762252645392,
+    "4": 0.007690073887561927,
+    "5": 0.2163053918494269,
+    "6": 0.007944969362332018,
+    "7": 0.08247162736950937,
+    "8": 0.09975879187466037,
+    "9": 0.0670272665671048
+   },
+   "513": {
+    "1": 0.22096194859855794,
+    "10": 0.008272613630312434,
+    "11": 0.007138234717742793,
+    "12": 0.0025543557101321713,
+    "13": 0.0009929483634210522,
+    "2": 0.16184734154921349,
+    "3": 0.10920544544209772,
+    "4": 0.19836057980796257,
+    "5": 0.23711441458363416,
+    "6": 0.016261583956109573,
+    "7": 0.010708330373108373,
+    "8": 0.012640583945911893,
+    "9": 0.013941619321795795
+   },
+   "521": {
+    "1": 0.3188166448709215,
+    "10": 0.005853797711495046,
+    "11": 0.005051097986944075,
+    "12": 0.0018074918373470906,
+    "13": 0.0007026218214916661,
+    "2": 0.15821545425542258,
+    "3": 0.012823856462807344,
+    "4": 0.12326190117253975,
+    "5": 0.23874776219911248,
+    "6": 0.10833215595517683,
+    "7": 0.007577339234404359,
+    "8": 0.008944624357096377,
+    "9": 0.009865252135240978
+   },
+   "525": {
+    "1": 0.040665317065273855,
+    "10": 0.012244352885851956,
+    "11": 0.010565350779325786,
+    "12": 0.0037807196260497954,
+    "13": 0.001469669768524819,
+    "2": 0.027343270761311177,
+    "3": 0.24015545336009475,
+    "4": 0.023296690381952898,
+    "5": 0.5612163142077926,
+    "6": 0.02406888334684551,
+    "7": 0.015849474152423788,
+    "8": 0.018709416084640076,
+    "9": 0.020635087579913076
+   },
+   "539": {
+    "1": 0.1211580544146413,
+    "10": 0.0068598357041197815,
+    "11": 0.0059191834128133995,
+    "12": 0.0021181287177707985,
+    "13": 0.0008233749260070047,
+    "2": 0.015318926756234683,
+    "3": 0.11509915673208938,
+    "4": 0.1310308423457995,
+    "5": 0.37481641726586507,
+    "6": 0.013484468054801304,
+    "7": 0.008879586344489394,
+    "8": 0.0809295603865048,
+    "9": 0.12356246493886369
+   },
+   "544": {
+    "1": 0.03256955398817775,
+    "10": 0.00980671346361159,
+    "11": 0.008461971710658038,
+    "12": 0.09240096302605147,
+    "13": 0.0011770838720851229,
+    "2": 0.021899697273831866,
+    "3": 0.10303943009874227,
+    "4": 0.01865872123714047,
+    "5": 0.3596461123614941,
+    "6": 0.12485374079030359,
+    "7": 0.012694117280900582,
+    "8": 0.12832446147530913,
+    "9": 0.0864674334216939
+   },
+   "549": {
+    "1": 0.050281738585356,
+    "10": 0.015139863534446811,
+    "11": 0.013063815661289956,
+    "12": 0.004674773729082702,
+    "13": 0.0018172132038008974,
+    "2": 0.03380933167893395,
+    "3": 0.17218597688496826,
+    "4": 0.02880582718214309,
+    "5": 0.4387770454987073,
+    "6": 0.17319831725996523,
+    "7": 0.019597513890481276,
+    "8": 0.02313376696762248,
+    "9": 0.025514815923202202
+   },
+   "562": {
+    "1": 0.06290752866502987,
+    "10": 0.018941496974315693,
+    "11": 0.016344151600728614,
+    "12": 0.005848613644605474,
+    "13": 0.0022735170844285224,
+    "2": 0.042298885471662356,
+    "3": 0.04149494915281026,
+    "4": 0.37692728303965817,
+    "5": 0.31034727451763405,
+    "6": 0.037233546381713105,
+    "7": 0.02451846737033513,
+    "8": 0.028942676796574984,
+    "9": 0.03192160930050384
+   },
+   "569": {
+    "1": 0.01679956760124062,
+    "10": 0.12243375537800276,
+    "11": 0.004364734802465716,
+    "12": 0.0015618826932348908,
+    "13": 0.0006071467877208861,
+    "2": 0.011295992721668448,
+    "3": 0.2309600741224666,
+    "4": 0.009624278210559039,
+    "5": 0.23363244997401955,
+    "6": 0.009943284893676574,
+    "7": 0.10897950569110498,
+    "8": 0.12294993689801842,
+    "9": 0.12684739022582145
+   },
+   "575": {
+    "1": 0.1711392997996489,
+    "10": 0.013685104730142523,
+    "11": 0.011808540089761219,
+    "12": 0.004225584195435962,
+    "13": 0.0016426008698447474,
+    "2": 0.030560661516507003,
+    "3": 0.029979822909359185,
+    "4": 0.11322221853336221,
+    "5": 0.3022823951279666,
+    "6": 0.026900987941940194,
+    "7": 0.017714428497420304,
+    "8": 0.10625360641909212,
+    "9": 0.17058474936951917
+   },
+   "589": {
+    "1": 0.05171155371052509,
+    "10": 0.12206188035577607,
+    "11": 0.1871931968348141,
+    "12": 0.004807705930168768,
+    "13": 0.0018688876088145741,
+    "2": 0.03477073625973094,
+    "3": 0.03410988060358955,
+    "4": 0.029624951750163307,
+    "5": 0.3198696697706418,
+    "6": 0.03060690150146706,
+    "7": 0.020154790201218915,
+    "8": 0.13697948841409394,
+    "9": 0.026240357058995877
+   },
+   "593": {
+    "1": 0.1738915861810085,
+    "10": 0.11485201732515235,
+    "11": 0.002318712816761419,
+    "12": 0.0008297313772730714,
+    "13": 0.00032253942153568016,
+    "2": 0.21423348327734135,
+    "3": 0.09371821864682216,
+    "4": 0.09195871798760652,
+    "5": 0.09697015204145995,
+    "6": 0.005282250392544708,
+    "7": 0.003478387005196912,
+    "8": 0.11612409422257694,
+    "9": 0.08602010930472032
+   },
+   "603": {
+    "1": 0.2820697974819531,
+    "10": 0.007686847251852746,
+    "11": 0.006632791325114593,
+    "12": 0.0023734871526862656,
+    "13": 0.0009226397774250378,
+    "2": 0.017165753688062373,
+    "3": 0.24473500550914384,
+    "4": 0.17812255901392493,
+    "5": 0.21053091405964838,
+    "6": 0.015110135385238905,
+    "7": 0.00995009601304813,
+    "8": 0.011745530772815397,
+    "9": 0.012954442569086327
+   },
+   "614": {
+    "1": 0.04825018920560722,
+    "10": 0.014528162721423526,
+    "11": 0.01253599408330706,
+    "12": 0.0044858973310706865,
+    "13": 0.0017437917497915842,
+    "2": 0.16179072179588277,
+    "3": 0.031826701671291854,
+    "4": 0.19261444878427578,
+    "5": 0.24363834628553147,
+    "6": 0.028558197974674113,
+    "7": 0.018805709185454222,
+    "8": 0.10572054987368253,
+    "9": 0.1355012893380074
+   },
+   "625": {
+    "1": 0.30561558040006265,
+    "10": 0.0033890766591648585,
+    "11": 0.002924350846133822,
+    "12": 0.0010464537210698273,
+    "13": 0.0004067853610249099,
+    "2": 0.1937281128443453,
+    "3": 0.11376719633388582,
+    "4": 0.10790898398605048,
+    "5": 0.09955009510984147,
+    "6": 0.079098664892554,
+    "7": 0.004386927052068438,
+    "8": 0.08246625056564441,
+    "9": 0.005711522228154087
+   },
+   "638": {
+    "1": 0.02537613176131256,
+    "10": 0.0076407694464706724,
+    "11": 0.006593031920796408,
+    "12": 0.0023592595928668652,
+    "13": 0.0009171091333639497,
+    "2": 0.2546404700590155,
+    "3": 0.01673855768103044,
+    "4": 0.23011598719817591,
+    "5": 0.406156759537635,
+    "6": 0.015019559645307295,
+    "7": 0.00989045145753655,
+    "8": 0.011675123717318294,
+    "9": 0.012876788849170435
+   },
+   "644": {
+    "1": 0.09020904001915316,
+    "10": 0.10046505494708859,
+    "11": 0.11388512028350598,
+    "12": 0.001129703899405744,
+    "13": 0.00043914699648753,
+    "2": 0.008170349207786892,
+    "3": 0.14138965195324782,
+    "4": 0.00696120436606897,
+    "5": 0.24206728768935326,
+    "6": 0.08529431541052238,
+    "7": 0.06518469373879615,
+    "8": 0.057301906345062735,
+    "9": 0.08750252514352073
+   },
+   "650": {
+    "1": 0.15142277678653754,
+    "10": 0.005987783812836809,
+    "11": 0.1511171408330484,
+    "12": 0.0018488630627342664,
+    "13": 0.0007187039553847542,
+    "2": 0.013371518738550399,
+    "3": 0.18610961089289368,
+    "4": 0.1354401416078683,
+    "5": 0.15137361878818126,
+    "6": 0.011770264336617185,
+    "7": 0.007750775043531852,
+    "8": 0.009149355611000231,
+    "9": 0.1739394465308153
+   },
+   "656": {
+    "1": 0.04595902271235048,
+    "10": 0.013838291030059487,
+    "11": 0.011940720778140415,
+    "12": 0.004272883914411492,
+    "13": 0.0016609875723547897,
+    "2": 0.14808986965689375,
+    "3": 0.03031540661399355,
+    "4": 0.02632939319440567,
+    "5": 0.25156901650194,
+    "6": 0.2461583356371222,
+    "7": 0.017912717645378853,
+    "8": 0.02114495941070804,
+    "9": 0.18080839533224125
+   },
+   "664": {
+    "1": 0.02954104994413752,
+    "10": 0.00889482896577438,
+    "11": 0.007675129018382177,
+    "12": 0.0027464787036738138,
+    "13": 0.0010676318584628827,
+    "2": 0.11622541534277371,
+    "3": 0.11727499971504125,
+    "4": 0.09278720179437519,
+    "5": 0.356766734736937,
+    "6": 0.017484680714710536,
+    "7": 0.08757718464527604,
+    "8": 0.013591331258891792,
+    "9": 0.14836733330156363
+   },
+   "670": {
+    "1": 0.1540285546728807,
+    "10": 0.08709859408494768,
+    "11": 0.0805860004310125,
+    "12": 0.0018019287764838834,
+    "13": 0.0007004593066321178,
+    "2": 0.01303207624509209,
+    "3": 0.09507061243574619,
+    "4": 0.10908060799609508,
+    "5": 0.2151032530446079,
+    "6": 0.10095480038999166,
+    "7": 0.007554017856973394,
+    "8": 0.12515420569256827,
+    "9": 0.009834889066968546
+   },
+   "680": {
+    "1": 0.21307569586049505,
+    "10": 0.012173863897543812,
+    "11": 0.010504527566004658,
+    "12": 0.003758954563902254,
+    "13": 0.0014612090898677964,
+    "2": 0.02718585946232554,
+    "3": 0.026669162638348596,
+    "4": 0.02316257466744671,
+    "5": 0.30889233403246147,
+    "6": 0.02393032222788378,
+    "7": 0.015758230996608558,
+    "8": 0.1207625251306141,
+    "9": 0.21266473986649762
+   },
+   "691": {
+    "1": 0.15967546455101775,
+    "10": 0.002899446154812652,
+    "11": 0.0025018607334291584,
+    "12": 0.0008952692791826605,
+    "13": 0.0003480158076885737,
+    "2": 0.10994534678370073,
+    "3": 0.09635949576574761,
+    "4": 0.21138752778705167,
+    "5": 0.1384052706501894,
+    "6": 0.09419401977633761,
+    "7": 0.0037531339806570895,
+    "8": 0.07692515670170415,
+    "9": 0.10270999202848101
+   },
+   "718": {
+    "1": 0.057770562858189524,
+    "10": 0.017394753295899356,
+    "11": 0.015009504545018884,
+    "12": 0.005371021710105278,
+    "13": 0.0020878639555929434,
+    "2": 0.03884480083431473,
+    "3": 0.038106513150347195,
+    "4": 0.03309608809733562,
+    "5": 0.5131724411584223,
+    "6": 0.20073596708903657,
+    "7": 0.022516313873124902,
+    "8": 0.026579246787201773,
+    "9": 0.029314922645410985
+   },
+   "722": {
+    "1": 0.11232867168484378,
+    "10": 0.005261754494858776,
+    "11": 0.119994357691785,
+    "12": 0.0016246851647957992,
+    "13": 0.0006315598368149662,
+    "2": 0.011750198575109016,
+    "3": 0.10458446870909714,
+    "4": 0.010011265313515564,
+    "5": 0.37004523604539924,
+    "6": 0.010343099085524603,
+    "7": 0.16311657475524158,
+    "8": 0.008039980152261702,
+    "9": 0.08226814849075269
+   },
+   "723": {
+    "1": 0.27218529042572265,
+    "10": 0.008467191483571702,
+    "11": 0.007306131158880794,
+    "12": 0.0026144360031023265,
+    "13": 0.00101630322677933,
+    "2": 0.1506170415127136,
+    "3": 0.13324402771401417,
+    "4": 0.01611008276520718,
+    "5": 0.2588704104837995,
+    "6": 0.016644068167046385,
+    "7": 0.10571758115303202,
+    "8": 0.012937899618812022,
+    "9": 0.014269536287318398
+   },
+   "729": {
+    "1": 0.1795864510732965,
+    "10": 0.0061487649704691436,
+    "11": 0.005305617975752836,
+    "12": 0.0018985696195248695,
+    "13": 0.05918643440341293,
+    "2": 0.17174246251929318,
+    "3": 0.09611081073522941,
+    "4": 0.1070801441281712,
+    "5": 0.22696369479820255,
+    "6": 0.012086707087019278,
+    "7": 0.06544132409995099,
+    "8": 0.058086665849865174,
+    "9": 0.010362352739811953
+   },
+   "735": {
+    "1": 0.14255079775632784,
+    "10": 0.012581132163205468,
+    "11": 0.10923139667444204,
+    "12": 0.003884707810268867,
+    "13": 0.0015100928376086903,
+    "2": 0.02809534374167392,
+    "3": 0.02756136117989466,
+    "4": 0.023937462713876482,
+    "5": 0.27097379157418944,
+    "6": 0.09325961930887121,
+    "7": 0.016285411804764248,
+    "8": 0.09341339892514577,
+    "9": 0.17671548350973118
+   },
+   "746": {
+    "1": 0.03386838463142097,
+    "10": 0.01019779219808453,
+    "11": 0.008799423926431378,
+    "12": 0.003148797936902407,
+    "13": 0.0012240244167203518,
+    "2": 0.24510642861834114,
+    "3": 0.12953683934977486,
+    "4": 0.24211155140328586,
+    "5": 0.057934708031812596,
+    "6": 0.2221033713863533,
+    "7": 0.013200341852454183,
+    "8": 0.015582263853169272,
+    "9": 0.01718607239524907
+   },
+   "750": {
+    "1": 0.10275228993940527,
+    "10": 0.00654138594149461,
+    "11": 0.0056444009494938715,
+    "12": 0.0020198001838995605,
+    "13": 0.000785151918773613,
+    "2": 0.014607786023481334,
+    "3": 0.14802775382954403,
+    "4": 0.08530152148321415,
+    "5": 0.39053765830795567,
+    "6": 0.14109376389913805,
+    "7": 0.008467374990518604,
+    "8": 0.009995261692518772,
+    "9": 0.08422585084056257
+   },
+   "782": {
+    "1": 0.05697918919207156,
+    "10": 0.0012114100662521299,
+    "11": 0.09888920272284557,
+    "12": 0.0003740501319564049,
+    "13": 0.0001454035805938409,
+    "2": 0.04705066368611538,
+    "3": 0.043993776842565835,
+    "4": 0.07784384699748235,
+    "5": 0.26130753291117337,
+    "6": 0.1346473825925759,
+    "7": 0.09471457164161755,
+    "8": 0.11175594815357989,
+    "9": 0.07108702148117044
+   },
+   "786": {
+    "1": 0.23921783808758657,
+    "10": 0.007063820843112049,
+    "11": 0.00609519716930298,
+    "12": 0.0021811137220090933,
+    "13": 0.0008478589305763004,
+    "2": 0.1019583491322374,
+    "3": 0.11596889591934675,
+    "4": 0.013439962783636862,
+    "5": 0.3593600270875486,
+    "6": 0.013885444289369648,
+    "7": 0.009143631101944254,
+    "8": 0.11893338847118268,
+    "9": 0.01190447246214682
+   },
+   "790": {
+    "1": 0.2073781174745493,
+    "10": 0.005246806722571999,
+    "11": 0.004527340400271447,
+    "12": 0.001620069703564227,
+    "13": 0.0006297656800112979,
+    "2": 0.16407088746575701,
+    "3": 0.15835969860278842,
+    "4": 0.09738697728254675,
+    "5": 0.14368390526570907,
+    "6": 0.010313716055582584,
+    "7": 0.10942704626336595,
+    "8": 0.08851336298148296,
+    "9": 0.008842306101799077
+   },
+   "801": {
+    "1": 0.030623988154658274,
+    "10": 0.009220902351158416,
+    "11": 0.007956489718167736,
+    "12": 0.0028471612027120754,
+    "13": 0.0011067699167406045,
+    "2": 0.020591503038324296,
+    "3": 0.16657079557402116,
+    "4": 0.01754412904624582,
+    "5": 0.3356818824256403,
+    "6": 0.2475436340351497,
+    "7": 0.13068342645661335,
+    "8": 0.014089572586804376,
+    "9": 0.015539745493764502
+   },
+   "816": {
+    "1": 0.18957621274931238,
+    "10": 0.001763651968542561,
+    "11": 0.0015218118812821266,
+    "12": 0.0005445672526062835,
+    "13": 0.00021168827822344634,
+    "2": 0.06790352748797006,
+    "3": 0.05963671064531214,
+    "4": 0.10825953793668619,
+    "5": 0.13090135300904127,
+    "6": 0.1403161538763992,
+    "7": 0.06778410069511796,
+    "8": 0.13024346526699515,
+    "9": 0.10133721895251128
+   },
+   "820": {
+    "1": 0.2207005022445848,
+    "10": 0.07686364874642877,
+    "11": 0.0031591077416778836,
+    "12": 0.0011304594508247455,
+    "13": 0.00043944070011776523,
+    "2": 0.144774219881743,
+    "3": 0.06994359592122144,
+    "4": 0.12065897777098028,
+    "5": 0.18477199424524296,
+    "6": 0.007196750709247507,
+    "7": 0.08677820518404411,
+    "8": 0.07741307368338096,
+    "9": 0.006170023720505801
+   },
+   "823": {
+    "1": 0.09939169355928772,
+    "10": 0.008119577983652794,
+    "11": 0.007006184024351858,
+    "12": 0.0025071025087416866,
+    "13": 0.000974579743576536,
+    "2": 0.1619579174012314,
+    "3": 0.017787478784322564,
+    "4": 0.13984407875925123,
+    "5": 0.3032375149693713,
+    "6": 0.015960759799725124,
+    "7": 0.0837974640720109,
+    "8": 0.14573193604425475,
+    "9": 0.013683712350222052
+   },
+   "830": {
+    "1": 0.37528276634541374,
+    "10": 0.008985042075338056,
+    "11": 0.007752971690536401,
+    "12": 0.002774334032332993,
+    "13": 0.0010784599913243223,
+    "2": 0.308798995563616,
+    "3": 0.019683442367705625,
+    "4": 0.017095370024808435,
+    "5": 0.20038465046957307,
+    "6": 0.01766201379475867,
+    "7": 0.011630520082123721,
+    "8": 0.01372917722093249,
+    "9": 0.01514225634153668
+   },
+   "834": {
+    "1": 0.08861066757016149,
+    "10": 0.02668072848020393,
+    "11": 0.023022144009506664,
+    "12": 0.008238275615117906,
+    "13": 0.0032024444586927236,
+    "2": 0.05958162017579597,
+    "3": 0.05844920668874409,
+    "4": 0.4079233359522987,
+    "5": 0.15157596708697604,
+    "6": 0.052446654174832276,
+    "7": 0.034536371203695994,
+    "8": 0.040768250901542784,
+    "9": 0.044964333682431405
+   },
+   "838": {
+    "1": 0.2510759610970321,
+    "10": 0.01505320380519391,
+    "11": 0.01298903911355943,
+    "12": 0.004648015586596202,
+    "13": 0.0018068115774006405,
+    "2": 0.03361580896171448,
+    "3": 0.03297690395486694,
+    "4": 0.21258313069214493,
+    "5": 0.3378053872125094,
+    "6": 0.02959027804582043,
+    "7": 0.01948533882074468,
+    "8": 0.02300135058371964,
+    "9": 0.025368770548697236
+   },
+   "842": {
+    "1": 0.03205245754392905,
+    "10": 0.09440616106839783,
+    "11": 0.008327623678612445,
+    "12": 0.0029799682885773724,
+    "13": 0.0011583956860246492,
+    "2": 0.02155200274922978,
+    "3": 0.02114238349896103,
+    "4": 0.018362482657715794,
+    "5": 0.39443293897582943,
+    "6": 0.16360505482156748,
+    "7": 0.012492576820407561,
+    "8": 0.12203908924471826,
+    "9": 0.10744886496602934
+   },
+   "848": {
+    "1": 0.17237054182036443,
+    "10": 0.012058398927305505,
+    "11": 0.010404895684706811,
+    "12": 0.0037233021547328294,
+    "13": 0.0014473500172271394,
+    "2": 0.02692801080555244,
+    "3": 0.18337170082506674,
+    "4": 0.02294288550243486,
+    "5": 0.24724718418617184,
+    "6": 0.13560655085679263,
+    "7": 0.14515219722664724,
+    "8": 0.018425277754467357,
+    "9": 0.020321704238530348
+   },
+   "859": {
+    "1": 0.3666729432965063,
+    "10": 0.01347556777112898,
+    "11": 0.011627735804402102,
+    "12": 0.004160884941770979,
+    "13": 0.0016174504893451248,
+    "2": 0.03009273757979743,
+    "3": 0.16672674670949403,
+    "4": 0.13095396646190702,
+    "5": 0.07655608873162781,
+    "6": 0.13737194216736573,
+    "7": 0.0174431972901182,
+    "8": 0.020590716941696147,
+    "9": 0.02271002181484029
+   },
+   "862": {
+    "1": 0.10471327629063726,
+    "10": 0.0625600504321739,
+    "11": 0.07080672830253099,
+    "12": 0.0022367336609385117,
+    "13": 0.0008694799315647208,
+    "2": 0.01617671241490124,
+    "3": 0.01586925640311868,
+    "4": 0.0876926054360647,
+    "5": 0.41952863841171156,
+    "6": 0.07919507397794498,
+    "7": 0.009376800146891994,
+    "8": 0.011068787128428997,
+    "9": 0.11990585746309235
+   },
+   "867": {
+    "1": 0.25433871750799425,
+    "10": 0.005089372642359124,
+    "11": 0.0043914944068101265,
+    "12": 0.0015714583867867048,
+    "13": 0.0006108691233388973,
+    "2": 0.19859902106351834,
+    "3": 0.22336969657686728,
+    "4": 0.08846359953875481,
+    "5": 0.1906201148317797,
+    "6": 0.010004245841289755,
+    "7": 0.006587843465401,
+    "8": 0.007776580049869712,
+    "9": 0.008576986565230552
+   },
+   "872": {
+    "1": 0.13784234366424739,
+    "10": 0.04150441752928598,
+    "11": 0.03581314048823195,
+    "12": 0.012815423353409705,
+    "13": 0.004981707753090372,
+    "2": 0.09268489211913243,
+    "3": 0.09092331494865642,
+    "4": 0.07896828633388382,
+    "5": 0.2357908716791933,
+    "6": 0.08158577208644756,
+    "7": 0.053724618930406774,
+    "8": 0.0634189020967612,
+    "9": 0.0699463090172531
+   },
+   "876": {
+    "1": 0.12142622800884009,
+    "10": 0.16994373746646865,
+    "11": 0.13288853379042084,
+    "12": 0.003026911503451461,
+    "13": 0.0011766438055790462,
+    "2": 0.10054470813151659,
+    "3": 0.021475437865796563,
+    "4": 0.018651745457030477,
+    "5": 0.18315198503798089,
+    "6": 0.019269976904877844,
+    "7": 0.012689371437403774,
+    "8": 0.19923390176556036,
+    "9": 0.01652081882507322
+   }
+  },
+  "length_citywide": {
+   "1": 0.13784234366424739,
+   "10": 0.04150441752928598,
+   "11": 0.03581314048823195,
+   "12": 0.012815423353409705,
+   "13": 0.004981707753090372,
+   "2": 0.09268489211913243,
+   "3": 0.09092331494865644,
+   "4": 0.07896828633388382,
+   "5": 0.2357908716791933,
+   "6": 0.08158577208644756,
+   "7": 0.05372461893040678,
+   "8": 0.0634189020967612,
+   "9": 0.0699463090172531
+  },
+  "length_tilt_by_ctip1": {
+   "0": {
+    "1": 0.97417,
+    "10": 1.28519,
+    "11": 1.13759,
+    "12": 1.74597,
+    "13": 2.41515,
+    "2": 0.97972,
+    "3": 0.93176,
+    "4": 0.96758,
+    "5": 0.89787,
+    "6": 1.04634,
+    "7": 1.20442,
+    "8": 0.95009,
+    "9": 1.06759
+   },
+   "1": {
+    "1": 0.96912,
+    "10": 1.0,
+    "11": 0.90987,
+    "12": 1.0,
+    "13": 1.0,
+    "2": 0.87337,
+    "3": 1.11626,
+    "4": 0.95571,
+    "5": 1.0113,
+    "6": 1.24439,
+    "7": 1.01683,
+    "8": 0.58581,
+    "9": 1.30827
+   }
+  },
+  "p_final_equals_round1": 0.8967,
+  "p_round1_unassigned": 0.001,
+  "p_same_school_repeat": 0.0697,
+  "program_by_hlgroup": {
+   "AR": {
+    "CB": 0.0038050892822739323,
+    "CE": 0.007075125217694631,
+    "CN": 0.0018582569554622362,
+    "CT": 0.0021958367421388747,
+    "FB": 0.00032422495866397125,
+    "GE": 0.9589592850706739,
+    "JE": 0.002929349152270661,
+    "JN": 0.0002964027658365468,
+    "KE": 0.0010189384663379813,
+    "KN": 0.00012241198232616055,
+    "ME": 0.0019215905664265696,
+    "MN": 0.0010075820658124006,
+    "SB": 0.004446388591505718,
+    "SE": 0.009108586126259886,
+    "SN": 0.0049309320563165
+   },
+   "EN": {
+    "CB": 0.0014114515013851597,
+    "CE": 0.051084378251220516,
+    "CN": 0.001790762876985895,
+    "CT": 0.0034338778635663735,
+    "FB": 0.0025166775918773077,
+    "GE": 0.8264402836655946,
+    "JE": 0.019262258678888693,
+    "JN": 0.0007847399357957352,
+    "KE": 0.006717036550287415,
+    "KN": 2.761417218018265e-07,
+    "ME": 0.011577730300439428,
+    "MN": 0.003543846570712864,
+    "SB": 0.0007932803967267192,
+    "SE": 0.05858129070885852,
+    "SN": 0.01206210896593921
+   },
+   "JA": {
+    "CB": 0.0011725776462015373,
+    "CE": 0.0021802730656001103,
+    "CN": 0.0005726411143686482,
+    "CT": 0.0006766698196898424,
+    "FB": 9.991327684242774e-05,
+    "GE": 0.7672627382361882,
+    "JE": 0.053240145332196315,
+    "JN": 0.1678440441829679,
+    "KE": 0.00031399643473511036,
+    "KN": 3.772251935625938e-05,
+    "ME": 0.000592158022110067,
+    "MN": 0.0003104968423708414,
+    "SB": 0.0013702006659905232,
+    "SE": 0.002806905091533381,
+    "SN": 0.0015195177498489674
+   },
+   "KO": {
+    "CB": 0.0009774943929523054,
+    "CE": 0.00181753822753904,
+    "CN": 0.0004773700746237025,
+    "CT": 0.000564091390254239,
+    "FB": 8.329057628835129e-05,
+    "GE": 0.8827074693411519,
+    "JE": 0.0007525243585435585,
+    "JN": 7.614329656087202e-05,
+    "KE": 0.04178984422623938,
+    "KN": 0.0652528861864237,
+    "ME": 0.0004936399292868925,
+    "MN": 0.00025883908279343706,
+    "SB": 0.0011422386164054905,
+    "SE": 0.002339916676231415,
+    "SN": 0.001266713624705736
+   },
+   "OTH": {
+    "CB": 0.007971280361172353,
+    "CE": 0.033475932409536314,
+    "CN": 3.5355274166083156e-05,
+    "CT": 0.010831616691001366,
+    "FB": 6.1687175561790234e-06,
+    "GE": 0.8237334832256678,
+    "JE": 0.020779757802189894,
+    "JN": 5.639371357622463e-06,
+    "KE": 0.005786209550760806,
+    "KN": 2.329015469918462e-06,
+    "ME": 0.008980647878568478,
+    "MN": 0.004491204297231057,
+    "SB": 0.009968018473806167,
+    "SE": 0.05607883435740448,
+    "SN": 0.017853522574111255
+   },
+   "RU": {
+    "CB": 0.0011932849363763568,
+    "CE": 0.0022187758864375844,
+    "CN": 0.0005827537459369508,
+    "CT": 0.0006886195599516077,
+    "FB": 0.00010167770858184848,
+    "GE": 0.9871295354010684,
+    "JE": 0.0009186507746547492,
+    "JN": 9.295260356195165e-05,
+    "KE": 0.0003195414963427416,
+    "KN": 3.838868518072799e-05,
+    "ME": 0.0006026153150943755,
+    "MN": 0.0003159801024638222,
+    "SB": 0.0013943979060456351,
+    "SE": 0.0028564740035895214,
+    "SN": 0.001546351874713824
+   },
+   "SP": {
+    "CB": 8.717712973055128e-05,
+    "CE": 0.00016209583092732707,
+    "CN": 4.257390448988898e-05,
+    "CT": 5.030808223825817e-05,
+    "FB": 7.428209743988029e-06,
+    "GE": 0.4608124559113204,
+    "JE": 0.003081427962865531,
+    "JN": 6.790784776115704e-06,
+    "KE": 2.3344558899367327e-05,
+    "KN": 2.8045400441811215e-06,
+    "ME": 0.0032446282073148583,
+    "MN": 2.3084376199712242e-05,
+    "SB": 0.25936399913687697,
+    "SE": 0.07254487816229187,
+    "SN": 0.2005470032022809
+   },
+   "VN": {
+    "CB": 0.00037850945461792297,
+    "CE": 0.0007037947309091068,
+    "CN": 0.00018484923074699536,
+    "CT": 0.00021842982018027384,
+    "FB": 3.225212424032248e-05,
+    "GE": 0.9959174943154695,
+    "JE": 0.0002913956198548984,
+    "JN": 2.9484524782816518e-05,
+    "KE": 0.0001013584214645103,
+    "KN": 1.2176873978968627e-05,
+    "ME": 0.00019114931170876654,
+    "MN": 0.00010022874889956289,
+    "SB": 0.0004423023997440655,
+    "SE": 0.0009060722919307331,
+    "SN": 0.0004905021314714128
+   },
+   "ZH": {
+    "CB": 0.14642884569027573,
+    "CE": 0.026033745296954326,
+    "CN": 0.06374900137713813,
+    "CT": 0.062086236151420955,
+    "FB": 1.1219398405143213e-06,
+    "GE": 0.6519163181643596,
+    "JE": 0.008025205682454987,
+    "JN": 1.0256646286608424e-06,
+    "KE": 0.002458712858279569,
+    "KN": 4.2359132527608196e-07,
+    "ME": 0.014559096346766233,
+    "MN": 0.02055611424636892,
+    "SB": 1.538617053966169e-05,
+    "SE": 0.004151703947166448,
+    "SN": 1.7062872481030386e-05
+   }
+  },
+  "program_rank1_by_hlgroup": {
+   "AR": {
+    "CB": 0.007436456810489929,
+    "CE": 0.007351760966880504,
+    "CN": 0.0029639780508600856,
+    "CT": 0.003203712195960509,
+    "FB": 0.0012711017460726463,
+    "GE": 0.9327017923387746,
+    "JE": 0.0034867055342733336,
+    "JN": 0.0008106732555692728,
+    "KE": 0.0011781567812450167,
+    "KN": 0.001063142052398912,
+    "ME": 0.002476988828812525,
+    "MN": 0.0025958140990599145,
+    "SB": 0.009747877002071479,
+    "SE": 0.013088453071386588,
+    "SN": 0.010623387266144724
+   },
+   "EN": {
+    "CB": 0.00019502725280681995,
+    "CE": 0.056555389378903184,
+    "CN": 0.004839760537347599,
+    "CT": 0.003800499400878919,
+    "FB": 0.010398524998199923,
+    "GE": 0.7531803587097236,
+    "JE": 0.021625744960138537,
+    "JN": 0.004139287075236397,
+    "KE": 0.00813108629073842,
+    "KN": 0.003365037456983146,
+    "ME": 0.016595994817144435,
+    "MN": 0.010751012216967249,
+    "SB": 0.00025564616602507124,
+    "SE": 0.08495388153280893,
+    "SN": 0.02121274920609778
+   },
+   "JA": {
+    "CB": 0.023140975025960592,
+    "CE": 0.022877416122612473,
+    "CN": 0.009223390090250493,
+    "CT": 0.009969401531722634,
+    "FB": 0.003955450090132927,
+    "GE": 0.36823269078787835,
+    "JE": 0.01085002814481243,
+    "JN": 0.42486953350681017,
+    "KE": 0.003666221339845428,
+    "KN": 0.003308315278441168,
+    "ME": 0.00770796336049152,
+    "MN": 0.008077727171580838,
+    "SB": 0.03033371725401177,
+    "SE": 0.040729015628272025,
+    "SN": 0.033058154667177674
+   },
+   "KO": {
+    "CB": 0.003980700949375993,
+    "CE": 0.003935363655869674,
+    "CN": 0.0015866037471427236,
+    "CT": 0.001714932326642162,
+    "FB": 0.0006804148879352545,
+    "GE": 0.06334323511287471,
+    "JE": 0.0018664173522661763,
+    "JN": 0.00043394964568693923,
+    "KE": 0.3612718903828138,
+    "KN": 0.5405602119892123,
+    "ME": 0.0013259206680981367,
+    "MN": 0.0013895272858917632,
+    "SB": 0.005217993491444737,
+    "SE": 0.007006188416725193,
+    "SN": 0.005686650088020222
+   },
+   "OTH": {
+    "CB": 0.002007041624991357,
+    "CE": 0.023366212558133044,
+    "CN": 0.0007999545314706159,
+    "CT": 0.0008646569052502289,
+    "FB": 0.00034306043576671027,
+    "GE": 0.7748820291130674,
+    "JE": 0.03611492955045308,
+    "JN": 0.00021879438147205392,
+    "KE": 0.00031797531552782584,
+    "KN": 0.00028693373831384914,
+    "ME": 0.013203428198774408,
+    "MN": 0.013632420594915085,
+    "SB": 0.017097742953343313,
+    "SE": 0.08884064526122819,
+    "SN": 0.028024174837293116
+   },
+   "RU": {
+    "CB": 0.002898172486715378,
+    "CE": 0.0028651644063965717,
+    "CN": 0.0011551360892883393,
+    "CT": 0.0012485664582345022,
+    "FB": 0.0004953800179525173,
+    "GE": 0.9737722118450423,
+    "JE": 0.0013588560125105432,
+    "JN": 0.00031593956434906834,
+    "KE": 0.00045915704958104914,
+    "KN": 0.0004143329443379974,
+    "ME": 0.0009653442568831185,
+    "MN": 0.0010116534250439184,
+    "SB": 0.003798990520786458,
+    "SE": 0.005100896240216168,
+    "SN": 0.004140198682661983
+   },
+   "SP": {
+    "CB": 0.0005113575577374278,
+    "CE": 0.0005055335664412592,
+    "CN": 0.0002038138075564646,
+    "CT": 0.00022029879093885934,
+    "FB": 8.740553479590047e-05,
+    "GE": 0.34162340291124244,
+    "JE": 0.00023975843227389367,
+    "JN": 5.5744813243074825e-05,
+    "KE": 8.10143042099574e-05,
+    "KN": 7.310547715086476e-05,
+    "ME": 0.00017032667442615272,
+    "MN": 0.00017849752803824972,
+    "SB": 0.3136394870965155,
+    "SE": 0.08735315478692242,
+    "SN": 0.25505709871850735
+   },
+   "VN": {
+    "CB": 0.002628312546784871,
+    "CE": 0.0025983779752419864,
+    "CN": 0.001047576943966315,
+    "CT": 0.0011323076534315228,
+    "FB": 0.00044925328722816735,
+    "GE": 0.97621438164979,
+    "JE": 0.0012323277249116568,
+    "JN": 0.0002865212214975915,
+    "KE": 0.00041640317817188364,
+    "KN": 0.000375752817039569,
+    "ME": 0.0008754573559588803,
+    "MN": 0.0009174545001130385,
+    "SB": 0.0034452519636663137,
+    "SE": 0.0046259322553994595,
+    "SN": 0.0037546889267986313
+   },
+   "ZH": {
+    "CB": 0.2606191451246285,
+    "CE": 0.030055010252963903,
+    "CN": 0.08921586106862636,
+    "CT": 0.09308520997320248,
+    "FB": 6.095528645273925e-05,
+    "GE": 0.4741036080178463,
+    "JE": 0.00016720387276207517,
+    "JN": 3.8875582277719215e-05,
+    "KE": 5.6498139750744126e-05,
+    "KN": 5.0982644421782674e-05,
+    "ME": 0.00011878322413371417,
+    "MN": 0.050823316538838786,
+    "SB": 0.000467456391121484,
+    "SE": 0.0006276526711214255,
+    "SN": 0.0005094412118518364
+   }
+  },
+  "rank1_counts_by_aa": {
+   "413": {
+    "413": 39.71,
+    "435": 5.36,
+    "479": 9.35,
+    "549": 5.89,
+    "569": 7.33,
+    "859": 5.27
+   },
+   "420": {
+    "420": 51.22,
+    "505": 7.32,
+    "796": 7.11
+   },
+   "435": {
+    "413": 14.99,
+    "435": 25.99,
+    "485": 6.02,
+    "509": 6.68
+   },
+   "453": {
+    "453": 14.07,
+    "750": 6.16
+   },
+   "456": {
+    "456": 10.19
+   },
+   "478": {
+    "478": 50.33,
+    "479": 5.62,
+    "485": 19.56,
+    "589": 10.19,
+    "644": 9.06,
+    "796": 5.55
+   },
+   "481": {
+    "420": 7.06,
+    "481": 13.06,
+    "539": 6.65,
+    "729": 18.83,
+    "876": 5.4
+   },
+   "488": {
+    "479": 10.79,
+    "485": 7.99,
+    "488": 6.09,
+    "537": 6.14,
+    "746": 8.61,
+    "876": 8.2
+   },
+   "490": {
+    "490": 22.03
+   },
+   "497": {
+    "449": 25.66,
+    "478": 8.97,
+    "479": 5.64,
+    "490": 12.19,
+    "497": 26.45,
+    "509": 5.43,
+    "537": 11.35,
+    "549": 5.15,
+    "562": 5.81,
+    "603": 5.64,
+    "786": 5.72,
+    "801": 6.86,
+    "814": 5.3,
+    "823": 6.94,
+    "830": 5.42,
+    "838": 15.87,
+    "859": 8.92,
+    "872": 8.73,
+    "876": 8.49
+   },
+   "505": {
+    "420": 15.24,
+    "478": 7.96,
+    "505": 12.24
+   },
+   "507": {
+    "420": 5.31,
+    "490": 6.26,
+    "507": 7.94,
+    "513": 9.91,
+    "603": 6.89,
+    "614": 9.62,
+    "638": 6.03,
+    "722": 8.59
+   },
+   "513": {
+    "453": 6.4,
+    "490": 7.23,
+    "513": 28.39,
+    "656": 9.88,
+    "676": 6.06
+   },
+   "521": {
+    "485": 10.29,
+    "497": 6.1,
+    "509": 5.05,
+    "521": 6.63,
+    "862": 5.03
+   },
+   "525": {
+    "479": 18.72,
+    "823": 8.02
+   },
+   "539": {
+    "485": 7.35,
+    "539": 23.95,
+    "676": 7.02,
+    "680": 5.19,
+    "746": 5.42,
+    "750": 8.64,
+    "862": 7.86
+   },
+   "544": {
+    "544": 52.47,
+    "676": 7.15,
+    "750": 16.64
+   },
+   "549": {
+    "549": 10.35,
+    "569": 15.09,
+    "735": 7.08
+   },
+   "562": {},
+   "569": {
+    "479": 9.48,
+    "569": 22.06
+   },
+   "575": {
+    "420": 10.71,
+    "478": 5.61,
+    "537": 10.01,
+    "575": 12.48,
+    "691": 6.45,
+    "760": 5.38
+   },
+   "589": {
+    "569": 7.74,
+    "589": 23.41,
+    "735": 7.22
+   },
+   "593": {
+    "593": 12.65,
+    "656": 5.15,
+    "691": 9.04,
+    "729": 5.59
+   },
+   "603": {
+    "420": 5.85,
+    "589": 9.49,
+    "603": 5.19,
+    "618": 8.23,
+    "680": 5.74,
+    "723": 8.21,
+    "838": 6.01
+   },
+   "614": {
+    "493": 6.14,
+    "497": 10.11,
+    "614": 14.03,
+    "656": 6.29
+   },
+   "625": {
+    "420": 8.41,
+    "453": 8.27,
+    "485": 5.74,
+    "507": 5.89,
+    "513": 11.52,
+    "537": 5.1,
+    "575": 9.99,
+    "723": 12.4,
+    "760": 8.75,
+    "782": 6.43
+   },
+   "638": {
+    "490": 16.75,
+    "872": 5.03
+   },
+   "644": {
+    "485": 8.32,
+    "539": 5.88,
+    "644": 27.61,
+    "676": 14.54,
+    "750": 8.66
+   },
+   "650": {
+    "479": 5.06,
+    "509": 8.56,
+    "650": 8.54
+   },
+   "656": {
+    "420": 11.07,
+    "656": 7.82,
+    "722": 7.9,
+    "760": 5.13,
+    "796": 6.04
+   },
+   "664": {
+    "413": 12.24,
+    "435": 5.18,
+    "569": 6.95,
+    "664": 44.56
+   },
+   "670": {
+    "670": 15.66,
+    "750": 8.35
+   },
+   "680": {
+    "420": 8.83,
+    "479": 5.33,
+    "537": 17.22,
+    "575": 7.34,
+    "680": 6.43
+   },
+   "691": {
+    "575": 5.59,
+    "691": 14.56,
+    "842": 7.03,
+    "876": 6.17
+   },
+   "718": {
+    "478": 5.23,
+    "718": 19.54,
+    "735": 11.98
+   },
+   "722": {
+    "478": 8.23,
+    "722": 31.85,
+    "876": 5.16
+   },
+   "723": {
+    "420": 8.22,
+    "449": 5.83,
+    "490": 6.63,
+    "537": 5.25,
+    "603": 13.13,
+    "714": 10.4,
+    "723": 6.91,
+    "782": 5.99
+   },
+   "729": {
+    "481": 5.89,
+    "505": 6.54,
+    "537": 13.62,
+    "575": 6.33,
+    "691": 6.64,
+    "729": 14.78,
+    "838": 5.63,
+    "842": 8.99,
+    "876": 5.61
+   },
+   "735": {
+    "479": 11.73,
+    "509": 7.06,
+    "549": 5.42,
+    "569": 7.78,
+    "735": 30.66,
+    "838": 5.57
+   },
+   "746": {
+    "746": 19.45
+   },
+   "750": {
+    "485": 7.5,
+    "750": 47.33
+   },
+   "782": {
+    "479": 5.85,
+    "544": 7.62,
+    "644": 8.4,
+    "676": 28.88,
+    "750": 15.48,
+    "782": 29.67
+   },
+   "786": {
+    "786": 14.54,
+    "814": 7.22
+   },
+   "790": {
+    "485": 8.25,
+    "618": 7.47,
+    "790": 12.04,
+    "823": 5.21,
+    "859": 7.99
+   },
+   "801": {
+    "479": 5.1,
+    "562": 5.37,
+    "801": 19.23,
+    "823": 6.08
+   },
+   "816": {
+    "420": 5.29,
+    "505": 9.4,
+    "569": 5.02,
+    "714": 15.45,
+    "723": 5.16
+   },
+   "820": {
+    "481": 8.39,
+    "729": 5.11,
+    "746": 14.09,
+    "876": 8.94
+   },
+   "823": {
+    "479": 13.67,
+    "735": 12.09,
+    "823": 24.83
+   },
+   "830": {
+    "420": 11.28,
+    "569": 5.05,
+    "830": 7.02
+   },
+   "834": {},
+   "838": {
+    "497": 6.69,
+    "569": 6.44
+   },
+   "842": {
+    "488": 10.84,
+    "575": 10.11,
+    "842": 27.69,
+    "876": 6.23
+   },
+   "848": {
+    "420": 7.91,
+    "435": 7.23,
+    "479": 25.03,
+    "569": 13.19
+   },
+   "859": {
+    "859": 13.73
+   },
+   "862": {
+    "670": 7.15,
+    "676": 7.78,
+    "750": 25.31,
+    "782": 6.28,
+    "820": 6.29,
+    "862": 29.21
+   },
+   "867": {
+    "723": 5.78,
+    "782": 6.43,
+    "867": 14.73,
+    "876": 5.2
+   },
+   "872": {
+    "513": 6.27,
+    "790": 7.55
+   },
+   "876": {
+    "478": 9.67,
+    "876": 35.72
+   }
+  },
+  "rank1_school_citywide": {
+   "413": 0.0177020393528241,
+   "420": 0.049700415021877074,
+   "435": 0.012462783606337261,
+   "449": 0.012405267246898057,
+   "453": 0.010707625740202306,
+   "456": 0.0077610313061635735,
+   "478": 0.042599748075688296,
+   "479": 0.04698791899742204,
+   "481": 0.006592274900941219,
+   "485": 0.0343038978951214,
+   "488": 0.011506129858788116,
+   "490": 0.02094077122949685,
+   "493": 0.005179559782540046,
+   "497": 0.016705016572897583,
+   "505": 0.011132348856184185,
+   "507": 0.00858216150119269,
+   "509": 0.02162571268645793,
+   "513": 0.018500836013802546,
+   "521": 0.0055453589767354705,
+   "525": 0.003585027370605909,
+   "537": 0.023989041313330746,
+   "539": 0.01199303923957297,
+   "544": 0.02150346361506082,
+   "549": 0.006752100711950632,
+   "562": 0.0042580184070532354,
+   "569": 0.02723616976496894,
+   "575": 0.011920372837348649,
+   "589": 0.015078057491765355,
+   "593": 0.008942269491022323,
+   "603": 0.009748923452355934,
+   "614": 0.009241974682893228,
+   "618": 0.013950955192862022,
+   "625": 0.0015259613847907359,
+   "638": 0.0018183738205678577,
+   "644": 0.013207310221764695,
+   "650": 0.005357568105473194,
+   "656": 0.010376209649745918,
+   "664": 0.01679669647413585,
+   "670": 0.013215225648443147,
+   "676": 0.03380133219450256,
+   "680": 0.011537131753170723,
+   "691": 0.012935417658481189,
+   "714": 0.011142819474295651,
+   "718": 0.009745126189059707,
+   "722": 0.014521614300643922,
+   "723": 0.013393610015250239,
+   "729": 0.02113054270496177,
+   "735": 0.01500240952095407,
+   "746": 0.02192984173750377,
+   "750": 0.03991687670960481,
+   "760": 0.0064156371114091485,
+   "782": 0.015948226868406065,
+   "786": 0.006855095419406225,
+   "790": 0.005013322085825324,
+   "796": 0.01790241178615927,
+   "801": 0.010077740848549323,
+   "814": 0.00755525944237956,
+   "816": 0.004393343421607987,
+   "820": 0.004986433241422125,
+   "823": 0.012544097042901261,
+   "830": 0.004003308459377166,
+   "834": 0.003267380385803514,
+   "838": 0.010315074353654783,
+   "842": 0.013166508036367059,
+   "848": 0.004253597124699421,
+   "859": 0.006955058563003103,
+   "862": 0.022400480197970814,
+   "867": 0.0077728886143556015,
+   "872": 0.009741422981305101,
+   "876": 0.029938335259685856
+  },
+  "rank1_total_by_aa": {
+   "413": 90.59,
+   "420": 98.18,
+   "435": 65.95,
+   "453": 65.59,
+   "456": 34.03,
+   "478": 109.97,
+   "481": 79.07,
+   "488": 77.32,
+   "490": 31.68,
+   "497": 252.72,
+   "505": 53.08,
+   "507": 111.73,
+   "513": 117.21,
+   "521": 73.64,
+   "525": 48.03,
+   "539": 74.35,
+   "544": 83.34,
+   "549": 39.45,
+   "562": 15.92,
+   "569": 32.56,
+   "575": 80.49,
+   "589": 51.43,
+   "593": 71.74,
+   "603": 64.14,
+   "614": 71.02,
+   "625": 116.9,
+   "638": 25.14,
+   "644": 94.75,
+   "650": 49.22,
+   "656": 60.57,
+   "664": 96.81,
+   "670": 44.7,
+   "680": 74.39,
+   "691": 71.4,
+   "718": 56.18,
+   "722": 63.51,
+   "723": 81.63,
+   "729": 114.07,
+   "735": 85.75,
+   "746": 46.87,
+   "750": 77.4,
+   "782": 126.59,
+   "786": 66.7,
+   "790": 69.67,
+   "801": 39.25,
+   "816": 68.33,
+   "820": 77.73,
+   "823": 88.09,
+   "830": 60.46,
+   "834": 23.57,
+   "838": 35.67,
+   "842": 89.24,
+   "848": 61.3,
+   "859": 42.46,
+   "862": 101.65,
+   "867": 86.24,
+   "872": 24.51,
+   "876": 73.0
+  },
+  "school_pop_tail": {
+   "413": 0.01826335847719026,
+   "420": 0.03599282779340729,
+   "435": 0.024496355441645645,
+   "449": 0.0030607737233923613,
+   "453": 0.003068791590288927,
+   "456": 0.006072442138221012,
+   "478": 0.04739858377926617,
+   "479": 0.026075200461482897,
+   "481": 0.005265903809175663,
+   "485": 0.02384864409964182,
+   "488": 0.024851732815197754,
+   "490": 0.008772533532017356,
+   "493": 0.007601809729250544,
+   "497": 0.013602552649641695,
+   "505": 0.012154108464122591,
+   "507": 0.0020216968562945894,
+   "509": 0.015373392341726154,
+   "513": 0.007979830538267797,
+   "521": 0.0032942867041991955,
+   "525": 0.0055203366677106566,
+   "537": 0.012218444430864232,
+   "539": 0.02336905338652126,
+   "544": 0.023141475706159865,
+   "549": 0.01805516790584441,
+   "562": 0.0074622683871985885,
+   "569": 0.025448910812489806,
+   "575": 0.016544463350924073,
+   "589": 0.02246055827758022,
+   "593": 0.0038825581883115395,
+   "603": 0.007890640120729896,
+   "614": 0.007129790095753396,
+   "618": 0.00985188756698877,
+   "625": 0.0015145466540043013,
+   "638": 0.005747524459844825,
+   "644": 0.027395798878736957,
+   "650": 0.005824787549323478,
+   "656": 0.0073781146906609085,
+   "664": 0.019601029793274573,
+   "670": 0.011738600434332386,
+   "676": 0.036080171526298006,
+   "680": 0.014448188531474586,
+   "691": 0.005345574699339328,
+   "714": 0.00554230399053089,
+   "718": 0.017631582394869765,
+   "722": 0.02139839234657571,
+   "723": 0.006687158032621185,
+   "729": 0.017913519242492713,
+   "735": 0.017637253644088764,
+   "746": 0.017867064702418518,
+   "750": 0.03559364095556652,
+   "760": 0.005736061493002139,
+   "782": 0.02519292654754621,
+   "786": 0.00735011382684578,
+   "790": 0.00376344402699863,
+   "796": 0.028454792403984727,
+   "801": 0.007567588011802215,
+   "814": 0.010765935946949134,
+   "816": 0.005220349595594176,
+   "820": 0.0036398393664522745,
+   "823": 0.010205524616621981,
+   "830": 0.000982587608479538,
+   "834": 0.004422122984091815,
+   "838": 0.009100199327454121,
+   "842": 0.01738498205120414,
+   "848": 0.016495598033608793,
+   "859": 0.0014081076117206162,
+   "862": 0.03515275759841819,
+   "867": 0.0028694058725244756,
+   "872": 0.007391444984778952,
+   "876": 0.0493805857239618
+  },
+  "school_program_types": {
+   "413": [
+    "GE"
+   ],
+   "420": [
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "435": [
+    "GE"
+   ],
+   "449": [
+    "FB",
+    "GE"
+   ],
+   "453": [
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "456": [
+    "GE",
+    "SB"
+   ],
+   "476": [
+    "NC"
+   ],
+   "478": [
+    "GE",
+    "JE",
+    "JN"
+   ],
+   "479": [
+    "GE",
+    "KE",
+    "KN"
+   ],
+   "481": [
+    "GE",
+    "SB"
+   ],
+   "485": [
+    "CE",
+    "CT"
+   ],
+   "488": [
+    "GE"
+   ],
+   "490": [
+    "CB",
+    "GE"
+   ],
+   "493": [
+    "GE"
+   ],
+   "497": [
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "505": [
+    "GE"
+   ],
+   "507": [
+    "GE"
+   ],
+   "509": [
+    "CE",
+    "CN"
+   ],
+   "513": [
+    "CB",
+    "GE",
+    "SB"
+   ],
+   "521": [
+    "GE"
+   ],
+   "525": [
+    "GE"
+   ],
+   "537": [
+    "SE",
+    "SN"
+   ],
+   "539": [
+    "GE"
+   ],
+   "544": [
+    "GE"
+   ],
+   "549": [
+    "GE"
+   ],
+   "562": [
+    "CE",
+    "CN",
+    "GE"
+   ],
+   "569": [
+    "GE"
+   ],
+   "575": [
+    "GE",
+    "SB"
+   ],
+   "589": [
+    "GE"
+   ],
+   "593": [
+    "GE",
+    "SB"
+   ],
+   "603": [
+    "GE",
+    "SB"
+   ],
+   "614": [
+    "CB",
+    "GE",
+    "SB"
+   ],
+   "618": [
+    "SE",
+    "SN"
+   ],
+   "625": [
+    "GE"
+   ],
+   "638": [
+    "CB",
+    "GE"
+   ],
+   "644": [
+    "GE"
+   ],
+   "650": [
+    "GE",
+    "SB"
+   ],
+   "656": [
+    "GE",
+    "SB"
+   ],
+   "664": [
+    "GE"
+   ],
+   "670": [
+    "GE"
+   ],
+   "676": [
+    "GE"
+   ],
+   "680": [
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "691": [
+    "FB",
+    "GE",
+    "SB"
+   ],
+   "714": [
+    "SE",
+    "SN"
+   ],
+   "718": [
+    "GE"
+   ],
+   "722": [
+    "GE"
+   ],
+   "723": [
+    "CB",
+    "GE",
+    "SB"
+   ],
+   "724": [
+    "NS"
+   ],
+   "729": [
+    "CB",
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "735": [
+    "GE"
+   ],
+   "746": [
+    "GE",
+    "ME",
+    "MN"
+   ],
+   "750": [
+    "GE"
+   ],
+   "760": [
+    "GE",
+    "SE",
+    "SN"
+   ],
+   "782": [
+    "GE"
+   ],
+   "786": [
+    "GE",
+    "JE",
+    "JN"
+   ],
+   "790": [
+    "GE"
+   ],
+   "796": [
+    "GE"
+   ],
+   "801": [
+    "GE"
+   ],
+   "814": [
+    "GE"
+   ],
+   "816": [
+    "GE",
+    "SB"
+   ],
+   "820": [
+    "GE"
+   ],
+   "823": [
+    "GE"
+   ],
+   "830": [
+    "GE"
+   ],
+   "834": [
+    "CB",
+    "GE",
+    "SB"
+   ],
+   "838": [
+    "GE",
+    "ME",
+    "MN"
+   ],
+   "842": [
+    "GE"
+   ],
+   "848": [
+    "CB",
+    "GE"
+   ],
+   "859": [
+    "GE"
+   ],
+   "862": [
+    "CB",
+    "GE"
+   ],
+   "867": [
+    "CB",
+    "GE"
+   ],
+   "872": [
+    "CB",
+    "GE"
+   ],
+   "876": [
+    "CE",
+    "CN",
+    "GE"
+   ]
+  },
+  "target_mean_dist_by_position": {
+   "1": 1.4425,
+   "2": 1.5955,
+   "3": 1.6624,
+   "4-6": 1.825,
+   "7+": 2.2733
+  }
+ },
+ "demographics": {
+  "coarse_eth_by_aa": {
+   "413": {
+    "Asian": 0.23991948524697385,
+    "Black": 0.0026362979146878915,
+    "Decline": 0.0017628061289453633,
+    "Hispanic": 0.19515022334067147,
+    "PI/Other": 0.00037220603308820143,
+    "TwoOrMore": 0.2033633539330857,
+    "White": 0.35679562740254733
+   },
+   "420": {
+    "Asian": 0.03531240412160802,
+    "Black": 0.005448526481020006,
+    "Decline": 0.0036432513263965727,
+    "Hispanic": 0.28604445813485274,
+    "PI/Other": 0.0007692508560499938,
+    "TwoOrMore": 0.27452982331229087,
+    "White": 0.39425228576778165
+   },
+   "435": {
+    "Asian": 0.39534905853553864,
+    "Black": 0.0034453426297531044,
+    "Decline": 0.002303787849699278,
+    "Hispanic": 0.13722498440652076,
+    "PI/Other": 0.0004864311069342457,
+    "TwoOrMore": 0.23507747857329506,
+    "White": 0.2261129168982589
+   },
+   "453": {
+    "Asian": 0.22479035114968932,
+    "Black": 0.007444593796395898,
+    "Decline": 0.004977956208469324,
+    "Hispanic": 0.523041022586141,
+    "PI/Other": 0.0010510658562037354,
+    "TwoOrMore": 0.20703892664950396,
+    "White": 0.03165608375359675
+   },
+   "456": {
+    "Asian": 0.0417853356824923,
+    "Black": 0.006447267288863427,
+    "Decline": 0.004311076615596735,
+    "Hispanic": 0.559833067951435,
+    "PI/Other": 0.0009102581952052558,
+    "TwoOrMore": 0.19214842329270387,
+    "White": 0.19456457097370328
+   },
+   "478": {
+    "Asian": 0.30691375344507,
+    "Black": 0.0013724358351427004,
+    "Decline": 0.060072542118655065,
+    "Hispanic": 0.10737891752653907,
+    "PI/Other": 0.00019376751581091085,
+    "TwoOrMore": 0.26483658775705005,
+    "White": 0.25923199580173223
+   },
+   "481": {
+    "Asian": 0.3709258562833269,
+    "Black": 0.0011036468417800333,
+    "Decline": 0.000737972520496176,
+    "Hispanic": 0.5463837256645214,
+    "PI/Other": 0.0001558185099721176,
+    "TwoOrMore": 0.004259999213956296,
+    "White": 0.07643298096594692
+   },
+   "488": {
+    "Asian": 0.4705716678085932,
+    "Black": 0.004649966356414793,
+    "Decline": 0.0031092803081203247,
+    "Hispanic": 0.21510649634530418,
+    "PI/Other": 0.0006565060503488844,
+    "TwoOrMore": 0.2861333825036388,
+    "White": 0.019772700627579787
+   },
+   "490": {
+    "Asian": 0.8715250207925196,
+    "Black": 0.007930090036901625,
+    "Decline": 0.005302591654097534,
+    "Hispanic": 0.049792574085889565,
+    "PI/Other": 0.0011196107003774885,
+    "TwoOrMore": 0.030609589992861744,
+    "White": 0.03372052273735246
+   },
+   "497": {
+    "Asian": 0.3548385512118562,
+    "Black": 0.07578545612023606,
+    "Decline": 0.0009518149999223304,
+    "Hispanic": 0.2898236715842256,
+    "PI/Other": 0.00020097007806915655,
+    "TwoOrMore": 0.11699451807377764,
+    "White": 0.1614050179319131
+   },
+   "505": {
+    "Asian": 0.033057984961752766,
+    "Black": 0.005100680935033123,
+    "Decline": 0.0034106583948558225,
+    "Hispanic": 0.24642059903862668,
+    "PI/Other": 0.0007201402414726936,
+    "TwoOrMore": 0.3723585691008778,
+    "White": 0.33893136732738094
+   },
+   "507": {
+    "Asian": 0.41229743483612064,
+    "Black": 0.06367350621939823,
+    "Decline": 0.0008487382439860677,
+    "Hispanic": 0.46123304367485624,
+    "PI/Other": 0.0001792060339121339,
+    "TwoOrMore": 0.056370729630870295,
+    "White": 0.005397341360856441
+   },
+   "513": {
+    "Asian": 0.42545081608746566,
+    "Black": 0.06501870144728525,
+    "Decline": 0.002666819678357575,
+    "Hispanic": 0.4739471906589867,
+    "PI/Other": 0.0005630831190931214,
+    "TwoOrMore": 0.015394407539630492,
+    "White": 0.016958981469181313
+   },
+   "521": {
+    "Asian": 0.6112944052815361,
+    "Black": 0.0023119353748054287,
+    "Decline": 0.001545915514982721,
+    "Hispanic": 0.2090372991482787,
+    "PI/Other": 0.00032641086950694205,
+    "TwoOrMore": 0.1656531656857313,
+    "White": 0.009830868125158848
+   },
+   "525": {
+    "Asian": 0.10551772627382529,
+    "Black": 0.016280854847494242,
+    "Decline": 0.010886474760585031,
+    "Hispanic": 0.10222654060712374,
+    "PI/Other": 0.0022986144184649416,
+    "TwoOrMore": 0.28723767808825024,
+    "White": 0.47555211100425654
+   },
+   "539": {
+    "Asian": 0.5982656225180808,
+    "Black": 0.002601323704796968,
+    "Decline": 0.00173942001950483,
+    "Hispanic": 0.09782792785284161,
+    "PI/Other": 0.0003672681951255917,
+    "TwoOrMore": 0.11012064096998544,
+    "White": 0.1890777967396648
+   },
+   "544": {
+    "Asian": 0.23353163962508405,
+    "Black": 0.0010678952508094254,
+    "Decline": 0.08350301466741214,
+    "Hispanic": 0.1417749715326328,
+    "PI/Other": 0.00015077091736977045,
+    "TwoOrMore": 0.18473548442201565,
+    "White": 0.35523622358467644
+   },
+   "549": {
+    "Asian": 0.205803459234939,
+    "Black": 0.004330854201272583,
+    "Decline": 0.0028959004545872505,
+    "Hispanic": 0.02719318162449337,
+    "PI/Other": 0.0006114521629585549,
+    "TwoOrMore": 0.3745905703502822,
+    "White": 0.38457458197146716
+   },
+   "562": {
+    "Asian": 0.2857367438924608,
+    "Black": 0.04408774351180059,
+    "Decline": 0.029480031084868578,
+    "Hispanic": 0.27682437713515967,
+    "PI/Other": 0.006224533285450069,
+    "TwoOrMore": 0.17017559022998613,
+    "White": 0.1874709808602741
+   },
+   "569": {
+    "Asian": 0.05915459864395384,
+    "Black": 0.009127257268458555,
+    "Decline": 0.006103098198294741,
+    "Hispanic": 0.05730951749928214,
+    "PI/Other": 0.0012886328976482936,
+    "TwoOrMore": 0.45021527689297086,
+    "White": 0.4168016185993916
+   },
+   "575": {
+    "Asian": 0.14441559335615814,
+    "Black": 0.0055294602649509795,
+    "Decline": 0.0036973690987307933,
+    "Hispanic": 0.24726372223832038,
+    "PI/Other": 0.0007806775019127136,
+    "TwoOrMore": 0.19312550450029436,
+    "White": 0.4051876730396328
+   },
+   "589": {
+    "Asian": 0.1871850587670022,
+    "Black": 0.004809611891650763,
+    "Decline": 0.003216030052299388,
+    "Hispanic": 0.2608058466235416,
+    "PI/Other": 0.0006790456241350503,
+    "TwoOrMore": 0.18894014361132236,
+    "White": 0.3543642634300486
+   },
+   "593": {
+    "Asian": 0.45865579435162884,
+    "Black": 0.001166371779791981,
+    "Decline": 0.0007799146335438474,
+    "Hispanic": 0.34865566313793556,
+    "PI/Other": 0.00016467433776876266,
+    "TwoOrMore": 0.11194078240576004,
+    "White": 0.07863679935357114
+   },
+   "603": {
+    "Asian": 0.1407651347341099,
+    "Black": 0.004981036141888528,
+    "Decline": 0.0033306558376802377,
+    "Hispanic": 0.6468180920517381,
+    "PI/Other": 0.0007032481771927428,
+    "TwoOrMore": 0.182221349393708,
+    "White": 0.021180483663682532
+   },
+   "614": {
+    "Asian": 0.5142813477790785,
+    "Black": 0.0063763289186348675,
+    "Decline": 0.0042636424492532455,
+    "Hispanic": 0.26900142617652434,
+    "PI/Other": 0.0009002427530090576,
+    "TwoOrMore": 0.17806343020108184,
+    "White": 0.02711358172241801
+   },
+   "625": {
+    "Asian": 0.126594395602592,
+    "Black": 0.23325820745740375,
+    "Decline": 0.0005560694789025258,
+    "Hispanic": 0.5266988918496166,
+    "PI/Other": 0.00011741076427250576,
+    "TwoOrMore": 0.05920514995647111,
+    "White": 0.05356987489074158
+   },
+   "638": {
+    "Asian": 0.9234656382701698,
+    "Black": 0.004724066765204142,
+    "Decline": 0.003158828826155202,
+    "Hispanic": 0.029662140442105293,
+    "PI/Other": 0.0006669679253335114,
+    "TwoOrMore": 0.018234565573520396,
+    "White": 0.020087792197511653
+   },
+   "644": {
+    "Asian": 0.316187052165755,
+    "Black": 0.0010789301391943384,
+    "Decline": 0.06549939386721147,
+    "Hispanic": 0.0924613025530479,
+    "PI/Other": 0.00015232887939236142,
+    "TwoOrMore": 0.32841089297304066,
+    "White": 0.19621009942235834
+   },
+   "650": {
+    "Asian": 0.12279059581468686,
+    "Black": 0.1398845187846548,
+    "Decline": 0.001258035453630345,
+    "Hispanic": 0.3855526679071937,
+    "PI/Other": 0.0002656267061881651,
+    "TwoOrMore": 0.1681365356420266,
+    "White": 0.18211201969161936
+   },
+   "656": {
+    "Asian": 0.15949935624197972,
+    "Black": 0.1051003409453577,
+    "Decline": 0.0009297837940272223,
+    "Hispanic": 0.33422116457968853,
+    "PI/Other": 0.00019631831993437322,
+    "TwoOrMore": 0.08246919936720573,
+    "White": 0.3175838367518069
+   },
+   "664": {
+    "Asian": 0.2952631667896887,
+    "Black": 0.003534457877690352,
+    "Decline": 0.00236337629923339,
+    "Hispanic": 0.02219265543132648,
+    "PI/Other": 0.0004990128537609587,
+    "TwoOrMore": 0.3321296243012251,
+    "White": 0.34401770644707497
+   },
+   "670": {
+    "Asian": 0.20828186078540098,
+    "Black": 0.004224390311249258,
+    "Decline": 0.09773428710855595,
+    "Hispanic": 0.26678657360844404,
+    "PI/Other": 0.0005964210460457261,
+    "TwoOrMore": 0.2898442790151791,
+    "White": 0.1325321881251252
+   },
+   "680": {
+    "Asian": 0.02808948117198723,
+    "Black": 0.004334065771240841,
+    "Decline": 0.002898047926309638,
+    "Hispanic": 0.25619913261781535,
+    "PI/Other": 0.0006119055888446093,
+    "TwoOrMore": 0.25743318079624217,
+    "White": 0.45043418612756
+   },
+   "691": {
+    "Asian": 0.4711126921886998,
+    "Black": 0.00358486269999061,
+    "Decline": 0.0023970803541447324,
+    "Hispanic": 0.38269599107816643,
+    "PI/Other": 0.0005061292645627767,
+    "TwoOrMore": 0.12445960359537758,
+    "White": 0.015243640819058166
+   },
+   "718": {
+    "Asian": 0.01184857194622951,
+    "Black": 0.001828175102125063,
+    "Decline": 0.0012224408542207228,
+    "Hispanic": 0.011479005129947704,
+    "PI/Other": 0.0002581111181560624,
+    "TwoOrMore": 0.19547280695835098,
+    "White": 0.7778908888909699
+   },
+   "722": {
+    "Asian": 0.13967201729461037,
+    "Black": 0.005413834180732186,
+    "Decline": 0.003620053720680672,
+    "Hispanic": 0.15377555735556497,
+    "PI/Other": 0.000764352819528062,
+    "TwoOrMore": 0.268206707999631,
+    "White": 0.42854747662925274
+   },
+   "723": {
+    "Asian": 0.09483193031670262,
+    "Black": 0.10358013838928971,
+    "Decline": 0.07450527517089693,
+    "Hispanic": 0.6274430812092644,
+    "PI/Other": 0.00035833725464309434,
+    "TwoOrMore": 0.009796759212907352,
+    "White": 0.0894844784462959
+   },
+   "729": {
+    "Asian": 0.3027055766547203,
+    "Black": 0.0019187124990281568,
+    "Decline": 0.0012829802482210507,
+    "Hispanic": 0.4853747816494148,
+    "PI/Other": 0.00027089365125282816,
+    "TwoOrMore": 0.11615609050830593,
+    "White": 0.09229096478905695
+   },
+   "735": {
+    "Asian": 0.21361753038611953,
+    "Black": 0.0037956294129290187,
+    "Decline": 0.0025380131566461067,
+    "Hispanic": 0.17624805187167022,
+    "PI/Other": 0.000535886387872997,
+    "TwoOrMore": 0.15745203911776728,
+    "White": 0.44581284966699475
+   },
+   "746": {
+    "Asian": 0.5460323777686814,
+    "Black": 0.14696292421765175,
+    "Decline": 0.004717035925929772,
+    "Hispanic": 0.24406543474995954,
+    "PI/Other": 0.0009959740898877192,
+    "TwoOrMore": 0.027229427625779134,
+    "White": 0.0299968256221107
+   },
+   "750": {
+    "Asian": 0.37201624212504375,
+    "Black": 0.006184021300280057,
+    "Decline": 0.004135052639129726,
+    "Hispanic": 0.038829110049199526,
+    "PI/Other": 0.0008730917791522362,
+    "TwoOrMore": 0.2769519792667202,
+    "White": 0.3010105028404744
+   },
+   "782": {
+    "Asian": 0.3612361964464359,
+    "Black": 0.0024050330680215875,
+    "Decline": 0.001608166895328538,
+    "Hispanic": 0.19230707583706816,
+    "PI/Other": 0.00033955487834167613,
+    "TwoOrMore": 0.31742583054799917,
+    "White": 0.12467814232680498
+   },
+   "786": {
+    "Asian": 0.24686660805936303,
+    "Black": 0.21051881499947794,
+    "Decline": 0.0016863439021362946,
+    "Hispanic": 0.27230541856789875,
+    "PI/Other": 0.0003560614885155543,
+    "TwoOrMore": 0.1344235427620796,
+    "White": 0.13384321022052878
+   },
+   "790": {
+    "Asian": 0.36284711747934345,
+    "Black": 0.0868151793161449,
+    "Decline": 0.003581034232720544,
+    "Hispanic": 0.4088251942266138,
+    "PI/Other": 0.0007561140866417287,
+    "TwoOrMore": 0.1144026573947684,
+    "White": 0.02277270326376701
+   },
+   "801": {
+    "Asian": 0.24153800067068426,
+    "Black": 0.006990557349850866,
+    "Decline": 0.004674356897376703,
+    "Hispanic": 0.2458877196381461,
+    "PI/Other": 0.0009869626667635553,
+    "TwoOrMore": 0.18552913504507518,
+    "White": 0.31439326773210313
+   },
+   "816": {
+    "Asian": 0.18664983429701487,
+    "Black": 0.004971907644183648,
+    "Decline": 0.003324551910042708,
+    "Hispanic": 0.5551506555320341,
+    "PI/Other": 0.0007019593691639315,
+    "TwoOrMore": 0.01919121394115951,
+    "White": 0.23000987730640118
+   },
+   "820": {
+    "Asian": 0.3765832780313626,
+    "Black": 0.0045045214739028805,
+    "Decline": 0.003012026075627374,
+    "Hispanic": 0.45448643044304127,
+    "PI/Other": 0.0006359713973981963,
+    "TwoOrMore": 0.14162353623648083,
+    "White": 0.01915423634218679
+   },
+   "823": {
+    "Asian": 0.30628402594413695,
+    "Black": 0.09661876046601908,
+    "Decline": 0.001482529622646097,
+    "Hispanic": 0.11313854155776369,
+    "PI/Other": 0.0003130273152107669,
+    "TwoOrMore": 0.14761384997423035,
+    "White": 0.3345492651199932
+   },
+   "830": {
+    "Asian": 0.04930457059270084,
+    "Black": 0.48936705967936184,
+    "Decline": 0.00508685111301595,
+    "Hispanic": 0.2357141256924452,
+    "PI/Other": 0.001074058367847127,
+    "TwoOrMore": 0.02936421227228195,
+    "White": 0.1900891222823471
+   },
+   "834": {
+    "Asian": 0.4011600237535296,
+    "Black": 0.01866962623139961,
+    "Decline": 0.012483767999993524,
+    "Hispanic": 0.11722549718313675,
+    "PI/Other": 0.0026358733890101166,
+    "TwoOrMore": 0.36843777032886266,
+    "White": 0.07938744111406765
+   },
+   "838": {
+    "Asian": 0.052883102112473386,
+    "Black": 0.008159596873269344,
+    "Decline": 0.005456055363767757,
+    "Hispanic": 0.3194782833465881,
+    "PI/Other": 0.0011520136502319496,
+    "TwoOrMore": 0.28951128076496435,
+    "White": 0.3233596678887051
+   },
+   "842": {
+    "Asian": 0.30484041902386233,
+    "Black": 0.0027477654239054005,
+    "Decline": 0.001837340804003194,
+    "Hispanic": 0.22469834209983308,
+    "PI/Other": 0.0003879435865691339,
+    "TwoOrMore": 0.16916660765030977,
+    "White": 0.2963215814115171
+   },
+   "848": {
+    "Asian": 0.2859895014023543,
+    "Black": 0.006885836684942512,
+    "Decline": 0.004604333616282715,
+    "Hispanic": 0.04323576802821483,
+    "PI/Other": 0.0009721776672948924,
+    "TwoOrMore": 0.026578845473770665,
+    "White": 0.63173353712714
+   },
+   "859": {
+    "Asian": 0.05649430654458166,
+    "Black": 0.008716787567761848,
+    "Decline": 0.005828630544201792,
+    "Hispanic": 0.8570176702962944,
+    "PI/Other": 0.0012306806843767862,
+    "TwoOrMore": 0.03364618715077203,
+    "White": 0.0370657372120113
+   },
+   "862": {
+    "Asian": 0.2842694209820998,
+    "Black": 0.0028286900487888007,
+    "Decline": 0.0018914524519820799,
+    "Hispanic": 0.12074744221121338,
+    "PI/Other": 0.00039936893931063816,
+    "TwoOrMore": 0.3403259984681466,
+    "White": 0.24953762689845857
+   },
+   "867": {
+    "Asian": 0.4242544552172555,
+    "Black": 0.006456900906805119,
+    "Decline": 0.004317518300603925,
+    "Hispanic": 0.43615328691743416,
+    "PI/Other": 0.07643846322966387,
+    "TwoOrMore": 0.024923183527820733,
+    "White": 0.027456191900416718
+   },
+   "872": {
+    "Asian": 0.7280987213672188,
+    "Black": 0.016783047049375097,
+    "Decline": 0.011222274249122326,
+    "Hispanic": 0.10537977623258939,
+    "PI/Other": 0.0023695164839213907,
+    "TwoOrMore": 0.06478138162640544,
+    "White": 0.07136528299136757
+   },
+   "876": {
+    "Asian": 0.2864058984619896,
+    "Black": 0.0013592845441576394,
+    "Decline": 0.0009089090849982595,
+    "Hispanic": 0.2282114855729407,
+    "PI/Other": 0.00019191074923674401,
+    "TwoOrMore": 0.24475750209663216,
+    "White": 0.238165009490045
+   }
+  },
+  "coarse_eth_by_frl_bin": {
+   "high": {
+    "Asian": 0.3191486621174311,
+    "Black": 0.08039840525217488,
+    "Decline": 0.019075496470485415,
+    "Hispanic": 0.4184561886319915,
+    "PI/Other": 0.008240060260023099,
+    "TwoOrMore": 0.08818230630555306,
+    "White": 0.06649888096234088
+   },
+   "low": {
+    "Asian": 0.22880654791408025,
+    "Black": 0.015116798386210486,
+    "Decline": 0.03202025163747776,
+    "Hispanic": 0.14916680220175976,
+    "PI/Other": 3.308788525144323e-05,
+    "TwoOrMore": 0.24184694917947283,
+    "White": 0.3330095627957472
+   },
+   "mid": {
+    "Asian": 0.30967262989433714,
+    "Black": 0.036785057616403535,
+    "Decline": 0.034741033756641365,
+    "Hispanic": 0.26303505415410444,
+    "PI/Other": 3.423294304317714e-05,
+    "TwoOrMore": 0.18993728843331587,
+    "White": 0.1657947032021545
+   }
+  },
+  "coarse_eth_citywide": {
+   "Asian": 0.28573674389246084,
+   "Black": 0.044087743511800594,
+   "Decline": 0.02948003108486858,
+   "Hispanic": 0.2768243771351597,
+   "PI/Other": 0.00622453328545007,
+   "TwoOrMore": 0.17017559022998616,
+   "White": 0.18747098086027414
+  },
+  "coarse_eth_tilt_by_ctip1": {
+   "0": {
+    "Asian": 0.99006,
+    "Black": 1.18268,
+    "Decline": 2.94719,
+    "Hispanic": 0.93843,
+    "PI/Other": 2.29571,
+    "TwoOrMore": 1.00848,
+    "White": 0.96077
+   },
+   "1": {
+    "Asian": 0.74594,
+    "Black": 1.19595,
+    "Decline": 2.13004,
+    "Hispanic": 1.06494,
+    "PI/Other": 2.7468,
+    "TwoOrMore": 0.84538,
+    "White": 0.76555
+   }
+  },
+  "englprof_by_homelang": {
+   "AR": {
+    "E": 1.0
+   },
+   "Amharic (Ethiopia)": {
+    "E": 1.0
+   },
+   "Bulgarian": {
+    "E": 1.0
+   },
+   "Burmese": {
+    "E": 1.0
+   },
+   "CC": {
+    "E": 1.0
+   },
+   "CM": {
+    "E": 1.0
+   },
+   "Chinese Other": {
+    "E": 1.0
+   },
+   "Czech": {
+    "E": 1.0
+   },
+   "Dutch": {
+    "E": 1.0
+   },
+   "EN": {
+    "E": 1.0
+   },
+   "Farsi (Persian)": {
+    "E": 1.0
+   },
+   "Filipino (Pilipino or Tagalog)": {
+    "E": 1.0
+   },
+   "Filipino Other": {
+    "E": 1.0
+   },
+   "French": {
+    "E": 1.0
+   },
+   "German": {
+    "E": 1.0
+   },
+   "Greek": {
+    "E": 1.0
+   },
+   "Gujarati": {
+    "E": 1.0
+   },
+   "Hebrew": {
+    "E": 1.0
+   },
+   "Hindi": {
+    "E": 1.0
+   },
+   "Indonesian": {
+    "E": 1.0
+   },
+   "Italian": {
+    "E": 1.0
+   },
+   "JA": {
+    "E": 1.0
+   },
+   "KO": {
+    "E": 1.0
+   },
+   "Khmer (Cambodian)": {
+    "E": 1.0
+   },
+   "Lao": {
+    "E": 1.0
+   },
+   "Nepali": {
+    "E": 1.0
+   },
+   "Other Asian": {
+    "E": 1.0
+   },
+   "Other non-English languages": {
+    "E": 1.0
+   },
+   "Pashto": {
+    "E": 1.0
+   },
+   "Polish": {
+    "E": 1.0
+   },
+   "Portuguese": {
+    "E": 1.0
+   },
+   "Punjabi": {
+    "E": 1.0
+   },
+   "RU": {
+    "E": 1.0
+   },
+   "Rumanian": {
+    "E": 1.0
+   },
+   "SP": {
+    "E": 1.0
+   },
+   "Sign Language": {
+    "E": 1.0
+   },
+   "Swedish": {
+    "E": 1.0
+   },
+   "Tamil": {
+    "E": 1.0
+   },
+   "Thai": {
+    "E": 1.0
+   },
+   "Tigrinya": {
+    "E": 1.0
+   },
+   "Turkish": {
+    "E": 1.0
+   },
+   "Ukrainian": {
+    "E": 1.0
+   },
+   "Urdu": {
+    "E": 1.0
+   },
+   "VN": {
+    "E": 1.0
+   },
+   "Yugoslavian": {
+    "E": 1.0
+   },
+   "__default__": {
+    "E": 1.0
+   }
+  },
+  "fine_eth_by_coarse": {
+   "Asian": {
+    "Asian Indian": 0.06649223170503432,
+    "Chinese": 0.7195734567635834,
+    "Filipino": 0.06910533452019983,
+    "Japanese": 0.01361059498079837,
+    "Korean": 0.019774729453927917,
+    "Other Asian": 0.07177316335676548,
+    "Vietnamese": 0.03967048921969057
+   },
+   "Black": {
+    "Black or African American": 1.0
+   },
+   "Decline": {
+    "Decline to State": 1.0
+   },
+   "Hispanic": {
+    "Hispanic/Latino": 1.0
+   },
+   "PI/Other": {
+    "Samoan": 1.0
+   },
+   "TwoOrMore": {
+    "Two or More Races": 1.0
+   },
+   "White": {
+    "Middle Eastern/Arabic": 0.05511824130424677,
+    "White": 0.9448817586957532
+   }
+  },
+  "frl_bin_edges": [
+   0.3,
+   0.6
+  ],
+  "frl_bin_labels": [
+   "low",
+   "mid",
+   "high"
+  ],
+  "homelang_by_coarse_eth": {
+   "Asian": {
+    "AR": 0.00011808684102107901,
+    "CC": 0.4276153179907755,
+    "CM": 0.08565664793082002,
+    "Chinese Other": 0.012680624857164246,
+    "EN": 0.387543455923299,
+    "Filipino (Pilipino or Tagalog)": 0.011291937787641726,
+    "Hebrew": 4.7441194595927326e-05,
+    "Italian": 5.8783977491544565e-05,
+    "JA": 0.009361896723835972,
+    "KO": 0.016626018389521685,
+    "Other Asian": 0.006877650332021661,
+    "Other non-English languages": 0.005386680597272507,
+    "Portuguese": 7.01754697274551e-05,
+    "Punjabi": 9.836560661625954e-05,
+    "RU": 0.00015779678630404052,
+    "SP": 0.0041605970100406136,
+    "Thai": 0.007475341570955717,
+    "VN": 0.02477318101089514
+   },
+   "Black": {
+    "AR": 0.0001483379689108568,
+    "Amharic (Ethiopia)": 0.041435606203665966,
+    "CC": 0.0039270309937421664,
+    "CM": 0.0009224015368968981,
+    "Chinese Other": 0.0001762362699409939,
+    "EN": 0.946781528675941,
+    "Filipino (Pilipino or Tagalog)": 0.00010720457240543226,
+    "Hebrew": 5.959453558257505e-05,
+    "Italian": 7.384307811266376e-05,
+    "JA": 0.00011827162474568564,
+    "KO": 0.00015528984577028066,
+    "Other Asian": 6.872022978059706e-05,
+    "Other non-English languages": 8.11887379436267e-05,
+    "Portuguese": 8.815280819374137e-05,
+    "Punjabi": 0.00012356460863861756,
+    "RU": 0.0001982206872383315,
+    "SP": 0.005226446101778945,
+    "VN": 0.0003083615207114244
+   },
+   "Decline": {
+    "AR": 0.00048826015333134346,
+    "CC": 0.01292597417383914,
+    "CM": 0.0030361202809039123,
+    "Chinese Other": 0.0005800884885760075,
+    "EN": 0.8097269513879151,
+    "Filipino (Pilipino or Tagalog)": 0.0003528679902038651,
+    "Hebrew": 0.00019615771535030538,
+    "Italian": 0.00024305734335229096,
+    "JA": 0.0003892956203800973,
+    "KO": 0.0005111425244885401,
+    "Other Asian": 0.00022619529022810912,
+    "Other non-English languages": 0.0002672358663678057,
+    "Portuguese": 0.06004177326201921,
+    "Punjabi": 0.0004067176812733291,
+    "RU": 0.0006524510471259964,
+    "SP": 0.10894072732061542,
+    "VN": 0.0010149838540294781
+   },
+   "Hispanic": {
+    "AR": 4.701810775106565e-05,
+    "CC": 0.0012447357056405654,
+    "CM": 0.00029237001942253717,
+    "Chinese Other": 5.586092347476569e-05,
+    "EN": 0.37458674135326325,
+    "Filipino (Pilipino or Tagalog)": 3.3980215407928626e-05,
+    "Hebrew": 1.888944763076873e-05,
+    "Italian": 2.3405752612522597e-05,
+    "JA": 3.7488095846371324e-05,
+    "KO": 4.922161705922505e-05,
+    "Other Asian": 2.1781983346716975e-05,
+    "Other non-English languages": 2.5734077774116555e-05,
+    "Portuguese": 2.7941451973790644e-05,
+    "Punjabi": 3.91657923176779e-05,
+    "RU": 6.28292385253229e-05,
+    "SP": 0.6233350960687953,
+    "VN": 9.7740149157665e-05
+   },
+   "PI/Other": {
+    "AR": 0.00044939875790785914,
+    "CC": 0.011897175509487714,
+    "CM": 0.0027944706808199216,
+    "Chinese Other": 0.0005339183311684146,
+    "EN": 0.9643031046698329,
+    "Filipino (Pilipino or Tagalog)": 0.0003247826705109909,
+    "Hebrew": 0.00018054521351171607,
+    "Italian": 0.00022371202617629558,
+    "JA": 0.00035831096816753993,
+    "KO": 0.00047045988506695446,
+    "Other Asian": 0.00020819205044597785,
+    "Other non-English languages": 0.0002459661424237157,
+    "Portuguese": 0.00026706421018993514,
+    "Punjabi": 0.00037434637976562754,
+    "RU": 0.0006005214395923192,
+    "SP": 0.01583383137612804,
+    "VN": 0.0009341996888036823
+   },
+   "TwoOrMore": {
+    "AR": 0.0002172243981110562,
+    "CC": 0.030071917652762223,
+    "CM": 0.03008220594972377,
+    "Chinese Other": 0.000258078345984877,
+    "EN": 0.9011651885563128,
+    "Filipino (Pilipino or Tagalog)": 0.00015698913020386357,
+    "Hebrew": 8.726954546891681e-05,
+    "Italian": 0.00010813494559394019,
+    "JA": 0.012490272525597009,
+    "KO": 0.016437777430673747,
+    "Other Asian": 0.0001006331060196357,
+    "Other non-English languages": 0.00011889184450003479,
+    "Portuguese": 0.00012908994805768404,
+    "Punjabi": 0.00018094657717392687,
+    "RU": 0.00029027207123472385,
+    "SP": 0.007653546944552469,
+    "VN": 0.0004515610280291943
+   },
+   "White": {
+    "AR": 0.021993540597842,
+    "CC": 0.006066546812111873,
+    "CM": 0.0014249421794903126,
+    "Chinese Other": 0.0002722529013121459,
+    "EN": 0.8847452001270119,
+    "Filipino (Pilipino or Tagalog)": 0.00016561151618267361,
+    "French": 0.011006146586463175,
+    "German": 0.023185654709720473,
+    "Hebrew": 9.206269072840813e-05,
+    "Italian": 0.00011407409079143126,
+    "JA": 0.00018270809403021974,
+    "KO": 0.00023989449543745917,
+    "Other Asian": 0.0001061602242425409,
+    "Other non-English languages": 0.00012542179578825928,
+    "Polish": 0.011245593063478377,
+    "Portuguese": 0.00013618001446350772,
+    "Punjabi": 0.00019088478899733204,
+    "RU": 0.022797000065715858,
+    "SP": 0.008073906212593369,
+    "Ukrainian": 0.007359856712183018,
+    "VN": 0.0004763623214155574
+   }
+  },
+  "homelang_by_coarse_eth_ctip": {
+   "Asian|0": {
+    "AR": 2.978727742603171e-06,
+    "CC": 0.42403971447927336,
+    "CM": 0.085800487433266,
+    "Chinese Other": 0.011885667459172264,
+    "EN": 0.3870231978146916,
+    "Filipino (Pilipino or Tagalog)": 0.007972508133818964,
+    "Gujarati": 0.006157921122013667,
+    "Hebrew": 1.1966989824031206e-06,
+    "Hindi": 0.006863909942946788,
+    "Italian": 1.4828194493183859e-06,
+    "JA": 0.013213220023273565,
+    "KO": 0.012790764349725472,
+    "Other Asian": 0.008729580108536172,
+    "Other non-English languages": 0.007798972448303003,
+    "Portuguese": 1.7701686040535717e-06,
+    "Punjabi": 2.4812617461207194e-06,
+    "RU": 3.980406800564396e-06,
+    "SP": 0.00010495060781063254,
+    "Thai": 0.00018856467943676982,
+    "VN": 0.02741665131440662
+   },
+   "Asian|1": {
+    "AR": 2.5817685932412812e-05,
+    "CC": 0.5967425225624073,
+    "CM": 0.12945390716175814,
+    "Chinese Other": 0.0027724036578349494,
+    "EN": 0.25211854368010855,
+    "Filipino (Pilipino or Tagalog)": 0.0024687907716799606,
+    "Hebrew": 1.0372212955696695e-05,
+    "Italian": 1.2852120148288255e-05,
+    "JA": 0.002046820011931191,
+    "KO": 0.0036349970697460575,
+    "Other Asian": 0.00150368165233071,
+    "Other non-English languages": 0.0011777063953618556,
+    "Portuguese": 1.5342676812394113e-05,
+    "Punjabi": 2.150597235230073e-05,
+    "RU": 3.449959228915744e-05,
+    "SP": 0.0009096440040883977,
+    "Thai": 0.0016343567094151792,
+    "VN": 0.005416236062847467
+   },
+   "Black|0": {
+    "AR": 1.233760626775024e-05,
+    "Amharic (Ethiopia)": 0.003446293612888778,
+    "CC": 0.00032662009974775076,
+    "CM": 7.671823381807615e-05,
+    "Chinese Other": 1.4657971418872453e-05,
+    "EN": 0.9955736986950223,
+    "Filipino (Pilipino or Tagalog)": 8.91644812283756e-06,
+    "Hebrew": 4.956613071661315e-06,
+    "Italian": 6.141696762076212e-06,
+    "JA": 9.836920037891782e-06,
+    "KO": 1.2915809678132638e-05,
+    "Other Asian": 5.71561781442376e-06,
+    "Other non-English languages": 6.752651997857498e-06,
+    "Portuguese": 7.331869560277414e-06,
+    "Punjabi": 1.0277149547113264e-05,
+    "RU": 1.6486465408860052e-05,
+    "SP": 0.0004346954097916553,
+    "VN": 2.564712904319549e-05
+   },
+   "Black|1": {
+    "AR": 1.0719080504580467e-05,
+    "Amharic (Ethiopia)": 0.0029941868687719505,
+    "CC": 0.0002837719949583593,
+    "CM": 6.665384732002321e-05,
+    "Chinese Other": 1.2735045377759829e-05,
+    "EN": 0.9961543690894404,
+    "Filipino (Pilipino or Tagalog)": 7.746731673018407e-06,
+    "Hebrew": 4.306373002360514e-06,
+    "Italian": 5.335989866972858e-06,
+    "JA": 8.546450220161727e-06,
+    "KO": 1.122143150925733e-05,
+    "Other Asian": 4.965806669189032e-06,
+    "Other non-English languages": 5.866796104010339e-06,
+    "Portuguese": 6.3700282178017355e-06,
+    "Punjabi": 8.928927618729049e-06,
+    "RU": 1.4323665881240416e-05,
+    "SP": 0.00037766929754502645,
+    "VN": 2.2282575319653694e-05
+   },
+   "Decline|0": {
+    "AR": 4.832822655147588e-05,
+    "CC": 0.08027055363651311,
+    "CM": 0.00030051665648308726,
+    "Chinese Other": 5.741743966720877e-05,
+    "EN": 0.7777402484522961,
+    "Filipino (Pilipino or Tagalog)": 3.4927044644094715e-05,
+    "Gujarati": 0.0605528738586316,
+    "Hebrew": 1.9415785708886594e-05,
+    "Italian": 2.4057933612612326e-05,
+    "JA": 3.853266912907215e-05,
+    "KO": 5.059313473571898e-05,
+    "Other Asian": 2.2388919424277638e-05,
+    "Other non-English languages": 2.6451135535811037e-05,
+    "Portuguese": 0.06982538850466789,
+    "Punjabi": 4.025711315772572e-05,
+    "RU": 6.457992077402778e-05,
+    "SP": 0.010783005974809459,
+    "VN": 0.00010046359365790553
+   },
+   "Decline|1": {
+    "AR": 0.00022323910477591813,
+    "CC": 0.005909929129453804,
+    "CM": 0.0013881550007236458,
+    "Chinese Other": 0.00026522425390843436,
+    "EN": 0.9130046047269369,
+    "Filipino (Pilipino or Tagalog)": 0.00016133598799681422,
+    "Hebrew": 8.968594400119867e-05,
+    "Italian": 0.00011112908429854299,
+    "JA": 0.00017799119013478531,
+    "KO": 0.00023370123242944448,
+    "Other Asian": 0.00010341952696841244,
+    "Other non-English languages": 0.00012218383000318483,
+    "Portuguese": 0.027451905752947686,
+    "Punjabi": 0.00018595679054395339,
+    "RU": 0.0002983093882979121,
+    "SP": 0.04980916479618531,
+    "VN": 0.00046406426039396093
+   },
+   "Hispanic|0": {
+    "AR": 9.237445154111939e-07,
+    "CC": 2.445478638378199e-05,
+    "CM": 5.744067867259328e-06,
+    "Chinese Other": 1.097475507921726e-06,
+    "EN": 0.4089369393204292,
+    "Filipino (Pilipino or Tagalog)": 6.675946590992614e-07,
+    "Hebrew": 3.7111284317208854e-07,
+    "Italian": 4.598427422762231e-07,
+    "JA": 7.365124754623884e-07,
+    "KO": 9.67035913883597e-07,
+    "Other Asian": 4.279412467604406e-07,
+    "Other non-English languages": 5.055863440711626e-07,
+    "Portuguese": 0.007436955939902418,
+    "Punjabi": 7.69473455561785e-07,
+    "RU": 1.234378992929874e-06,
+    "SP": 0.5835858249281002,
+    "VN": 1.9202586203146116e-06
+   },
+   "Hispanic|1": {
+    "AR": 4.617469092281773e-07,
+    "CC": 1.2224074774095066e-05,
+    "CM": 2.871254486337319e-06,
+    "Chinese Other": 5.485888308748493e-07,
+    "EN": 0.2780438637499231,
+    "Filipino (Pilipino or Tagalog)": 3.3370673959466426e-07,
+    "Hebrew": 1.8550606304094177e-07,
+    "Italian": 2.2985897229661897e-07,
+    "JA": 3.6815629590111064e-07,
+    "KO": 4.833867339928193e-07,
+    "Other Asian": 2.139125534455018e-07,
+    "Other non-English languages": 2.5272456596823674e-07,
+    "Portuguese": 2.744023463588444e-07,
+    "Punjabi": 3.8463231327616704e-07,
+    "RU": 6.170219961174478e-07,
+    "SP": 0.7219357274077575,
+    "VN": 9.598687386569691e-07
+   },
+   "PI/Other|0": {
+    "AR": 5.126416360201757e-05,
+    "CC": 0.001357143830480598,
+    "CM": 0.0003187730264976965,
+    "Chinese Other": 6.0905545904391875e-05,
+    "EN": 0.9959279560744472,
+    "Filipino (Pilipino or Tagalog)": 3.704886064591509e-05,
+    "Hebrew": 2.0595293600974914e-05,
+    "Italian": 2.5519451729307712e-05,
+    "JA": 4.087352661598633e-05,
+    "KO": 5.3666664831333666e-05,
+    "Other Asian": 2.3749045022706452e-05,
+    "Other non-English languages": 2.8058040535020366e-05,
+    "Portuguese": 3.0464755681918223e-05,
+    "Punjabi": 4.270273052259481e-05,
+    "RU": 6.850314733645015e-05,
+    "SP": 0.0018062090912120692,
+    "VN": 0.00010656675133402354
+   },
+   "PI/Other|1": {
+    "AR": 9.578333141820111e-05,
+    "CC": 0.0025357237524884554,
+    "CM": 0.0005956040301613386,
+    "Chinese Other": 0.00011379754742233294,
+    "EN": 0.9923916844542965,
+    "Filipino (Pilipino or Tagalog)": 6.922307999529659e-05,
+    "Hebrew": 3.848079621374529e-05,
+    "Italian": 4.768122467724931e-05,
+    "JA": 7.636918796692516e-05,
+    "KO": 0.00010027222883329837,
+    "Other Asian": 4.437334953780745e-05,
+    "Other non-English languages": 5.2424391752007575e-05,
+    "Portuguese": 5.692116256317612e-05,
+    "Punjabi": 7.978692136404728e-05,
+    "RU": 0.00012799310870369548,
+    "SP": 0.0033747692703470665,
+    "VN": 0.00019911216225882363
+   },
+   "TwoOrMore|0": {
+    "AR": 6.094981258058803e-06,
+    "CC": 0.03179916287181476,
+    "CM": 0.02308998475521563,
+    "Chinese Other": 7.241279964713961e-06,
+    "EN": 0.9070538129528921,
+    "Filipino (Pilipino or Tagalog)": 0.0094436068696565,
+    "Hebrew": 2.4486487183655164e-06,
+    "Italian": 3.0340996336853383e-06,
+    "JA": 0.013141755681710877,
+    "KO": 0.015202437778499379,
+    "Other Asian": 2.8236095966363073e-06,
+    "Other non-English languages": 3.335921610395158e-06,
+    "Portuguese": 3.622064652300778e-06,
+    "Punjabi": 5.07708160858217e-06,
+    "RU": 8.14458619426831e-06,
+    "SP": 0.0002147467116510161,
+    "VN": 1.2670105322610268e-05
+   },
+   "TwoOrMore|1": {
+    "AR": 1.0907115257607732e-05,
+    "CC": 0.001509949502487639,
+    "CM": 0.0015104660910556815,
+    "Chinese Other": 1.2958444307488442e-05,
+    "EN": 0.9950373775263995,
+    "Filipino (Pilipino or Tagalog)": 7.882625304592687e-06,
+    "Hebrew": 4.381915655818162e-06,
+    "Italian": 5.429594121214952e-06,
+    "JA": 0.0006271525814792159,
+    "KO": 0.00082536185886265,
+    "Other Asian": 5.05291714757597e-06,
+    "Other non-English languages": 5.969711793094632e-06,
+    "Portuguese": 6.481771634804643e-06,
+    "Punjabi": 9.085559402478468e-06,
+    "RU": 1.4574932487109567e-05,
+    "SP": 0.0003842943950111304,
+    "VN": 2.2673457592181843e-05
+   },
+   "White|0": {
+    "AR": 0.02189143581322706,
+    "CC": 0.00031005123224927986,
+    "CM": 7.282645173904883e-05,
+    "Chinese Other": 1.3914398116362174e-05,
+    "EN": 0.91134972266258,
+    "Filipino (Pilipino or Tagalog)": 8.464132274491479e-06,
+    "French": 0.000562506054455248,
+    "German": 0.0011849806876793262,
+    "Greek": 0.012669736017371317,
+    "Hebrew": 4.705172743007411e-06,
+    "Italian": 5.830139206539308e-06,
+    "JA": 9.337910256109344e-06,
+    "KO": 1.2260613199539556e-05,
+    "Other Asian": 5.4256745001200015e-06,
+    "Other non-English languages": 6.4101017497184704e-06,
+    "Polish": 0.0005747437701699096,
+    "Portuguese": 6.959936616303273e-06,
+    "Punjabi": 9.7558076908111e-06,
+    "RU": 0.03176684787111004,
+    "SP": 0.00041264407047544697,
+    "Ukrainian": 0.010891703718834387,
+    "VN": 2.4346094957537334e-05,
+    "Yugoslavian": 0.00820539166879846
+   },
+   "White|1": {
+    "AR": 0.00564354314704621,
+    "CC": 0.0015566760856634563,
+    "CM": 0.00036564020405103386,
+    "Chinese Other": 6.986010227086254e-05,
+    "EN": 0.8690904590993369,
+    "Filipino (Pilipino or Tagalog)": 4.249591979366735e-05,
+    "French": 0.0028241775291748556,
+    "German": 0.005949439662282551,
+    "Hebrew": 2.3623289076517376e-05,
+    "Italian": 2.9271414962840356e-05,
+    "JA": 4.688290215879541e-05,
+    "KO": 6.155693439704843e-05,
+    "Other Asian": 2.7240716579833723e-05,
+    "Other non-English languages": 3.21832363898931e-05,
+    "Polish": 0.0028856195020319263,
+    "Portuguese": 3.494379560995247e-05,
+    "Punjabi": 4.8981042321442145e-05,
+    "RU": 0.0058497108695044035,
+    "SP": 0.002071764565294503,
+    "Ukrainian": 0.0018885394430471097,
+    "Urdu": 0.10133515595369376,
+    "VN": 0.00012223458531272476
+   }
+  },
+  "homelang_citywide": {
+   "AR": 0.004991043818359622,
+   "CC": 0.13213059279247666,
+   "CM": 0.031035523288992072,
+   "Chinese Other": 0.0059297221885810615,
+   "EN": 0.6035485954574259,
+   "Filipino (Pilipino or Tagalog)": 0.003607051669458703,
+   "Hebrew": 0.002005143663563094,
+   "Italian": 0.002484556322625251,
+   "JA": 0.003979418525873448,
+   "KO": 0.005224949690739983,
+   "Other Asian": 0.0023121907395726705,
+   "Other non-English languages": 0.0027317115881333853,
+   "Portuguese": 0.00296602772464018,
+   "Punjabi": 0.004157508564003675,
+   "RU": 0.00666941945461316,
+   "SP": 0.17585127866992362,
+   "VN": 0.010375265841017493
+  },
+  "p_demographics_observed": 0.9594,
+  "p_demographics_observed_by_aa": {
+   "413": 0.8836,
+   "420": 0.8028,
+   "435": 0.8677,
+   "453": 0.8506,
+   "456": 0.9637,
+   "478": 0.886,
+   "488": 0.9073,
+   "497": 0.8758,
+   "505": 0.8197,
+   "513": 0.9159,
+   "525": 0.9575,
+   "539": 0.8755,
+   "544": 0.9183,
+   "569": 0.8315,
+   "589": 0.8831,
+   "603": 0.9268,
+   "614": 0.8499,
+   "625": 0.9487,
+   "644": 0.9645,
+   "656": 0.7637,
+   "664": 0.8579,
+   "670": 0.9003,
+   "680": 0.8747,
+   "691": 0.8715,
+   "718": 0.8718,
+   "722": 0.8207,
+   "723": 0.892,
+   "729": 0.9068,
+   "735": 0.8461,
+   "746": 0.8617,
+   "750": 0.9267,
+   "782": 0.9725,
+   "786": 0.8899,
+   "816": 0.809,
+   "823": 0.849,
+   "848": 0.8616,
+   "859": 0.7967,
+   "862": 0.9013,
+   "867": 0.992,
+   "876": 0.9049
+  },
+  "race_frl_aa_blend": 1.0,
+  "sped_rate_by_ctip1": {
+   "0": 0.11,
+   "1": 0.11
+  }
+ },
+ "meta": {
+  "attribute_decimals": 3,
+  "composed_epsilon": 20.5,
+  "frl_edge_round": 0.05,
+  "generated": "2026-09-24",
+  "grade": "KG",
+  "laplace_epsilon_per_family": 0.5,
+  "min_blockgroup_blocks": 3,
+  "min_blockgroup_students": 5,
+  "min_cell": 5,
+  "min_rate_denominator": 20,
+  "n_noisy_queries": 462,
+  "n_query_families": 41,
+  "non_laplace_releases": [
+   "blockgroup socio-economic attribute means",
+   "within-block-group attribute residual quantiles",
+   "frl_bin_edges (snapped to frl_edge_round grid)",
+   "ctip_by_tract (binary CTIP1 per census tract)"
+  ],
+  "parent_variant": "joint_v3",
+  "prior_floor": 2.0,
+  "privacy_revision": "2026-09-24-private-noise-seed",
+  "profile": "joint_frl_eth",
+  "query_families": [
+   "cohort size",
+   "students per attendance area",
+   "rank-1 school",
+   "tail school popularity",
+   "mean choice distance by list position",
+   "list-length bins",
+   "list-length bins CTIP1 tilt",
+   "program type",
+   "rank-1 program type",
+   "school x program-type existence",
+   "same-school repeat choices",
+   "assigned rank",
+   "round-1 unassigned rate",
+   "final school equals round-1 assignment",
+   "final-school popularity",
+   "demographics observed rate",
+   "coarse ethnicity",
+   "coarse ethnicity CTIP1 tilt",
+   "reported ethnicity",
+   "home language",
+   "home language by ethnicity",
+   "home language by ethnicity and CTIP",
+   "English proficiency by language",
+   "sibling rate",
+   "two sibling schools",
+   "sibling school is attendance-area school",
+   "sibling school appears in list",
+   "sibling school is first choice",
+   "sibling is in a language pathway",
+   "attendance-area pre-K rate",
+   "citywide pre-K rate",
+   "pre-K schools",
+   "current language pathway rate",
+   "current language pathway schools",
+   "designation request rate",
+   "designation flag",
+   "previous pathway equals assigned pathway",
+   "previous pathway distribution",
+   "missing census block",
+   "missing coordinates",
+   "num_ranked minus list length"
+  ],
+  "race_frl_aa_blend_override": 1.0,
+  "source_year": "2324",
+  "tilt_cap": 8.0,
+  "variant": "joint_v4_blend1"
+ },
+ "missingness": {
+  "num_ranked_excess": {
+   "0": 0.9317890949075923,
+   "1": 0.02494666455555993,
+   "10": 0.0015343782034414584,
+   "12": 0.0018202549247546516,
+   "17": 0.001295380914783382,
+   "2": 0.013832467169532276,
+   "22": 0.001808502239625739,
+   "3": 0.008114928349835194,
+   "4": 0.005215075405115016,
+   "5": 0.004174585683703597,
+   "6": 0.002141599889296746,
+   "7": 0.0033270677567599173
+  },
+  "p_no_census_block": 0.0194,
+  "p_no_latlon": 0.012
+ },
+ "n_students": 3886,
+ "priorities": {
+  "currentlp_schools": {
+   "420": 0.07204479244644749,
+   "453": 0.04141979506968139,
+   "456": 0.05563525084671121,
+   "485": 0.04296482143588623,
+   "490": 0.048338973304117905,
+   "497": 0.03596874965413559,
+   "509": 0.057533461158069905,
+   "513": 0.052740209785260214,
+   "537": 0.13459088555808937,
+   "603": 0.04220006150413018,
+   "618": 0.08434449088511262,
+   "638": 0.0214507380305089,
+   "680": 0.03949813842420226,
+   "714": 0.02175408477003467,
+   "723": 0.04872146229593344,
+   "729": 0.06334256601709021,
+   "760": 0.04117554846235568,
+   "862": 0.05744057816812342,
+   "876": 0.038835392184109335
+  },
+  "designation_rate_by_hlgroup": {
+   "AR": 0.25,
+   "EN": 0.2709,
+   "JA": 0.25,
+   "KO": 0.5923,
+   "OTH": 0.2721,
+   "RU": 0.25,
+   "SP": 0.1915,
+   "VN": 0.0,
+   "ZH": 0.2772
+  },
+  "p_aaprek": 0.016,
+  "p_aaprek_by_aa": {
+   "435": 0.1272,
+   "453": 0.1298,
+   "490": 0.288,
+   "507": 0.0726,
+   "544": 0.213,
+   "589": 0.2251,
+   "656": 0.1674,
+   "782": 0.0398,
+   "790": 0.1146,
+   "823": 0.1429,
+   "830": 0.3018,
+   "859": 0.1279,
+   "867": 0.0234,
+   "876": 0.1152
+  },
+  "p_currentlp": 0.0392,
+  "p_isdesignation_ge": 0.0904,
+  "p_isdesignation_lp": 0.0196,
+  "p_prek": 0.0178,
+  "p_previous_pathway_matches_assignment": 0.92,
+  "p_sibling": 0.1662,
+  "p_sibling_by_aa": {
+   "413": 0.2214,
+   "420": 0.2334,
+   "435": 0.3152,
+   "453": 0.179,
+   "456": 0.2403,
+   "478": 0.1984,
+   "481": 0.338,
+   "488": 0.3636,
+   "490": 0.4987,
+   "497": 0.2691,
+   "505": 0.3404,
+   "507": 0.2937,
+   "513": 0.3198,
+   "521": 0.3511,
+   "525": 0.2208,
+   "539": 0.2979,
+   "544": 0.4151,
+   "549": 0.2937,
+   "569": 0.1138,
+   "575": 0.2555,
+   "589": 0.3053,
+   "593": 0.3712,
+   "603": 0.2595,
+   "614": 0.2804,
+   "625": 0.3095,
+   "638": 0.4712,
+   "644": 0.3315,
+   "650": 0.3802,
+   "656": 0.2463,
+   "664": 0.2663,
+   "670": 0.333,
+   "680": 0.4079,
+   "691": 0.2275,
+   "718": 0.2554,
+   "722": 0.3096,
+   "723": 0.0892,
+   "729": 0.3321,
+   "735": 0.3483,
+   "746": 0.1761,
+   "750": 0.2117,
+   "782": 0.3799,
+   "786": 0.2473,
+   "790": 0.3077,
+   "801": 0.1595,
+   "816": 0.3827,
+   "820": 0.2708,
+   "823": 0.2953,
+   "830": 0.432,
+   "842": 0.3433,
+   "848": 0.2718,
+   "859": 0.1833,
+   "862": 0.3296,
+   "867": 0.344,
+   "872": 0.4299,
+   "876": 0.2386
+  },
+  "prek_schools": {
+   "449": 0.3147567377911078,
+   "537": 0.10017595133059633,
+   "760": 0.17127771373705827,
+   "796": 0.12474795906141906,
+   "814": 0.28904163807981853
+  },
+  "previous_pathway_citywide": {
+   "CB": 0.044186452444159065,
+   "CE": 0.02455005612637399,
+   "CN": 0.015530098700496823,
+   "CT": 0.006780792843882154,
+   "FB": 0.00660484865837312,
+   "GE": 0.7081080701991629,
+   "JE": 0.014254158563077221,
+   "JN": 0.003759411127788203,
+   "KE": 0.0021142274607172194,
+   "KN": 0.0030521955800968514,
+   "ME": 0.006692657314432509,
+   "MN": 0.010446447318399775,
+   "SB": 0.056122861434660457,
+   "SE": 0.044279917532457455,
+   "SN": 0.053517804695922204
+  },
+  "sibling": {
+   "p_currentlpsibling_given_sibling": 0.0291,
+   "p_sibling_first_choice": 0.9228,
+   "p_sibling_in_list": 0.9968,
+   "p_sibling_is_aa_school": 0.3135,
+   "p_two_schools": 0.0027
+  }
+ },
+ "students_per_aa": {
+  "413": 87,
+  "420": 107,
+  "435": 75,
+  "453": 57,
+  "456": 42,
+  "478": 112,
+  "481": 78,
+  "488": 55,
+  "490": 31,
+  "497": 212,
+  "505": 48,
+  "507": 103,
+  "513": 100,
+  "521": 73,
+  "525": 37,
+  "539": 89,
+  "544": 85,
+  "549": 40,
+  "562": 16,
+  "569": 38,
+  "575": 68,
+  "589": 55,
+  "593": 64,
+  "603": 50,
+  "614": 62,
+  "625": 111,
+  "638": 22,
+  "644": 91,
+  "650": 44,
+  "656": 69,
+  "664": 88,
+  "670": 57,
+  "680": 65,
+  "691": 80,
+  "718": 54,
+  "722": 68,
+  "723": 75,
+  "729": 102,
+  "735": 79,
+  "746": 46,
+  "750": 71,
+  "782": 115,
+  "786": 50,
+  "790": 57,
+  "801": 38,
+  "816": 63,
+  "820": 66,
+  "823": 65,
+  "830": 37,
+  "834": 23,
+  "838": 33,
+  "842": 84,
+  "848": 48,
+  "859": 44,
+  "862": 91,
+  "867": 77,
+  "872": 21,
+  "876": 69
+ }
+}

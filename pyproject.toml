@@ -1,0 +1,83 @@
+[project]
+name = "student-assignment"
+version = "0.1.0"
+description = "Student Assignment Simulation Tools for San Francisco Unified School District."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    { name = "Kaleigh Mentzer", email = "klmentzer@gmail.com" },
+]
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "shapely",
+    "matplotlib",
+    "seaborn",
+    "openpyxl",
+    "click",
+    "tqdm",
+    "yamale",
+    "rules",
+    "pyyaml",
+    "hydra-core",
+    "omegaconf",
+    "adjusttext>=1.4.0",
+    "geopandas>=1.1.4",
+]
+
+[project.urls]
+Homepage = "https://github.com/klmentzer/student-assignment"
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff>=0.6",
+    "sphinx",
+    "sphinx-rtd-theme",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["student_assignment*"]
+exclude = ["tests*", "docs*"]
+
+[tool.ruff]
+line-length = 80
+# Untracked, local-only exploratory scripts — not part of the package.
+extend-exclude = ["Model_Analysis", "_local_scripts", "*.ipynb"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "D"]
+ignore = [
+    # Line length is enforced by the formatter (ruff format), which knows how
+    # to wrap code; the linter would otherwise also flag long comments/URLs.
+    "E501",
+    # Don't force a docstring onto *every* symbol; quality rules below still
+    # apply to the docstrings that do exist (google convention).
+    "D100", "D101", "D102", "D103", "D104", "D105", "D107",
+    # Multi-line summaries are used deliberately throughout; the one-line
+    # summary rule is the most cosmetic of the pydocstyle checks.
+    "D205",
+]
+
+[tool.ruff.lint.per-file-ignores]
+# Package __init__.py files aggregate/re-export the public API via star.
+"__init__.py" = ["F401", "F403", "F405"]
+# Entry points / scripts are not a documented library API.
+"scripts/*" = ["D"]
+# Tests star-import the shared fixtures helper and aren't a documented API.
+"tests/*" = ["D", "F403", "F405"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

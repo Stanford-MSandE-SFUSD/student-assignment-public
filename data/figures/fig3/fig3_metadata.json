@@ -1,0 +1,20 @@
+{
+  "feature": "freelunch_prob",
+  "panels": {
+    "mean": {
+      "title": "Weighted Mean Spatial Deviation vs Zone Deviation",
+      "curve_legend": "Weighted mean spatial deviation, $\\bar{D}(r)$",
+      "maps_csv": "fig3_mean_maps.csv",
+      "curve_csv": "fig3_mean_curve.csv",
+      "outfile": "fig3_mean.png"
+    },
+    "quantile": {
+      "title": "Quantile Spatial Deviation vs Max Zone Deviation",
+      "curve_legend": "Quantile spatial deviation, $\\bar{D}^{q(r)}(r)$",
+      "maps_csv": "fig3_quantile_maps.csv",
+      "curve_csv": "fig3_quantile_curve.csv",
+      "outfile": "fig3_quantile.png"
+    }
+  },
+  "note": "Aggregate (radius, zone deviation) points + spatial segregation index curve for paper Fig. 3; no student microdata."
+}

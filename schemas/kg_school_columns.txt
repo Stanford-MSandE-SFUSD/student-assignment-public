@@ -1,0 +1,19 @@
+# Ordered columns for KG paper/simulator school CSVs (schools_rehauled shape).
+school_id
+school_name
+school_name_long
+lat
+lon
+zip
+category
+grades
+cap_lb
+greatschools_rating
+ela_color
+math_color
+chronic_color
+suspension_color
+index
+Block
+BlockGroup
+Tract

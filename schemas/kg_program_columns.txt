@@ -1,0 +1,9 @@
+# Ordered columns for KG paper/simulator program CSVs.
+program_id
+school_id
+program_type
+capacity
+programno
+r1_assigned
+r1_noenroll
+r1_first_choice

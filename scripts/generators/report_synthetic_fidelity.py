@@ -1,0 +1,586 @@
+"""Compare the synthetic dataset against the confidential source cohort.
+
+Produces the fidelity table shipped as ``data/synthetic_2324/FIDELITY.md``.
+Like ``extract_synthetic_priors.py`` this needs the confidential data, so it
+cannot be re-run from a public clone; the point of committing it is that the
+numbers in the released table can be audited by anyone with data access.
+
+Every statistic reported here is an aggregate over hundreds or thousands of
+applicants -- the same class of quantity the priors file already releases.
+
+Usage:
+    python scripts/generators/report_synthetic_fidelity.py \
+        --sfusd-root <SFUSD_DATA_PATH> \
+        --data-dir data/synthetic_2324 \
+        --out data/synthetic_2324/FIDELITY.md
+"""
+
+import argparse
+import ast
+import datetime as _dt
+import logging
+import sys
+from collections import Counter
+from pathlib import Path
+
+import numpy as np
+import pandas as pd
+
+_GENERATORS = Path(__file__).resolve().parent
+if str(_GENERATORS) not in sys.path:
+    sys.path.insert(0, str(_GENERATORS))
+from extract_synthetic_priors import (  # noqa: E402
+    canonicalize_ethnicity,
+    normalize_homelang,
+)
+
+logger = logging.getLogger(__name__)
+
+GRADE = "KG"
+LIST_COLUMNS = ("r1_ranked_idschool", "r1_programs", "sibling")
+# `map_ethnicity` in student_assignment/evaluation/short_match_evaluator.py
+# folds these labels into the AALPI groups the equity metrics are built on.
+AALPI_LABELS = {
+    "Black or African American",
+    "Black/African American",
+    "Hispanic/Latino",
+    "Hispanic/Latinx",
+    "Hispanic",
+    "Samoan",
+    "Pacific Islander",
+    "Other Pacific Islander",
+    "Hawaiian Native",
+}
+
+
+def _load(path: Path) -> pd.DataFrame:
+    """Load a student table and parse its list-valued columns."""
+    df = pd.read_csv(path, low_memory=False)
+    if "grade" in df.columns:
+        df = df.loc[df["grade"] == GRADE].reset_index(drop=True)
+    if "englprof" not in df.columns and "englprof_desc" in df.columns:
+        df["englprof"] = df["englprof_desc"]
+    if "homelang" in df.columns:
+        df["homelang"] = df["homelang"].apply(normalize_homelang)
+    if "resolved_ethnicity" in df.columns:
+        df["resolved_ethnicity"] = df["resolved_ethnicity"].apply(
+            canonicalize_ethnicity
+        )
+    for column in LIST_COLUMNS:
+        df[column] = df[column].fillna("[]").apply(ast.literal_eval)
+    df["n_listed"] = df["r1_ranked_idschool"].apply(len)
+    return df
+
+
+def _haversine_miles(lat1, lon1, lat2, lon2):
+    """Great-circle distance in miles between (arrays of) coordinates."""
+    lat1, lon1, lat2, lon2 = map(np.radians, (lat1, lon1, lat2, lon2))
+    a = (
+        np.sin((lat2 - lat1) / 2) ** 2
+        + np.cos(lat1) * np.cos(lat2) * np.sin((lon2 - lon1) / 2) ** 2
+    )
+    return 3958.8 * 2 * np.arcsin(np.sqrt(np.clip(a, 0, 1)))
+
+
+def _choice_distances(df: pd.DataFrame, school_ll: pd.DataFrame) -> dict:
+    """Mean home-to-school distance of ranked choices, by list position."""
+    buckets: dict[int, list] = {}
+    located = df.dropna(subset=["latitude", "longitude"])
+    for row in located.itertuples():
+        for position, school in enumerate(row.r1_ranked_idschool, start=1):
+            if int(school) not in school_ll.index:
+                continue
+            lat, lon = school_ll.loc[int(school)]
+            buckets.setdefault(min(position, 8), []).append(
+                _haversine_miles(row.latitude, row.longitude, lat, lon)
+            )
+    return {k: float(np.mean(v)) for k, v in sorted(buckets.items())}
+
+
+def _share(counter: Counter) -> pd.Series:
+    """Normalise a counter into a share series."""
+    total = sum(counter.values())
+    return (
+        pd.Series({k: v / total for k, v in counter.items()})
+        if total
+        else pd.Series()
+    )
+
+
+def _rows(
+    real: pd.DataFrame, syn: pd.DataFrame, school_ll: pd.DataFrame
+) -> list:
+    """Build the (section, statistic, real, synthetic, gap) rows of the report."""
+    out = []
+
+    def add(section, name, real_value, syn_value, fmt="{:.3f}"):
+        out.append(
+            (
+                section,
+                name,
+                fmt.format(real_value) if real_value is not None else "-",
+                fmt.format(syn_value) if syn_value is not None else "-",
+                "-",
+            )
+        )
+
+    def add_gap(section, name, gap_value, fmt="{:.3f}"):
+        """Cross-dataset statistic (correlation, TAD, max abs diff)."""
+        if gap_value is None or (isinstance(gap_value, float) and np.isnan(gap_value)):
+            return
+        out.append(
+            (
+                section,
+                name,
+                "-",
+                "-",
+                fmt.format(gap_value),
+            )
+        )
+
+    aa_real = real["idschoolattendance"].value_counts()
+    aa_syn = syn["idschoolattendance"].value_counts()
+    joined = pd.DataFrame({"real": aa_real, "syn": aa_syn}).dropna()
+    add("Cohort", "Applicants", len(real), len(syn), "{:.0f}")
+    add(
+        "Cohort",
+        "Attendance areas",
+        real["idschoolattendance"].nunique(),
+        syn["idschoolattendance"].nunique(),
+        "{:.0f}",
+    )
+    add_gap(
+        "Cohort",
+        "Correlation of applicants per attendance area",
+        joined["real"].corr(joined["syn"]),
+    )
+    add_gap(
+        "Cohort",
+        "Largest absolute difference in applicants per area",
+        (joined["real"] - joined["syn"]).abs().max(),
+        "{:.0f}",
+    )
+
+    add(
+        "Ranked lists",
+        "Mean list length",
+        real["n_listed"].mean(),
+        syn["n_listed"].mean(),
+    )
+    add(
+        "Ranked lists",
+        "Median list length",
+        real["n_listed"].median(),
+        syn["n_listed"].median(),
+        "{:.0f}",
+    )
+    add(
+        "Ranked lists",
+        "Share filing no list",
+        (real["n_listed"] == 0).mean(),
+        (syn["n_listed"] == 0).mean(),
+    )
+    add(
+        "Ranked lists",
+        "Share filing 10 or more choices",
+        (real["n_listed"] >= 10).mean(),
+        (syn["n_listed"] >= 10).mean(),
+    )
+    for name, df in (("real", real), ("syn", syn)):
+        df["_aa_first"] = [
+            (bool(lst) and not pd.isna(aa) and int(lst[0]) == int(aa))
+            for lst, aa in zip(
+                df["r1_ranked_idschool"], df["idschoolattendance"]
+            )
+        ]
+        df["_aa_in"] = [
+            (bool(lst) and not pd.isna(aa) and int(aa) in lst)
+            for lst, aa in zip(
+                df["r1_ranked_idschool"], df["idschoolattendance"]
+            )
+        ]
+    listed_real = real[real["n_listed"] > 0]
+    listed_syn = syn[syn["n_listed"] > 0]
+    add(
+        "Ranked lists",
+        "First choice is own attendance-area school",
+        listed_real["_aa_first"].mean(),
+        listed_syn["_aa_first"].mean(),
+    )
+    add(
+        "Ranked lists",
+        "Own attendance-area school appears in list",
+        listed_real["_aa_in"].mean(),
+        listed_syn["_aa_in"].mean(),
+    )
+
+    first_real = _share(
+        Counter(int(x[0]) for x in real["r1_ranked_idschool"] if x)
+    )
+    first_syn = _share(
+        Counter(int(x[0]) for x in syn["r1_ranked_idschool"] if x)
+    )
+    any_real = _share(
+        Counter(int(s) for x in real["r1_ranked_idschool"] for s in x)
+    )
+    any_syn = _share(
+        Counter(int(s) for x in syn["r1_ranked_idschool"] for s in x)
+    )
+    first = pd.DataFrame({"real": first_real, "syn": first_syn}).fillna(0)
+    anywhere = pd.DataFrame({"real": any_real, "syn": any_syn}).fillna(0)
+    add_gap(
+        "School demand",
+        "Correlation of first-choice share across schools",
+        first["real"].corr(first["syn"]),
+    )
+    add_gap(
+        "School demand",
+        "Correlation of any-rank share across schools",
+        anywhere["real"].corr(anywhere["syn"]),
+    )
+    add_gap(
+        "School demand",
+        "Total absolute deviation in first-choice share",
+        (first["real"] - first["syn"]).abs().sum(),
+    )
+
+    type_real = _share(Counter(p for x in real["r1_programs"] for p in x))
+    type_syn = _share(Counter(p for x in syn["r1_programs"] for p in x))
+    add(
+        "Program type",
+        "General education share of choices",
+        type_real.get("GE", 0),
+        type_syn.get("GE", 0),
+    )
+    add(
+        "Program type",
+        "Language pathway share of choices",
+        1 - type_real.get("GE", 0),
+        1 - type_syn.get("GE", 0),
+    )
+
+    def _repeat_share(df: pd.DataFrame) -> float:
+        repeats = total = 0
+        for lst in df["r1_ranked_idschool"]:
+            seen = set()
+            for school in lst:
+                total += 1
+                repeats += school in seen
+                seen.add(school)
+        return repeats / total if total else 0.0
+
+    def _repeat_applicants(df: pd.DataFrame) -> float:
+        return float(
+            np.mean(
+                [len(set(lst)) != len(lst) for lst in df["r1_ranked_idschool"]]
+            )
+        )
+
+    add(
+        "Program type",
+        "Share of choices repeating a school already ranked",
+        _repeat_share(real),
+        _repeat_share(syn),
+    )
+    add(
+        "Program type",
+        "Share of applicants ranking one school twice",
+        _repeat_applicants(listed_real),
+        _repeat_applicants(listed_syn),
+    )
+    add_gap(
+        "Program type",
+        "Total absolute deviation across program types",
+        pd.DataFrame({"real": type_real, "syn": type_syn})
+        .fillna(0)
+        .diff(axis=1)
+        .iloc[:, 1]
+        .abs()
+        .sum(),
+    )
+
+    real_dist = _choice_distances(real, school_ll)
+    syn_dist = _choice_distances(syn, school_ll)
+    for position in sorted(real_dist):
+        label = "8+" if position == 8 else str(position)
+        add(
+            "Choice distance (mi)",
+            f"Mean distance of choice at position {label}",
+            real_dist[position],
+            syn_dist.get(position),
+            "{:.2f}",
+        )
+
+    for column, label in (
+        ("freelunch_prob", "Free-lunch probability of home block"),
+    ):
+        add(
+            "Block attributes",
+            f"{label}: mean",
+            real[column].mean(),
+            syn[column].mean(),
+        )
+        add(
+            "Block attributes",
+            f"{label}: std. dev.",
+            real[column].std(),
+            syn[column].std(),
+        )
+    add(
+        "Block attributes",
+        "CTIP1 share",
+        real["ctip1"].mean(),
+        syn["ctip1"].mean(),
+    )
+
+    for column, label in (
+        ("resolved_ethnicity", "ethnicity"),
+        ("homelang", "home language"),
+        ("englprof", "English proficiency"),
+    ):
+        real_obs = real[column].dropna()
+        syn_obs = syn[column].dropna()
+        if real_obs.empty or syn_obs.empty:
+            # Source extract may lack the field (e.g. 2324 englprof is blank).
+            continue
+        shares = pd.DataFrame(
+            {
+                "real": real_obs.value_counts(normalize=True),
+                "syn": syn_obs.value_counts(normalize=True),
+            }
+        ).fillna(0)
+        add_gap(
+            "Demographics",
+            f"Total absolute deviation across {label} categories",
+            (shares["real"] - shares["syn"]).abs().sum(),
+        )
+    for name, df in (("real", real), ("syn", syn)):
+        df["_aalpi"] = df["resolved_ethnicity"].isin(AALPI_LABELS)
+    add(
+        "Demographics",
+        "AALPI share",
+        real["_aalpi"].mean(),
+        syn["_aalpi"].mean(),
+    )
+    add(
+        "Segregation signal",
+        "Mean block free-lunch probability, AALPI applicants",
+        real.loc[real["_aalpi"], "freelunch_prob"].mean(),
+        syn.loc[syn["_aalpi"], "freelunch_prob"].mean(),
+    )
+    add(
+        "Segregation signal",
+        "Mean block free-lunch probability, other applicants",
+        real.loc[~real["_aalpi"], "freelunch_prob"].mean(),
+        syn.loc[~syn["_aalpi"], "freelunch_prob"].mean(),
+    )
+    add(
+        "Segregation signal",
+        "CTIP1 share, AALPI applicants",
+        real.loc[real["_aalpi"], "ctip1"].mean(),
+        syn.loc[syn["_aalpi"], "ctip1"].mean(),
+    )
+    add(
+        "Segregation signal",
+        "CTIP1 share, other applicants",
+        real.loc[~real["_aalpi"], "ctip1"].mean(),
+        syn.loc[~syn["_aalpi"], "ctip1"].mean(),
+    )
+
+    for column, label in (
+        ("sibling", "sibling priority"),
+        ("aaprek", "attendance-area pre-K priority"),
+        ("prek", "citywide pre-K priority"),
+        ("currentlp", "current language pathway"),
+        ("aa", "attendance-area priority applied"),
+    ):
+        if column == "sibling":
+            real_rate = (real[column].apply(len) > 0).mean()
+            syn_rate = (syn[column].apply(len) > 0).mean()
+        else:
+            real_rate = (real[column].fillna("[]") != "[]").mean()
+            syn_rate = (syn[column].fillna("[]") != "[]").mean()
+        add("Priorities", f"Share with {label}", real_rate, syn_rate)
+
+    add(
+        "Round 1 outcome",
+        "Share of applicants with a list left with no offer",
+        listed_real["r1_idschool"].isna().mean(),
+        listed_syn["r1_idschool"].isna().mean(),
+    )
+    add(
+        "Round 1 outcome",
+        "Share of applicants with a list offered their first choice",
+        (listed_real["r1_rank"] == 1).mean(),
+        (listed_syn["r1_rank"] == 1).mean(),
+    )
+
+    def _offer_on_list(df: pd.DataFrame) -> float:
+        offered = df.dropna(subset=["r1_idschool"])
+        return float(
+            np.mean(
+                [
+                    int(school) in lst
+                    for school, lst in zip(
+                        offered["r1_idschool"], offered["r1_ranked_idschool"]
+                    )
+                ]
+            )
+        )
+
+    add(
+        "Round 1 outcome",
+        "Share of offers that are on the applicant's own list",
+        _offer_on_list(listed_real),
+        _offer_on_list(listed_syn),
+    )
+    add(
+        "Round 1 outcome",
+        "Mean distance to the round-1 offer (mi)",
+        real["r1_distance"].mean(),
+        syn["r1_distance"].mean(),
+        "{:.2f}",
+    )
+    return out
+
+
+def _coarsen_source_cell(value: str) -> str:
+    """Coarsen a formatted Source cell for the public FIDELITY table.
+
+    Exact cohort aggregates are not needed at full precision in the shipped
+    doc; Synthetic stays as computed.
+    """
+    if value in {"-", ""}:
+        return value
+    raw = value.replace(",", "")
+    try:
+        number = float(raw)
+    except ValueError:
+        return value
+    if "." not in raw and abs(number) >= 100:
+        # Large integer counts (applicants, income-like ints already formatted).
+        return f"{int(round(number / 10.0) * 10)}"
+    if abs(number) >= 1000:
+        return f"{int(round(number / 1000.0) * 1000):,}"
+    if abs(number) >= 10:
+        return f"{number:.1f}"
+    # Shares and small means: hundredths.
+    return f"{round(number, 2):.2f}"
+
+
+def write_report(
+    rows: list, out_path: Path, year: str, *, coarsen_source: bool = True
+) -> None:
+    """Write the fidelity table as markdown.
+
+    Args:
+        rows: ``(section, statistic, real, synthetic, gap)`` tuples. Values
+            are already formatted strings (or ``"-"``). ``gap`` holds
+            cross-dataset measures (correlation, total absolute deviation,
+            max abs difference); those rows leave Source/Synthetic blank.
+        out_path: File to write.
+        year: Two-school-year tag of the source cohort.
+        coarsen_source: When True (default), snap Source cells before writing
+            so the public doc does not carry exact confidential aggregates.
+    """
+    lines = [
+        f"# Fidelity of the synthetic {year} kindergarten cohort",
+        "",
+        "Generated by `scripts/generators/report_synthetic_fidelity.py`"
+        f" on {_dt.date.today().isoformat()}.",
+        "",
+        "Each row compares one aggregate statistic of the confidential source",
+        "cohort with the same statistic in the released synthetic dataset.",
+        "Correlations, total absolute deviations, and max absolute differences",
+        "are cross-dataset measures; they appear only in the **Gap** column.",
+        "",
+        "**Source values in this public file are coarsened** (rounded shares,",
+        "distances, and large counts) so the fidelity table is not an exact",
+        "dump of confidential cohort aggregates. Synthetic values are from the",
+        "released cohort and are shown at full computed precision.",
+        "",
+        "See [ANONYMIZATION.md](ANONYMIZATION.md) for which differences are"
+        " deliberate.",
+    ]
+    current = None
+    for section, name, real_value, syn_value, gap_value in rows:
+        if section != current:
+            lines += [
+                "",
+                f"## {section}",
+                "",
+                "| Statistic | Source (coarsened) | Synthetic | Gap |",
+                "| --- | --- | --- | --- |",
+            ]
+            current = section
+        source = (
+            _coarsen_source_cell(str(real_value))
+            if coarsen_source
+            else real_value
+        )
+        lines.append(f"| {name} | {source} | {syn_value} | {gap_value} |")
+    lines.append("")
+    out_path.write_text("\n".join(lines), newline="\n")
+    logger.info("wrote %s (%d statistics)", out_path, len(rows))
+
+
+def _resolve_student_csv(sfusd_root: Path, year: str, student_csv: Path | None) -> Path:
+    """Locate the confidential student extract (same fallbacks as extract_priors)."""
+    if student_csv is not None:
+        path = Path(student_csv)
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        return path
+    candidates = [
+        sfusd_root / "Data" / "Cleaned" / f"student_{year}.csv",
+        sfusd_root / "data" / "cleaned" / f"student_{year}.csv",
+        sfusd_root
+        / "data"
+        / "cleaned"
+        / f"r1_filter_student_without_specialprogs_{year}.csv",
+        sfusd_root
+        / "data"
+        / "cleaned"
+        / f"student_without_specialprogs_{year}.csv",
+    ]
+    for path in candidates:
+        if path.is_file():
+            return path
+    raise FileNotFoundError(
+        "No confidential student CSV found under "
+        + ", ".join(str(p) for p in candidates)
+    )
+
+
+def main() -> None:
+    """CLI entry point."""
+    logging.basicConfig(
+        level=logging.INFO, format="[%(levelname)s] %(message)s"
+    )
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--sfusd-root", type=Path, required=True)
+    parser.add_argument(
+        "--data-dir", type=Path, default=Path("data/synthetic_2324")
+    )
+    parser.add_argument(
+        "--student-csv",
+        type=Path,
+        default=None,
+        help="Confidential student CSV (default: search under --sfusd-root).",
+    )
+    parser.add_argument("--year", default="2324")
+    parser.add_argument("--out", type=Path, default=None)
+    args = parser.parse_args()
+
+    real = _load(_resolve_student_csv(args.sfusd_root, args.year, args.student_csv))
+    syn = _load(args.data_dir / f"student_{args.year}_synthetic.csv")
+    schools = pd.read_csv(
+        args.data_dir / "Cleaned" / f"schools_rehauled_{args.year}.csv"
+    ).dropna(subset=["lat", "lon"])
+    school_ll = schools.set_index("school_id")[["lat", "lon"]]
+    rows = _rows(real, syn, school_ll)
+    write_report(rows, args.out or args.data_dir / "FIDELITY.md", args.year)
+
+
+if __name__ == "__main__":
+    main()
